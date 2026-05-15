@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Automatización para Empresas de Servicios | Fluxit</title>
+  <meta name="description" content="Automatiza la gestión de solicitudes, el seguimiento comercial y las tareas repetitivas en tu empresa de servicios. Más capacidad, mismo equipo. Auditoría gratuita." />
+  <link rel="canonical" href="https://www.fluxit.es/automatizacion-empresas-servicios" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Automatización para Empresas de Servicios",
+      "provider": {
+        "@type": "Organization",
+        "name": "Fluxit",
+        "url": "https://www.fluxit.es"
+      },
+      "description": "Automatiza la gestión de solicitudes, el seguimiento comercial y las tareas repetitivas en tu empresa de servicios. Más capacidad, mismo equipo.",
+      "areaServed": "ES",
+      "url": "https://www.fluxit.es/automatizacion-empresas-servicios"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.fluxit.es"},
+        {"@type": "ListItem", "position": 2, "name": "Sectores", "item": "https://www.fluxit.es/sectores"},
+        {"@type": "ListItem", "position": 3, "name": "Empresas de Servicios", "item": "https://www.fluxit.es/automatizacion-empresas-servicios"}
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Sirve aunque cada cliente sea diferente?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Aunque cada proyecto sea único, hay procesos comunes en todos: la recepción de solicitudes, el onboarding, los reportes, la facturación. Automatizamos esas capas comunes sin tocar lo que hace especial a tu servicio."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Necesito cambiar mi forma de trabajar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. El sistema se adapta a cómo trabajas ahora y conecta las herramientas que ya usas: tu email, tu CRM, tu gestor de proyectos, tu hoja de cálculo. No tienes que aprender nada nuevo ni cambiar tu operativa."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué pasa si cambia algo en mis procesos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Los flujos son completamente editables. Cualquier ajuste —nuevo campo, nueva condición, nuevo paso— lo hacemos sin coste adicional dentro de los primeros 90 días. Y después, en la mayoría de los casos, puedes gestionarlo tú mismo."
+          }
+        }
+      ]
+    }
+  ]
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --dark: #0d0d14;
+      --dark2: #12121f;
+      --dark3: #1a1a2e;
+      --dark4: #16213e;
+      --accent: #4f6ef7;
+      --accent2: #8b9ff4;
+      --light: #f7f7f9;
+      --white: #ffffff;
+      --text-main: #1a1a2e;
+      --text-muted: #6b7280;
+      --text-light: rgba(255,255,255,0.75);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--white);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(13,13,20,0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 0 2rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 1.35rem;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-logo span { color: var(--accent2); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--white); }
+
+    .nav-cta {
+      background: var(--accent);
+      color: var(--white) !important;
+      padding: 0.5rem 1.25rem;
+      border-radius: 6px;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover { background: #3d5ce0 !important; }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--dark) 0%, var(--dark3) 60%, var(--dark4) 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 100px 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -40%;
+      right: -20%;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(79,110,247,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(139,159,244,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 1.25rem;
+    }
+
+    .breadcrumb a { color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: rgba(255,255,255,0.75); }
+    .breadcrumb span { color: rgba(255,255,255,0.25); }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(79,110,247,0.15);
+      border: 1px solid rgba(79,110,247,0.3);
+      color: var(--accent2);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.9rem;
+      border-radius: 20px;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero h1 {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.18;
+      margin-bottom: 1.4rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--accent2);
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: var(--text-light);
+      max-width: 640px;
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 3.5rem;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--white);
+      padding: 0.85rem 1.75rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-primary:hover { background: #3d5ce0; transform: translateY(-1px); }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.07);
+      color: var(--white);
+      padding: 0.85rem 1.75rem;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.15);
+      transition: background 0.2s, border-color 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-secondary:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.25); }
+
+    .hero-stats {
+      display: flex;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .hero-stat-value {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.02em;
+    }
+
+    .hero-stat-label {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.02em;
+    }
+
+    /* ── WHAT WE AUTOMATE ── */
+    .section-automate {
+      background: var(--light);
+      padding: 5rem 2rem;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 3.5rem;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-header h2 {
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+    }
+
+    .cards-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 2rem;
+      border: 1px solid rgba(0,0,0,0.06);
+      transition: box-shadow 0.25s, transform 0.25s;
+      opacity: 0;
+      transform: translateY(24px);
+    }
+
+    .card.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card:hover {
+      box-shadow: 0 12px 40px rgba(79,110,247,0.1);
+      transform: translateY(-3px);
+    }
+
+    .card-number {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.6rem;
+      line-height: 1.3;
+    }
+
+    .card p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* ── CASO REAL ── */
+    .section-case {
+      background: var(--dark4);
+      padding: 5rem 2rem;
+    }
+
+    .case-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .case-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 2rem;
+    }
+
+    .case-quote {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(1.25rem, 2.5vw, 1.6rem);
+      color: var(--white);
+      line-height: 1.55;
+      margin-bottom: 1.5rem;
+    }
+
+    .case-author {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 3rem;
+    }
+
+    .case-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .case-metric {
+      border-left: 3px solid var(--accent);
+      padding-left: 1.25rem;
+    }
+
+    .case-metric-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.3rem;
+      letter-spacing: -0.02em;
+    }
+
+    .case-metric-label {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.4;
+    }
+
+    /* ── FAQ ── */
+    .section-faq {
+      background: var(--white);
+      padding: 5rem 2rem;
+    }
+
+    .faq-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.4s, transform 0.4s;
+    }
+
+    .faq-item.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.4rem 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-main);
+      text-align: left;
+      gap: 1rem;
+    }
+
+    .faq-icon {
+      width: 28px;
+      height: 28px;
+      min-width: 28px;
+      border-radius: 50%;
+      background: var(--light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      color: var(--accent);
+      transition: transform 0.3s;
+      font-weight: 700;
+    }
+
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+
+    .faq-answer p {
+      padding-bottom: 1.4rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* ── TAMBIÉN PUEDE INTERESARTE ── */
+    .section-related {
+      background: var(--light);
+      padding: 5rem 2rem;
+    }
+
+    .related-grid {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .related-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 1.75rem;
+      border: 1px solid rgba(0,0,0,0.06);
+      text-decoration: none;
+      transition: box-shadow 0.25s, transform 0.25s;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .related-card:hover {
+      box-shadow: 0 12px 40px rgba(79,110,247,0.1);
+      transform: translateY(-3px);
+    }
+
+    .related-tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .related-card h3 {
+      font-size: 0.975rem;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.3;
+    }
+
+    .related-card p {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .related-arrow {
+      margin-top: auto;
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    /* ── CTA FINAL ── */
+    .section-cta {
+      background: linear-gradient(135deg, var(--dark) 0%, var(--dark3) 100%);
+      padding: 6rem 2rem;
+      text-align: center;
+    }
+
+    .section-cta h2 {
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .section-cta h2 em {
+      font-style: normal;
+      color: var(--accent2);
+    }
+
+    .section-cta p {
+      font-size: 1.05rem;
+      color: var(--text-light);
+      max-width: 520px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.65;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-whatsapp {
+      background: #25d366;
+      color: var(--white);
+      padding: 0.85rem 1.75rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-whatsapp:hover { background: #1db954; transform: translateY(-1px); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 3.5rem 2rem 2rem;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .footer-brand p {
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.65;
+      margin-top: 0.75rem;
+      max-width: 280px;
+    }
+
+    .footer-col h4 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 1rem;
+    }
+
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+
+    .footer-col a {
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover { color: rgba(255,255,255,0.85); }
+
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 0 auto;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-bottom p {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.3);
+    }
+
+    /* ── WHATSAPP FLOAT ── */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 1.75rem;
+      right: 1.75rem;
+      z-index: 999;
+      background: #25d366;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.35);
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.08);
+      box-shadow: 0 8px 28px rgba(37,211,102,0.45);
+    }
+
+    .whatsapp-float svg { width: 28px; height: 28px; fill: white; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .cards-grid { grid-template-columns: repeat(2, 1fr); }
+      .case-metrics { grid-template-columns: 1fr 1fr; }
+      .related-grid { grid-template-columns: 1fr 1fr; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .cards-grid { grid-template-columns: 1fr; }
+      .case-metrics { grid-template-columns: 1fr; }
+      .related-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .hero-stats { gap: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a href="/" class="nav-logo">FLUX<span>IT</span></a>
+    <ul class="nav-links">
+      <li><a href="/automatizacion-procesos-empresas">Automatización</a></li>
+      <li><a href="/captacion-leads-b2b">Captación</a></li>
+      <li><a href="/diseno-landings-conversion">Landings</a></li>
+      <li><a href="mailto:lucas@fluxit.es" class="nav-cta">Auditoría gratuita</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Inicio</a>
+        <span>›</span>
+        <a href="/sectores">Sectores</a>
+        <span>›</span>
+        <span>Empresas de Servicios</span>
+      </nav>
+      <div class="hero-tag">Sector · Empresas de Servicios</div>
+      <h1>Automatización para empresas de <em>servicios</em>: más capacidad sin ampliar el equipo</h1>
+      <p class="hero-subtitle">Las empresas de servicios crecen hasta que la operativa se convierte en un cuello de botella. Automatizamos los procesos que limitan tu crecimiento para que puedas atender más clientes sin contratar más personas.</p>
+      <div class="hero-ctas">
+        <a href="mailto:lucas@fluxit.es" class="btn-primary">Solicitar auditoría gratuita →</a>
+        <a href="https://wa.me/34658010945?text=Hola!%20Quiero%20automatizar%20los%20procesos%20de%20mi%20empresa%20de%20servicios." class="btn-secondary" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="hero-stat-value">−60%</span>
+          <span class="hero-stat-label">tiempo en gestión operativa</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-value">+40%</span>
+          <span class="hero-stat-label">capacidad sin nuevas contrataciones</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-value">0€</span>
+          <span class="hero-stat-label">auditoría inicial</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUÉ AUTOMATIZAMOS -->
+  <section class="section-automate">
+    <div class="section-header">
+      <span class="section-label">Lo que automatizamos</span>
+      <h2>Qué automatizamos en tu empresa de servicios</h2>
+    </div>
+    <div class="cards-grid">
+      <div class="card">
+        <span class="card-number">01</span>
+        <h3>Gestión de solicitudes entrantes</h3>
+        <p>Las solicitudes se registran, clasifican y asignan automáticamente sin que nadie tenga que leer emails y repartir tareas a mano.</p>
+      </div>
+      <div class="card">
+        <span class="card-number">02</span>
+        <h3>Seguimiento comercial automático</h3>
+        <p>Presupuestos enviados que no responden reciben seguimiento automático en el momento adecuado, sin que el equipo comercial tenga que recordarlo.</p>
+      </div>
+      <div class="card">
+        <span class="card-number">03</span>
+        <h3>Onboarding de nuevos clientes</h3>
+        <p>Bienvenida, documentación, accesos y asignación de responsable sin intervención manual. El cliente tiene una experiencia impecable desde el primer día.</p>
+      </div>
+      <div class="card">
+        <span class="card-number">04</span>
+        <h3>Reporting automático</h3>
+        <p>Informes de actividad, estado de proyectos y métricas clave generados y enviados solos cada semana o mes, sin que nadie los prepare.</p>
+      </div>
+      <div class="card">
+        <span class="card-number">05</span>
+        <h3>Comunicación interna</h3>
+        <p>Notificaciones automáticas al equipo cuando hay cambios de estado, tareas pendientes o alertas. Menos reuniones, más claridad.</p>
+      </div>
+      <div class="card">
+        <span class="card-number">06</span>
+        <h3>Facturación y recordatorios</h3>
+        <p>Recordatorios de pago, alertas de facturas vencidas y seguimiento automático sin que nadie tenga que hacer gestiones manuales.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASO REAL -->
+  <section class="section-case">
+    <div class="case-inner">
+      <span class="case-label">Caso real</span>
+      <blockquote class="case-quote">
+        "Con 12 personas en el equipo estábamos al límite. Cada cliente nuevo suponía más carga de gestión. Después de automatizar los procesos clave con Fluxit, podemos atender un 40% más de proyectos sin haber contratado a nadie."
+      </blockquote>
+      <p class="case-author">Ignacio Palomares, CEO · Empresa de Consultoría IT, Sevilla</p>
+      <div class="case-metrics">
+        <div class="case-metric">
+          <div class="case-metric-value">+40%</div>
+          <div class="case-metric-label">capacidad de proyectos simultáneos</div>
+        </div>
+        <div class="case-metric">
+          <div class="case-metric-value">−5h</div>
+          <div class="case-metric-label">/semana por persona en tareas administrativas</div>
+        </div>
+        <div class="case-metric">
+          <div class="case-metric-value">3 semanas</div>
+          <div class="case-metric-label">de implementación</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-faq">
+    <div class="faq-inner">
+      <div class="section-header" style="text-align:left; margin-bottom:2rem;">
+        <span class="section-label">Preguntas frecuentes</span>
+        <h2>Lo que suelen preguntar</h2>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          ¿Sirve aunque cada cliente sea diferente?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Sí. Aunque cada proyecto sea único, hay procesos comunes en todos: la recepción de solicitudes, el onboarding, los reportes, la facturación. Automatizamos esas capas comunes sin tocar lo que hace especial a tu servicio.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          ¿Necesito cambiar mi forma de trabajar?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>No. El sistema se adapta a cómo trabajas ahora y conecta las herramientas que ya usas: tu email, tu CRM, tu gestor de proyectos, tu hoja de cálculo. No tienes que aprender nada nuevo ni cambiar tu operativa.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          ¿Qué pasa si cambia algo en mis procesos?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Los flujos son completamente editables. Cualquier ajuste —nuevo campo, nueva condición, nuevo paso— lo hacemos sin coste adicional dentro de los primeros 90 días. Y después, en la mayoría de los casos, puedes gestionarlo tú mismo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAMBIÉN PUEDE INTERESARTE -->
+  <section class="section-related">
+    <div class="section-header">
+      <span class="section-label">Más servicios</span>
+      <h2>También puede interesarte</h2>
+    </div>
+    <div class="related-grid">
+      <a href="/automatizacion-procesos-empresas" class="related-card">
+        <span class="related-tag">Automatización</span>
+        <h3>Automatización de procesos empresariales</h3>
+        <p>Elimina las tareas manuales que consumen tiempo y ralentizan tu operativa.</p>
+        <span class="related-arrow">Ver servicio →</span>
+      </a>
+      <a href="/captacion-leads-b2b" class="related-card">
+        <span class="related-tag">Captación</span>
+        <h3>Captación de leads B2B</h3>
+        <p>Sistemas de generación de oportunidades comerciales para empresas que venden a otras empresas.</p>
+        <span class="related-arrow">Ver servicio →</span>
+      </a>
+      <a href="/diseno-landings-conversion" class="related-card">
+        <span class="related-tag">Conversión</span>
+        <h3>Diseño de landings de conversión</h3>
+        <p>Páginas optimizadas para convertir visitas en contactos cualificados desde el primer día.</p>
+        <span class="related-arrow">Ver servicio →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="section-cta">
+    <h2>¿Listo para crecer sin<br>ampliar el <em>equipo</em>?</h2>
+    <p>Analizamos tu operativa actual sin coste y te decimos exactamente qué automatizar para liberar capacidad de forma inmediata.</p>
+    <div class="cta-buttons">
+      <a href="mailto:lucas@fluxit.es" class="btn-primary">Escribir a lucas@fluxit.es →</a>
+      <a href="https://wa.me/34658010945?text=Hola!%20Quiero%20automatizar%20los%20procesos%20de%20mi%20empresa%20de%20servicios." class="btn-whatsapp" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:18px;height:18px;fill:white;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo" style="font-size:1.1rem;">FLUX<span>IT</span></a>
+        <p>Consultoría de IA y automatización para empresas en España. Más resultados, menos trabajo manual.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="/automatizacion-procesos-empresas">Automatización de procesos</a></li>
+          <li><a href="/captacion-leads-b2b">Captación leads B2B</a></li>
+          <li><a href="/diseno-landings-conversion">Diseño de landings</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Sectores</h4>
+        <ul>
+          <li><a href="/automatizacion-inmobiliarias">Inmobiliarias</a></li>
+          <li><a href="/captacion-leads-despachos">Despachos y consultoras</a></li>
+          <li><a href="/automatizacion-empresas-servicios">Empresas de servicios</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="mailto:lucas@fluxit.es">lucas@fluxit.es</a></li>
+          <li><a href="https://wa.me/34658010945" target="_blank" rel="noopener">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Fluxit. Todos los derechos reservados.</p>
+      <p>Madrid · España</p>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/34658010945?text=Hola!%20Quiero%20automatizar%20los%20procesos%20de%20mi%20empresa%20de%20servicios." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <!-- anime.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script>
+    // Reveal on scroll
+    const revealEls = document.querySelectorAll('.card, .faq-item');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const idx = Array.from(revealEls).indexOf(entry.target);
+          setTimeout(() => {
+            entry.target.classList.add('revealed');
+          }, 80 * (idx % 3));
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealEls.forEach(el => observer.observe(el));
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const answer = item.querySelector('.faq-answer');
+        const isOpen = item.classList.contains('open');
+
+        document.querySelectorAll('.faq-item.open').forEach(openItem => {
+          openItem.classList.remove('open');
+          openItem.querySelector('.faq-answer').style.maxHeight = null;
+          openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+
+        if (!isOpen) {
+          item.classList.add('open');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // Hero anime reveal
+    anime({
+      targets: '.hero-inner > *',
+      translateY: [30, 0],
+      opacity: [0, 1],
+      duration: 700,
+      delay: anime.stagger(120, { start: 200 }),
+      easing: 'easeOutQuad'
+    });
+  </script>
+</body>
+</html>
