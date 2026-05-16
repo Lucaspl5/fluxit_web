@@ -1309,6 +1309,27 @@
 
     /* ─── REVEAL animations ─── */
 
+
+    /* ═══ INTRO SPLASH ═══ */
+    #intro-overlay {
+      position: fixed; inset: 0; background: #05050a;
+      z-index: 10000; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 20px;
+    }
+    #intro-word {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(52px, 10vw, 128px);
+      font-weight: 700; letter-spacing: 0.06em;
+      color: #fff; display: flex; align-items: baseline;
+    }
+    .il {
+      display: inline-block; opacity: 0; transform: translateY(48px);
+    }
+    .accent-dot { color: #4f6ef7; }
+    #intro-line {
+      width: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, #4f6ef7, transparent);
+    }
     /* ─── Animation initial states ─── */
     #nav-logo { opacity: 0; }
     #hero-tag, #hero-subtitle, #hero-actions, #hero-scroll { opacity: 0; }
@@ -1371,6 +1392,13 @@
   </style>
 </head>
 <body>
+  <!-- ═══ INTRO SPLASH ═══ -->
+  <div id="intro-overlay">
+    <div id="intro-word">
+      <span class="il">F</span><span class="il">L</span><span class="il">U</span><span class="il">X</span><span class="il">I</span><span class="il">T</span><span class="il accent-dot">.</span>
+    </div>
+    <div id="intro-line"></div>
+  </div>
 
   <!-- NAVBAR -->
   <nav id="navbar">
@@ -1942,6 +1970,51 @@
     })();
 
     // ═══════════════════════════════════════════════
+    // INTRO SPLASH ANIMATION
+    // ═══════════════════════════════════════════════
+    (function() {
+      const overlay = document.getElementById('intro-overlay');
+
+      anime.timeline({ easing: 'easeOutExpo' })
+        // Letters appear staggered
+        .add({
+          targets: '.il',
+          translateY: [48, 0],
+          opacity: [0, 1],
+          duration: 750,
+          delay: anime.stagger(75)
+        })
+        // Line appears under text
+        .add({
+          targets: '#intro-line',
+          width: ['0%', '120px'],
+          duration: 500,
+          easing: 'easeOutCubic'
+        }, '-=200')
+        // Brief pause — held at 900ms from here
+        // Letters scale up slightly and overlay fades
+        .add({
+          targets: '#intro-word',
+          scale: [1, 1.06],
+          opacity: [1, 0],
+          duration: 600,
+          delay: 350,
+          easing: 'easeInExpo'
+        })
+        .add({
+          targets: '#intro-overlay',
+          opacity: [1, 0],
+          duration: 500,
+          easing: 'easeInQuad',
+          complete() {
+            overlay.style.display = 'none';
+            startMainAnimations();
+          }
+        }, '-=400');
+    })();
+
+    function startMainAnimations() {
+    // ═══════════════════════════════════════════════
     // FLUXIT ANIMATIONS v2 — anime.js 3.2.2
     // ═══════════════════════════════════════════════
     const isMobile = window.matchMedia('(max-width:768px)').matches || ('ontouchstart' in window);
@@ -2166,6 +2239,7 @@
     document.querySelectorAll('.nav-links a').forEach(a => {
       a.addEventListener('click', () => { navLinks.style.display = ''; });
     });
+    } // end startMainAnimations
   </script>
 </body>
 </html>
