@@ -1308,6 +1308,13 @@
     .wa-float svg { width: 26px; height: 26px; }
 
     /* ─── REVEAL animations ─── */
+
+    /* ─── Animation initial states ─── */
+    #nav-logo { opacity: 0; }
+    #hero-tag, #hero-subtitle, #hero-actions, #hero-scroll { opacity: 0; }
+    body { cursor: none; }
+    @media (max-width: 768px) { body { cursor: auto; } }
+
     .reveal {
       opacity: 0;
       transform: translateY(28px);
@@ -1934,41 +1941,207 @@
       draw();
     })();
 
+    // ═══════════════════════════════════════════════
+    // FLUXIT ANIMATIONS v2 — anime.js 3.2.2
+    // ═══════════════════════════════════════════════
+    const isMobile = window.matchMedia('(max-width:768px)').matches || ('ontouchstart' in window);
+
     // ─── Navbar scroll ───
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
       navbar.classList.toggle('scrolled', window.scrollY > 60);
-    });
+    }, { passive: true });
 
-    // ─── Hero entrance animations ───
-    anime.timeline({ easing: 'easeOutExpo' })
-      .add({ targets: '#hero-tag', opacity: [0, 1], translateY: [20, 0], duration: 800 }, 400)
-      .add({ targets: '#hero-title', opacity: [0, 1], translateY: [32, 0], duration: 900 }, 600)
-      .add({ targets: '#hero-subtitle', opacity: [0, 1], translateY: [24, 0], duration: 800 }, 900)
-      .add({ targets: '#hero-actions', opacity: [0, 1], translateY: [20, 0], duration: 700 }, 1100)
-      .add({ targets: '#hero-scroll', opacity: [0, 0.8], duration: 600 }, 1500);
-
-    // ─── Scroll reveal ───
-    const revealEls = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            anime({
-              targets: entry.target,
-              opacity: [0, 1],
-              translateY: [28, 0],
-              duration: 700,
-              easing: 'easeOutCubic'
-            });
-            entry.target.classList.add('visible');
-          }, 80);
-          observer.unobserve(entry.target);
-        }
+    // ─── 1. LOGO WIPE REVEAL ───
+    (function() {
+      const logo = document.querySelector('.nav-logo');
+      if (!logo) return;
+      anime({
+        targets: logo,
+        opacity: [0, 1],
+        clipPath: ['inset(0 100% 0 0)', 'inset(0 0% 0 0)'],
+        duration: 1000,
+        delay: 150,
+        easing: 'easeOutExpo'
       });
-    }, { threshold: 0.12 });
+    })();
 
-    revealEls.forEach(el => observer.observe(el));
+    // ─── 2. HERO WORD-BY-WORD STAGGER ───
+    (function() {
+      const title = document.getElementById('hero-title');
+      if (!title) return;
+      function wrapWords(el) {
+        [...el.childNodes].forEach(node => {
+          if (node.nodeType === 3) {
+            const parts = node.textContent.split(/(\s+)/);
+            const frag = document.createDocumentFragment();
+            parts.forEach(p => {
+              if (/^\s+$/.test(p)) {
+                frag.appendChild(document.createTextNode(p));
+              } else if (p) {
+                const outer = document.createElement('span');
+                outer.style.cssText = 'display:inline-block;overflow:hidden;vertical-align:bottom;line-height:1.15;';
+                const inner = document.createElement('span');
+                inner.className = 'hw';
+                inner.style.cssText = 'display:inline-block;';
+                inner.textContent = p;
+                outer.appendChild(inner);
+                frag.appendChild(outer);
+              }
+            });
+            node.parentNode.replaceChild(frag, node);
+          } else if (node.nodeType === 1 && node.tagName !== 'BR') {
+            wrapWords(node);
+          }
+        });
+      }
+      title.style.opacity = '1';
+      wrapWords(title);
+
+      anime.timeline({ easing: 'easeOutExpo' })
+        .add({ targets: '#hero-tag', opacity: [0,1], translateY: [14,0], duration: 700 }, 250)
+        .add({ targets: '#hero-title .hw', translateY: ['105%','0%'], opacity: [0,1],
+               duration: 900, delay: anime.stagger(50) }, 450)
+        .add({ targets: '#hero-subtitle', opacity: [0,1], translateY: [18,0], duration: 750 }, 1050)
+        .add({ targets: '#hero-actions > *', opacity: [0,1], translateY: [14,0],
+               duration: 600, delay: anime.stagger(110) }, 1250)
+        .add({ targets: '#hero-scroll', opacity: [0,0.7], duration: 500 }, 1650);
+    })();
+
+    // ─── 3. CURSOR FOLLOWER ───
+    if (!isMobile) {
+      const cursor = document.createElement('div');
+      cursor.style.cssText = 'position:fixed;width:10px;height:10px;border-radius:50%;background:rgba(79,110,247,0.9);pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s,background .2s;box-shadow:0 0 16px rgba(79,110,247,0.7),0 0 32px rgba(79,110,247,0.3);';
+      const ring = document.createElement('div');
+      ring.style.cssText = 'position:fixed;width:34px;height:34px;border-radius:50%;border:1px solid rgba(79,110,247,0.35);pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:transform .15s;';
+      document.body.appendChild(cursor);
+      document.body.appendChild(ring);
+      let mx = -200, my = -200, rx = -200, ry = -200;
+      window.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; }, { passive:true });
+      (function loop() {
+        cursor.style.left = mx+'px'; cursor.style.top = my+'px';
+        rx += (mx-rx)*0.11; ry += (my-ry)*0.11;
+        ring.style.left = rx+'px'; ring.style.top = ry+'px';
+        requestAnimationFrame(loop);
+      })();
+      document.querySelectorAll('a,button,[role="button"]').forEach(el => {
+        el.addEventListener('mouseenter', () => {
+          cursor.style.width = '18px'; cursor.style.height = '18px';
+          cursor.style.background = 'rgba(79,110,247,1)';
+          ring.style.transform = 'translate(-50%,-50%) scale(1.7)';
+        });
+        el.addEventListener('mouseleave', () => {
+          cursor.style.width = '10px'; cursor.style.height = '10px';
+          cursor.style.background = 'rgba(79,110,247,0.9)';
+          ring.style.transform = 'translate(-50%,-50%) scale(1)';
+        });
+      });
+    }
+
+    // ─── 4. MAGNETIC BUTTONS ───
+    if (!isMobile) {
+      document.querySelectorAll('.btn-primary').forEach(btn => {
+        btn.addEventListener('mousemove', e => {
+          const r = btn.getBoundingClientRect();
+          const x = (e.clientX - r.left - r.width/2) * 0.25;
+          const y = (e.clientY - r.top - r.height/2) * 0.25;
+          btn.style.transform = `translate(${x}px,${y}px)`;
+        });
+        btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
+      });
+    }
+
+    // ─── 5. HERO PARALLAX ───
+    if (!isMobile) {
+      let hx = 0, hy = 0;
+      window.addEventListener('mousemove', e => {
+        hx = (e.clientX/window.innerWidth - 0.5) * 20;
+        hy = (e.clientY/window.innerHeight - 0.5) * 10;
+      }, { passive:true });
+      const hcontent = document.querySelector('.hero-content');
+      (function parallax() {
+        if (hcontent) hcontent.style.transform = `translate(${hx*0.28}px,${hy*0.28}px)`;
+        requestAnimationFrame(parallax);
+      })();
+    }
+
+    // ─── 6. STAT COUNTERS ───
+    (function() {
+      const stats = document.querySelectorAll('.stat-number');
+      if (!stats.length) return;
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          io.unobserve(entry.target);
+          const orig = entry.target.textContent.trim();
+          const m = orig.match(/^([+]?)(\d+)([a-z€%]*)$/i);
+          if (!m || parseInt(m[2]) === 0) return;
+          const prefix = m[1], num = parseInt(m[2]), suffix = m[3];
+          const obj = { val: 0 };
+          anime({ targets: obj, val: num, duration: 1800, delay: 300, easing: 'easeOutExpo', round: 1,
+            update() { entry.target.textContent = prefix + Math.round(obj.val) + suffix; },
+            complete() { entry.target.textContent = orig; }
+          });
+        });
+      }, { threshold: 0.5 });
+      stats.forEach(el => io.observe(el));
+    })();
+
+    // ─── 7. STAGGERED CARD REVEALS ───
+    (function() {
+      ['.service-card', '.sector-card', '.sector-tile', '.process-step', '.testimonial-card'].forEach(sel => {
+        const cards = document.querySelectorAll(sel);
+        if (!cards.length) return;
+        cards.forEach(el => { el.style.opacity = '0'; el.style.transform = 'translateY(30px)'; });
+        const io = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            io.unobserve(entry.target);
+            const siblings = [...(entry.target.parentElement || document).querySelectorAll(sel)];
+            const idx = siblings.indexOf(entry.target);
+            anime({ targets: entry.target, opacity: [0,1], translateY: [30,0],
+              duration: 750, delay: Math.min(idx * 90, 360), easing: 'easeOutCubic' });
+          });
+        }, { threshold: 0.1 });
+        cards.forEach(el => io.observe(el));
+      });
+    })();
+
+    // ─── 8. SCROLL REVEAL (existing .reveal elements) ───
+    (function() {
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          anime({ targets: entry.target, opacity: [0,1], translateY: [26,0],
+            duration: 700, easing: 'easeOutCubic' });
+          entry.target.classList.add('visible');
+          io.unobserve(entry.target);
+        });
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    })();
+
+    // ─── 9. SECTION H2 CHARACTER SPLIT ───
+    (function() {
+      const selectors = '.section-header h2, .intro-left h2, .process-left h2, .cta-final h2';
+      document.querySelectorAll(selectors).forEach(h2 => {
+        if (h2.closest('#home')) return;
+        const text = h2.textContent;
+        h2.innerHTML = [...text].map(ch =>
+          ch === ' ' ? ' ' : `<span class="ch" style="display:inline-block;opacity:0;transform:translateY(18px)">${ch === '<' ? '&lt;' : ch}</span>`
+        ).join('');
+        const io = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            io.unobserve(entry.target);
+            anime({ targets: entry.target.querySelectorAll('.ch'),
+              opacity: [0,1], translateY: [18,0], duration: 580,
+              delay: anime.stagger(16), easing: 'easeOutExpo' });
+          });
+        }, { threshold: 0.2 });
+        io.observe(h2);
+      });
+    })();
 
     // ─── FAQ accordion ───
     document.querySelectorAll('[data-faq]').forEach(item => {
@@ -1978,10 +2151,7 @@
           f.classList.remove('open');
           f.querySelector('.faq-answer').classList.remove('open');
         });
-        if (!isOpen) {
-          item.classList.add('open');
-          item.querySelector('.faq-answer').classList.add('open');
-        }
+        if (!isOpen) { item.classList.add('open'); item.querySelector('.faq-answer').classList.add('open'); }
       });
     });
 
@@ -1990,14 +2160,9 @@
     const navLinks = document.querySelector('.nav-links');
     hamburger.addEventListener('click', () => {
       const open = navLinks.style.display === 'flex';
-      if (open) {
-        navLinks.style.display = '';
-      } else {
-        navLinks.style.cssText = 'display:flex;flex-direction:column;position:fixed;top:68px;left:0;right:0;background:rgba(13,13,20,0.97);padding:24px 24px 32px;gap:20px;border-bottom:1px solid rgba(255,255,255,0.08);backdrop-filter:blur(12px);z-index:999;';
-      }
+      navLinks.style[open ? 'display' : 'cssText'] = open ? ''
+        : 'display:flex;flex-direction:column;position:fixed;top:68px;left:0;right:0;background:rgba(13,13,20,0.97);padding:24px 24px 32px;gap:20px;border-bottom:1px solid rgba(255,255,255,0.08);backdrop-filter:blur(12px);z-index:999;';
     });
-
-    // Close mobile menu on link click
     document.querySelectorAll('.nav-links a').forEach(a => {
       a.addEventListener('click', () => { navLinks.style.display = ''; });
     });
