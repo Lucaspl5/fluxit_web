@@ -50,55 +50,78 @@
 
   <!-- JSON-LD -->
   <script type="application/ld+json">
-  [
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Fluxit",
-      "url": "https://fluxit.es",
-      "logo": "https://fluxit.es/assets/images/logo.png",
-      "image": "https://fluxit.es/assets/images/card.jpg",
-      "description": "Consultoría especializada en IA, automatización de procesos y captación de leads para empresas en España. Auditoría gratuita sin compromiso.",
-      "address": { "@type": "PostalAddress", "addressCountry": "ES", "addressRegion": "España" },
-      "areaServed": "ES",
-      "priceRange": "€€€",
-      "telephone": "+34",
-      "email": "hola@fluxit.es",
-      "sameAs": ["https://shop.fluxit.es", "https://crypto-shop.fluxit.es"],
-      "serviceType": ["Consultoría IA", "Automatización de procesos", "Captación de leads B2B", "Automatización inmobiliarias", "Automatización despachos", "Diseño de landings"],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Servicios Fluxit",
-        "itemListElement": [
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Automatización de Procesos con IA", "url": "https://fluxit.es/automatizacion-procesos-empresas" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Captación de Leads B2B", "url": "https://fluxit.es/captacion-leads-b2b" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Automatización para Inmobiliarias", "url": "https://fluxit.es/automatizacion-inmobiliarias" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diseño de Landings de Conversión", "url": "https://fluxit.es/diseno-landings-conversion" } }
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.fluxit.es/#organization",
+        "name": "Fluxit",
+        "url": "https://www.fluxit.es",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.fluxit.es/assets/images/card.jpg"
+        },
+        "description": "Consultoría de automatización con IA para empresas en España. Captación de leads, automatización de procesos y webs de alta conversión.",
+        "areaServed": "ES",
+        "serviceType": "Consultoría IA y Automatización"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.fluxit.es/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Necesito conocimientos técnicos para usar los sistemas que implantáis?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Diseñamos todos los sistemas para que los use cualquier persona de tu equipo. Incluimos formación y documentación, y el soporte siempre está disponible."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuánto tarda en verse el retorno de la inversión?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La mayoría de clientes ven ROI positivo en el primer mes. El ahorro de horas es inmediato y la captación de leads empieza a generar resultados desde la primera semana de activación."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Con qué herramientas trabajáis?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Trabajamos con las que ya usas o con las más eficientes para tu caso: Make (Integromat), n8n, Zapier, Notion, HubSpot, Airtable, OpenAI, y muchas más. Adaptamos, no imponemos."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué pasa si algo falla tras la implementación?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Incluimos un período de garantía y soporte post-implementación. Monitorizamos los sistemas y actuamos de inmediato ante cualquier incidencia."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿La auditoría inicial realmente es gratuita?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí, sin letra pequeña. Una llamada de 30-45 minutos donde analizamos tu situación y te entregamos un informe con las 3 automatizaciones de mayor impacto para tu negocio."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Trabajáis con empresas de cualquier tamaño?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí. Desde freelancers hasta pymes con equipos de 50 personas. El enfoque cambia, pero la metodología y los resultados son igual de sólidos."
+            }
+          }
         ]
       }
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "¿Qué es Fluxit?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Fluxit es una consultoría especializada en inteligencia artificial, automatización de procesos y captación de leads para empresas en España." }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Cuánto cuesta una consultoría de IA con Fluxit?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Ofrecemos una auditoría gratuita sin compromiso. Los proyectos se presupuestan según el alcance y los objetivos de cada empresa." }
-        },
-        {
-          "@type": "Question",
-          "name": "¿En qué sectores trabaja Fluxit?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Trabajamos con inmobiliarias, despachos de abogados y asesores, empresas de servicios B2B y cualquier negocio que quiera automatizar procesos con IA." }
-        }
-      ]
-    }
-  ]
+    ]
+  }
   </script>
 
   <style>
@@ -634,10 +657,10 @@
       </svg>
 
       <h1 class="hero-headline">
-        <span class="hl">Empresas que</span>
-        <span class="hl accent">operan solas.</span>
-        <span class="hl">Tú decides dónde</span>
-        <span class="hl">creces.</span>
+        <span class="hl">Automatización con IA</span>
+        <span class="hl accent">para empresas</span>
+        <span class="hl">que operan solas.</span>
+        <span class="hl">Tú decides dónde creces.</span>
       </h1>
       <p class="hero-body">
         Implementamos IA, automatizamos procesos y construimos sistemas de captación
