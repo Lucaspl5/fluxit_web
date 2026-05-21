@@ -230,7 +230,7 @@
     }
     .nav-logo span { color: var(--accent); }
     .nav-links {
-      display: flex; gap: 36px; list-style: none;
+      display: none; gap: 36px; list-style: none;
     }
     .nav-links a {
       font-family: var(--mono); font-size: .72rem;
@@ -536,7 +536,7 @@
 
     /* ─── HAMBURGER ─── */
     .nav-burger {
-      display: none;
+      display: flex;
       flex-direction: column; justify-content: center; align-items: center;
       width: 40px; height: 40px; gap: 5px;
       background: none; border: none; cursor: pointer; padding: 4px;
@@ -551,32 +551,39 @@
     .nav-burger.open span:nth-child(2) { opacity: 0; }
     .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-    /* ─── MOBILE MENU ─── */
+    /* ─── NAV MENU (overlay) ─── */
     .mobile-menu {
-      display: none;
+      display: flex;
       position: fixed; inset: 0; z-index: 300;
       background: rgba(11,17,32,0.98);
       backdrop-filter: blur(20px);
       flex-direction: column; align-items: center; justify-content: center;
-      gap: 12px;
+      gap: 4px;
       opacity: 0; pointer-events: none;
       transition: opacity .3s ease;
     }
     .mobile-menu.open {
       opacity: 1; pointer-events: all;
     }
+    .menu-close {
+      position: absolute; top: 20px; right: 24px;
+      background: none; border: none; cursor: pointer;
+      color: var(--muted); font-size: 2rem; line-height: 1;
+      padding: 8px; transition: color .2s;
+    }
+    .menu-close:hover { color: var(--text); }
     .mobile-menu a {
-      font-family: var(--mono); font-size: 1.1rem;
+      font-family: var(--mono); font-size: 1rem;
       text-transform: uppercase; letter-spacing: .12em;
-      color: var(--muted); padding: 14px 0;
+      color: var(--muted); padding: 12px 0;
       text-align: center; width: 100%;
       transition: color .2s;
     }
     .mobile-menu a:hover, .mobile-menu a:active { color: var(--text); }
     .mobile-menu a.mobile-cta {
-      margin-top: 16px;
+      margin-top: 20px;
       background: var(--accent); color: #fff;
-      padding: 14px 40px; border-radius: 4px;
+      padding: 14px 48px; border-radius: 4px;
       font-size: .85rem; width: auto;
     }
     .mobile-menu a.mobile-accent { color: var(--accent); }
@@ -592,10 +599,7 @@
       .faq-grid { grid-template-columns: 1fr; }
       .footer-inner { grid-template-columns: 1fr 1fr; }
       .stats-inner { grid-template-columns: repeat(2,1fr); }
-      .nav-links { display: none; }
       .nav-cta { display: none; }
-      .nav-burger { display: flex; }
-      .mobile-menu { display: flex; }
     }
   </style>
 </head>
@@ -640,15 +644,18 @@
   </div>
 </nav>
 
-<!-- Mobile Menu -->
+<!-- Nav Menu Overlay -->
 <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Menú de navegación">
-  <a href="#servicios" class="mobile-link">Servicios</a>
-  <a href="#sectores" class="mobile-link">Sectores</a>
-  <a href="#proceso" class="mobile-link">Proceso</a>
-  <a href="#faq" class="mobile-link">FAQ</a>
-  <a href="https://shop.fluxit.es" target="_blank" class="mobile-link">Tienda IA</a>
-  <a href="https://crypto-shop.fluxit.es" target="_blank" class="mobile-link mobile-accent">₿ Crypto Bots</a>
-  <a href="#contacto" class="mobile-link mobile-cta">Auditoría gratis</a>
+  <button class="menu-close" id="menu-close" aria-label="Cerrar menú">&#x2715;</button>
+  <a href="#servicios">Servicios</a>
+  <a href="#sectores">Sectores</a>
+  <a href="#proceso">Proceso</a>
+  <a href="precios.html">Precios</a>
+  <a href="blog.html">Blog</a>
+  <a href="#faq">FAQ</a>
+  <a href="https://shop.fluxit.es" target="_blank">Tienda IA</a>
+  <a href="https://crypto-shop.fluxit.es" target="_blank" class="mobile-accent">₿ Crypto Bots</a>
+  <a href="#contacto" class="mobile-cta">Auditoría gratis</a>
 </div>
 
 <!-- ═══ HERO ═══ -->
@@ -1265,10 +1272,11 @@ window.addEventListener('scroll', () => {
   if (hero) hero.style.transform = `translateY(${y * 0.12}px)`;
 });
 
-/* ─── MOBILE MENU ─── */
+/* ─── NAV MENU ─── */
 (function() {
   const burger = document.getElementById('nav-burger');
   const menu   = document.getElementById('mobile-menu');
+  const closeBtn = document.getElementById('menu-close');
   if (!burger || !menu) return;
 
   function openMenu() {
@@ -1287,6 +1295,8 @@ window.addEventListener('scroll', () => {
   burger.addEventListener('click', () => {
     burger.classList.contains('open') ? closeMenu() : openMenu();
   });
+
+  if (closeBtn) closeBtn.addEventListener('click', closeMenu);
 
   menu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', closeMenu);
