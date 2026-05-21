@@ -534,6 +534,53 @@
     .reveal { opacity: 0; transform: translateY(32px); transition: none; }
     .revealed { opacity: 1; transform: translateY(0); transition: opacity .7s ease, transform .7s ease; }
 
+    /* ─── HAMBURGER ─── */
+    .nav-burger {
+      display: none;
+      flex-direction: column; justify-content: center; align-items: center;
+      width: 40px; height: 40px; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 4px;
+      z-index: 310;
+    }
+    .nav-burger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--text);
+      transition: transform .3s ease, opacity .3s ease;
+    }
+    .nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-burger.open span:nth-child(2) { opacity: 0; }
+    .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ─── MOBILE MENU ─── */
+    .mobile-menu {
+      display: none;
+      position: fixed; inset: 0; z-index: 300;
+      background: rgba(11,17,32,0.98);
+      backdrop-filter: blur(20px);
+      flex-direction: column; align-items: center; justify-content: center;
+      gap: 12px;
+      opacity: 0; pointer-events: none;
+      transition: opacity .3s ease;
+    }
+    .mobile-menu.open {
+      opacity: 1; pointer-events: all;
+    }
+    .mobile-menu a {
+      font-family: var(--mono); font-size: 1.1rem;
+      text-transform: uppercase; letter-spacing: .12em;
+      color: var(--muted); padding: 14px 0;
+      text-align: center; width: 100%;
+      transition: color .2s;
+    }
+    .mobile-menu a:hover, .mobile-menu a:active { color: var(--text); }
+    .mobile-menu a.mobile-cta {
+      margin-top: 16px;
+      background: var(--accent); color: #fff;
+      padding: 14px 40px; border-radius: 4px;
+      font-size: .85rem; width: auto;
+    }
+    .mobile-menu a.mobile-accent { color: var(--accent); }
+
     /* ─── MOBILE ─── */
     @media (max-width: 900px) {
       .hero-inner { grid-template-columns: 1fr; }
@@ -546,6 +593,9 @@
       .footer-inner { grid-template-columns: 1fr 1fr; }
       .stats-inner { grid-template-columns: repeat(2,1fr); }
       .nav-links { display: none; }
+      .nav-cta { display: none; }
+      .nav-burger { display: flex; }
+      .mobile-menu { display: flex; }
     }
   </style>
 </head>
@@ -584,8 +634,22 @@
       <li><a href="https://crypto-shop.fluxit.es" target="_blank" style="color:var(--accent);">₿ Crypto Bots</a></li>
     </ul>
     <a href="#contacto" class="nav-cta mag-btn">Auditoría gratis</a>
+    <button class="nav-burger" id="nav-burger" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Menú de navegación">
+  <a href="#servicios" class="mobile-link">Servicios</a>
+  <a href="#sectores" class="mobile-link">Sectores</a>
+  <a href="#proceso" class="mobile-link">Proceso</a>
+  <a href="#faq" class="mobile-link">FAQ</a>
+  <a href="https://shop.fluxit.es" target="_blank" class="mobile-link">Tienda IA</a>
+  <a href="https://crypto-shop.fluxit.es" target="_blank" class="mobile-link mobile-accent">₿ Crypto Bots</a>
+  <a href="#contacto" class="mobile-link mobile-cta">Auditoría gratis</a>
+</div>
 
 <!-- ═══ HERO ═══ -->
 <section class="hero">
@@ -1200,6 +1264,38 @@ window.addEventListener('scroll', () => {
   const hero = document.querySelector('.hero-content');
   if (hero) hero.style.transform = `translateY(${y * 0.12}px)`;
 });
+
+/* ─── MOBILE MENU ─── */
+(function() {
+  const burger = document.getElementById('nav-burger');
+  const menu   = document.getElementById('mobile-menu');
+  if (!burger || !menu) return;
+
+  function openMenu() {
+    burger.classList.add('open');
+    menu.classList.add('open');
+    burger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu() {
+    burger.classList.remove('open');
+    menu.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  burger.addEventListener('click', () => {
+    burger.classList.contains('open') ? closeMenu() : openMenu();
+  });
+
+  menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeMenu();
+  });
+})();
 </script>
 </body>
 </html>
