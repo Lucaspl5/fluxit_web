@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Precios — Automatización con IA para Empresas | Fluxit</title>
+  <meta name="description" content="Planes de automatización con IA para empresas en España. Desde proyectos puntuales hasta soporte continuo. Auditoría gratuita sin compromiso." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Fluxit" />
+  <meta name="theme-color" content="#0B1120" />
+  <link rel="canonical" href="https://www.fluxit.es/precios.html" />
+  <meta property="og:title" content="Precios — Automatización con IA para Empresas | Fluxit" />
+  <meta property="og:description" content="Planes de automatización con IA para empresas en España. Desde proyectos puntuales hasta soporte continuo. Auditoría gratuita sin compromiso." />
+  <meta property="og:url" content="https://www.fluxit.es/precios.html" />
+  <meta property="og:locale" content="es_ES" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:     #0B1120;
+      --bg2:    #101828;
+      --card:   #131F35;
+      --accent: #E07040;
+      --accent2:#FF8C55;
+      --text:   #E8EDFF;
+      --muted:  #7A8BA8;
+      --border: rgba(140,180,255,0.10);
+      --sans:   'Space Grotesk', sans-serif;
+      --mono:   'JetBrains Mono', monospace;
+      --body:   'Inter', sans-serif;
+      --grid:   rgba(140,180,255,0.04);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--body); background: var(--bg); color: var(--text); overflow-x: hidden; -webkit-font-smoothing: antialiased; cursor: none; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    #fx-cursor { position:fixed;width:10px;height:10px;background:var(--accent); border-radius:50%;pointer-events:none;z-index:9999; transform:translate(-50%,-50%); transition:width .2s,height .2s,opacity .2s; }
+    #fx-cursor-ring { position:fixed;width:32px;height:32px; border:1px solid rgba(224,112,64,.4);border-radius:50%; pointer-events:none;z-index:9998;transform:translate(-50%,-50%); }
+    #fx-cursor.hov{width:18px;height:18px;opacity:.6;}
+
+    .grid-bg { position:fixed;inset:0;pointer-events:none;z-index:0; background-image:linear-gradient(var(--grid) 1px,transparent 1px), linear-gradient(90deg,var(--grid) 1px,transparent 1px); background-size:60px 60px; }
+
+    nav { position:fixed;top:0;left:0;right:0;z-index:1000; display:flex;align-items:center;justify-content:space-between; padding:0 40px;height:64px; background:rgba(11,17,32,0.92); backdrop-filter:blur(18px) saturate(160%); -webkit-backdrop-filter:blur(18px) saturate(160%); border-bottom:1px solid var(--border); }
+    .nav-logo { font-family:var(--mono);font-size:1.05rem;font-weight:600; letter-spacing:.14em;color:var(--text); }
+    .nav-logo span{color:var(--accent);}
+    .nav-links{display:flex;align-items:center;gap:32px;list-style:none;}
+    .nav-links a{ font-family:var(--mono);font-size:.72rem;text-transform:uppercase; letter-spacing:.12em;color:var(--muted);transition:color .2s; }
+    .nav-links a:hover{color:var(--text);}
+    .nav-cta{ font-family:var(--mono)!important;font-size:.72rem!important; text-transform:uppercase;letter-spacing:.1em!important; background:var(--accent)!important;color:#fff!important; padding:10px 22px;border-radius:4px;border:none;cursor:none; transition:background .2s!important; }
+    .nav-cta:hover{background:var(--accent2)!important;}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
+    .hamburger span{display:block;width:24px;height:1.5px;background:var(--text);}
+
+    .page-hero { background:var(--bg);padding:140px 48px 80px; position:relative;overflow:hidden; }
+    .page-hero::before { content:'';position:absolute;inset:0; background:radial-gradient(ellipse 70% 80% at 80% 50%,rgba(224,112,64,.08) 0%,transparent 65%); }
+    .breadcrumb { display:flex;align-items:center;gap:8px; font-family:var(--mono);font-size:.7rem;color:var(--muted); letter-spacing:.06em;margin-bottom:32px;position:relative;z-index:1; }
+    .breadcrumb a{color:var(--muted);transition:color .2s;}
+    .breadcrumb a:hover{color:var(--accent);}
+    .breadcrumb span{color:rgba(140,180,255,.25);}
+    .page-hero-tag { display:inline-flex;align-items:center;gap:8px; font-family:var(--mono);font-size:.7rem;font-weight:500; letter-spacing:.16em;text-transform:uppercase; color:var(--accent);margin-bottom:24px;position:relative;z-index:1; }
+    .page-hero-tag::before{content:'';display:block;width:24px;height:1px;background:var(--accent);}
+    .page-hero h1 { font-family:var(--sans);font-size:clamp(2rem,5vw,3.8rem); font-weight:700;line-height:1.1;color:var(--text); margin-bottom:24px;max-width:720px;position:relative;z-index:1; }
+    .page-hero h1 em{font-style:normal;color:var(--accent);}
+    .page-hero-sub { font-family:var(--body);font-size:1.05rem;font-weight:300; color:var(--muted);line-height:1.75;max-width:600px; margin-bottom:40px;position:relative;z-index:1; }
+    .hero-cta-row{display:flex;gap:16px;align-items:center;position:relative;z-index:1;flex-wrap:wrap;}
+
+    .btn-primary { display:inline-flex;align-items:center;gap:8px; background:var(--accent);color:#fff; font-family:var(--mono);font-size:.78rem;font-weight:500; letter-spacing:.1em;text-transform:uppercase; padding:14px 28px;border-radius:4px;border:none;cursor:none; transition:background .2s,transform .15s; }
+    .btn-primary:hover{background:var(--accent2);transform:translateY(-2px);}
+    .btn-ghost-dark { display:inline-flex;align-items:center;gap:8px; color:var(--muted);font-family:var(--mono);font-size:.78rem; font-weight:400;letter-spacing:.1em;text-transform:uppercase; border:1px solid var(--border);padding:14px 24px;border-radius:4px; transition:color .2s,border-color .2s; }
+    .btn-ghost-dark:hover{color:var(--accent);border-color:var(--accent);}
+    .btn-wa { display:inline-flex;align-items:center;gap:10px; background:#25d366;color:#fff; font-family:var(--mono);font-size:.78rem;font-weight:500; letter-spacing:.08em;text-transform:uppercase; padding:14px 28px;border-radius:4px;cursor:none; transition:opacity .2s,transform .2s; }
+    .btn-wa:hover{opacity:.88;transform:translateY(-2px);}
+
+    .section{padding:96px 48px;position:relative;z-index:1;}
+    .section-label{ font-family:var(--mono);font-size:.7rem;font-weight:500; letter-spacing:.16em;text-transform:uppercase; color:var(--accent);margin-bottom:16px; }
+    h2.section-title{ font-family:var(--sans);font-size:clamp(1.8rem,3.5vw,2.8rem); font-weight:700;line-height:1.15;color:var(--text);margin-bottom:24px; }
+    .body-text{ font-size:1rem;font-weight:300;color:var(--muted);line-height:1.8; }
+
+    /* ── PRICING GRID ─────────────────────────── */
+    .pricing-grid {
+      display:grid;grid-template-columns:repeat(3,1fr);
+      gap:2px;margin-top:56px;
+      border:1px solid var(--border);border-radius:12px;overflow:hidden;
+    }
+    .price-card {
+      background:var(--card);padding:40px 32px;
+      border-right:1px solid var(--border);
+      position:relative;transition:background .3s;
+    }
+    .price-card:last-child{border-right:none;}
+    .price-card.featured {
+      background:rgba(224,112,64,.06);
+      border-right:1px solid rgba(224,112,64,.2);
+    }
+    .price-card.featured::before {
+      content:'Más popular';position:absolute;top:0;left:50%;
+      transform:translateX(-50%);
+      font-family:var(--mono);font-size:.62rem;font-weight:600;
+      letter-spacing:.14em;text-transform:uppercase;
+      background:var(--accent);color:#fff;
+      padding:6px 18px;border-radius:0 0 8px 8px;
+    }
+    .price-tag{
+      font-family:var(--mono);font-size:.65rem;font-weight:500;
+      text-transform:uppercase;letter-spacing:.16em;
+      color:var(--accent);margin-bottom:20px;
+    }
+    .price-card h3{
+      font-family:var(--sans);font-size:1.3rem;font-weight:700;
+      color:var(--text);margin-bottom:12px;
+    }
+    .price-desc{
+      font-size:.88rem;font-weight:300;color:var(--muted);
+      line-height:1.6;margin-bottom:28px;min-height:52px;
+    }
+    .price-amount{
+      font-family:var(--sans);font-size:2.4rem;font-weight:700;
+      color:var(--text);line-height:1;margin-bottom:6px;
+    }
+    .price-amount span{font-size:1rem;font-weight:300;color:var(--muted);}
+    .price-note{
+      font-family:var(--mono);font-size:.68rem;color:var(--muted);
+      letter-spacing:.06em;margin-bottom:32px;
+    }
+    .price-features{
+      list-style:none;display:flex;flex-direction:column;gap:12px;
+      margin-bottom:36px;
+    }
+    .price-features li{
+      display:flex;gap:10px;align-items:flex-start;
+      font-size:.88rem;font-weight:300;color:var(--muted);line-height:1.5;
+    }
+    .price-features li svg{flex-shrink:0;margin-top:2px;}
+    .price-cta{
+      display:flex;width:100%;justify-content:center;
+      font-family:var(--mono);font-size:.75rem;font-weight:500;
+      letter-spacing:.1em;text-transform:uppercase;
+      padding:14px 20px;border-radius:4px;
+      transition:background .2s,color .2s,border-color .2s;
+    }
+    .price-cta-primary{background:var(--accent);color:#fff;border:1px solid var(--accent);}
+    .price-cta-primary:hover{background:var(--accent2);border-color:var(--accent2);}
+    .price-cta-ghost{background:transparent;color:var(--muted);border:1px solid var(--border);}
+    .price-cta-ghost:hover{color:var(--accent);border-color:var(--accent);}
+
+    /* ── INCLUDES ────────────────────────────── */
+    .includes-section{background:var(--bg2);}
+    .includes-grid{
+      display:grid;grid-template-columns:repeat(3,1fr);
+      gap:24px;margin-top:48px;
+    }
+    .include-card{
+      background:var(--card);border:1px solid var(--border);
+      border-radius:10px;padding:28px 24px;
+      transition:border-color .3s;
+    }
+    .include-card:hover{border-color:rgba(224,112,64,.3);}
+    .include-icon{
+      width:44px;height:44px;border-radius:10px;
+      background:rgba(224,112,64,.1);border:1px solid rgba(224,112,64,.2);
+      display:flex;align-items:center;justify-content:center;
+      margin-bottom:16px;
+    }
+    .include-icon svg{width:20px;height:20px;stroke:var(--accent);fill:none;stroke-width:1.5;}
+    .include-card h3{
+      font-family:var(--sans);font-size:.95rem;font-weight:600;
+      color:var(--text);margin-bottom:8px;
+    }
+    .include-card p{font-size:.85rem;font-weight:300;color:var(--muted);line-height:1.65;}
+
+    /* ── COMPARISON ──────────────────────────── */
+    .compare-table{
+      width:100%;border-collapse:collapse;margin-top:48px;
+    }
+    .compare-table th{
+      font-family:var(--mono);font-size:.7rem;text-transform:uppercase;
+      letter-spacing:.1em;color:var(--muted);
+      padding:16px 24px;text-align:left;
+      border-bottom:1px solid var(--border);
+    }
+    .compare-table th:first-child{width:40%;}
+    .compare-table td{
+      padding:16px 24px;font-size:.88rem;color:var(--muted);
+      border-bottom:1px solid var(--border);
+    }
+    .compare-table td:first-child{color:var(--text);font-weight:400;}
+    .compare-table tr:hover td{background:rgba(224,112,64,.02);}
+    .check-yes{color:var(--accent);font-size:1rem;}
+    .check-no{color:rgba(140,180,255,.2);}
+
+    /* ── FAQ ─────────────────────────────────── */
+    .faq-section{background:var(--bg2);}
+    .faq-list{display:flex;flex-direction:column;gap:2px;margin-top:48px;max-width:800px;}
+    .faq-item{ background:var(--card);border:1px solid var(--border); border-radius:8px;cursor:pointer;transition:border-color .2s; overflow:hidden; }
+    .faq-item:hover,.faq-item.open{border-color:rgba(224,112,64,.4);}
+    .faq-question{ display:flex;justify-content:space-between;align-items:center; padding:24px 28px;gap:16px; }
+    .faq-question span{ font-family:var(--sans);font-size:.95rem;font-weight:500; color:var(--text);line-height:1.4; }
+    .faq-toggle{ width:28px;height:28px;border-radius:50%;border:1px solid var(--border); display:flex;align-items:center;justify-content:center;flex-shrink:0; transition:background .2s,transform .3s; }
+    .faq-item.open .faq-toggle{background:var(--accent);border-color:var(--accent);transform:rotate(45deg);}
+    .faq-toggle svg{width:14px;height:14px;stroke:var(--muted);fill:none;stroke-width:2;}
+    .faq-item.open .faq-toggle svg{stroke:#fff;}
+    .faq-answer{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;padding:0 28px;}
+    .faq-answer.open{max-height:300px;padding:0 28px 24px;}
+    .faq-answer p{font-size:.88rem;font-weight:300;color:var(--muted);line-height:1.75;}
+
+    /* ── CTA SECTION ─────────────────────────── */
+    .cta-section{ background:var(--card);padding:96px 48px;text-align:center; position:relative;overflow:hidden; border-top:1px solid var(--border);border-bottom:1px solid var(--border); }
+    .cta-section::before{ content:'';position:absolute;inset:0; background:radial-gradient(ellipse 60% 60% at 50% 50%,rgba(224,112,64,.07) 0%,transparent 70%); }
+    .cta-section .section-label{color:var(--accent);position:relative;}
+    .cta-section h2{ font-family:var(--sans);font-size:clamp(2rem,4vw,3.2rem); font-weight:700;color:var(--text);line-height:1.15; margin-bottom:16px;position:relative; }
+    .cta-section h2 em{font-style:normal;color:var(--accent);}
+    .cta-section p{ font-size:1rem;font-weight:300;color:var(--muted); margin-bottom:40px;position:relative; }
+    .cta-btns{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;position:relative;}
+
+    /* ── FOOTER ─────────────────────────────── */
+    footer{ background:var(--bg);border-top:1px solid var(--border); padding:60px 48px 32px;position:relative;z-index:1; }
+    .footer-top{ display:flex;justify-content:space-between;align-items:flex-start; margin-bottom:48px; }
+    .footer-logo{ font-family:var(--mono);font-size:1rem;font-weight:600; letter-spacing:.14em;color:var(--text); }
+    .footer-logo span{color:var(--accent);}
+    .footer-desc{ font-size:.88rem;font-weight:300;color:var(--muted); margin-top:10px;max-width:280px;line-height:1.6; }
+    .footer-links{display:flex;gap:60px;}
+    .footer-col h4{ font-family:var(--mono);font-size:.65rem;text-transform:uppercase; letter-spacing:.12em;color:var(--text);margin-bottom:20px; }
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:12px;}
+    .footer-col a{font-size:.88rem;font-weight:300;color:var(--muted);transition:color .2s;}
+    .footer-col a:hover{color:var(--accent);}
+    .footer-bottom{ border-top:1px solid var(--border);padding-top:28px; display:flex;justify-content:space-between;align-items:center; }
+    .footer-bottom p,.footer-bottom a{ font-family:var(--mono);font-size:.7rem; color:var(--muted);transition:color .2s; }
+    .footer-bottom a:hover{color:var(--accent);}
+
+    .wa-float{ position:fixed;bottom:32px;right:32px;z-index:999; width:56px;height:56px;border-radius:50%;background:#25d366; display:flex;align-items:center;justify-content:center; box-shadow:0 4px 20px rgba(37,211,102,.4); transition:transform .25s,box-shadow .25s; }
+    .wa-float:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,.5);}
+
+    .reveal{opacity:0;transform:translateY(24px);}
+    .reveal.visible{opacity:1;transform:none;transition:opacity .7s ease,transform .7s ease;}
+
+    @media(max-width:900px){
+      nav{padding:0 20px;}
+      .nav-links{display:none;}
+      .hamburger{display:flex;}
+      .page-hero{padding:120px 24px 60px;}
+      .pricing-grid{grid-template-columns:1fr;}
+      .includes-grid{grid-template-columns:1fr;}
+      .section{padding:64px 24px;}
+      .footer-top{flex-direction:column;gap:40px;}
+      .footer-links{flex-direction:column;gap:32px;}
+      footer{padding:48px 24px 24px;}
+      .compare-table th,.compare-table td{padding:12px 14px;}
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7LBYX8W3BM"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-7LBYX8W3BM');</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "name": "Planes de Automatización con IA para Empresas — Fluxit",
+        "description": "Planes de automatización con IA para empresas en España. Desde proyectos puntuales hasta soporte continuo. Auditoría gratuita sin compromiso.",
+        "provider": { "@type": "Organization", "name": "Fluxit", "url": "https://www.fluxit.es" },
+        "areaServed": "ES",
+        "url": "https://www.fluxit.es/precios.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "¿Hay permanencia en los planes mensuales?", "acceptedAnswer": { "@type": "Answer", "text": "No hay permanencia. Puedes cancelar con 15 días de aviso. Creemos que nos tienes que querer por los resultados, no por un contrato." } },
+          { "@type": "Question", "name": "¿Qué incluye la auditoría gratuita?", "acceptedAnswer": { "@type": "Answer", "text": "Analizamos tus procesos actuales, identificamos los 3 flujos con mayor potencial de automatización y te entregamos un plan de acción con estimación de ROI. Sin coste ni compromiso." } },
+          { "@type": "Question", "name": "¿Cuánto tiempo tarda la implementación?", "acceptedAnswer": { "@type": "Answer", "text": "La mayoría de proyectos se implementan en 2-4 semanas. Los flujos más complejos pueden llevar hasta 6 semanas, pero siempre con hitos intermedios funcionales." } },
+          { "@type": "Question", "name": "¿Qué herramientas utilizáis?", "acceptedAnswer": { "@type": "Answer", "text": "Principalmente n8n, Make y Zapier para automatizaciones, junto con las herramientas que ya uses (CRM, email, WhatsApp Business API, Google Workspace, etc.). No te obligamos a cambiar lo que ya funciona." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<div id="fx-cursor"></div>
+<div id="fx-cursor-ring"></div>
+<div class="grid-bg"></div>
+
+<nav id="navbar">
+  <a href="/" class="nav-logo">FLUXIT<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="/#servicios">Servicios</a></li>
+    <li><a href="/#sectores">Sectores</a></li>
+    <li><a href="/#proceso">Proceso</a></li>
+    <li><a href="/#faq">FAQ</a></li>
+    <li><a href="https://shop.fluxit.es" target="_blank">Tienda</a></li>
+    <li><a href="/#contacto" class="nav-cta">Auditoría gratis</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" aria-label="Menú" role="button" tabindex="0">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="breadcrumb"><a href="/">Inicio</a><span>/</span><span>Precios</span></div>
+  <div class="page-hero-tag">Planes y precios</div>
+  <h1>Automatización con IA.<br><em>Sin sorpresas en la factura.</em></h1>
+  <p class="page-hero-sub">Elige el plan que mejor se adapta a tu empresa. Empezamos siempre con una auditoría gratuita para asegurarnos de que la inversión tiene sentido antes de comprometerte a nada.</p>
+  <div class="hero-cta-row">
+    <a href="mailto:hola@fluxit.es?subject=Quiero auditoria gratuita" class="btn-primary">Auditoría gratuita →</a>
+    <a href="https://wa.me/34600000000" target="_blank" class="btn-wa">
+      <svg width="16" height="16" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.552 4.116 1.52 5.847L0 24l6.335-1.502A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.368l-.36-.214-3.76.891.924-3.668-.234-.376A9.818 9.818 0 112 12c0-5.42 4.398-9.818 9.818-9.818 5.421 0 9.819 4.398 9.819 9.818 0 5.421-4.398 9.818-9.818 9.818z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- PRICING PLANS -->
+<section class="section" style="background:var(--bg2);">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div class="section-label reveal">// Planes</div>
+    <h2 class="section-title reveal">Tres formas de trabajar juntos</h2>
+    <p class="body-text reveal">Todos los planes incluyen auditoría gratuita previa. Pagamos nosotros si no generamos ROI en el primer mes.</p>
+    <div class="pricing-grid reveal">
+      <!-- PLAN STARTER -->
+      <div class="price-card">
+        <div class="price-tag">Starter</div>
+        <h3>Proyecto Puntual</h3>
+        <p class="price-desc">Un flujo concreto, implementado y funcionando. Ideal para empresas que quieren probar la automatización con un caso de uso definido.</p>
+        <div class="price-amount">Desde <span>€</span>497</div>
+        <div class="price-note">Pago único · Entrega en 2 semanas</div>
+        <ul class="price-features">
+          <li><svg viewBox="0 0 24 24" width="14" height="14" stroke="var(--accent)" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>1 flujo de automatización completo</li>
+          <li><svg viewBox="0 0 24 24" width="14" height="14" stroke="var(--accent)" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Auditoría y diseño del flujo</li>
+          <li><svg viewBox="0 0 24 24" width="14" height="14" stroke="var(--accent)" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Implementación en n8n o Make</li>
+          <li><svg viewBox="0 0 24 24" width="14" height="14" stroke="var(--accent)" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Testing y puesta en marcha</li>
+          <li><svg viewBox="0 0 24 24" width="14" height="14" stroke="var(--accent)" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Documentación del flujo</li>
+          <li><svg viewBox="0 0 24 24" width="14" height="14" stroke="var(--accent)" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>30 días de soporte post-entrega</li>
+        </ul>
+        <a href="mailto:hola@fluxit.es?subject=Plan Starter" class="price-cta price-cta-ghost">Solicitar info →</a>
+      </div>
+      <!-- PLAN GROWTH (featured) -->
+      <div class="price-card featured">
+        <div class="price-tag">Growth</div>
+        <h3>Automatización Completa</h3>
+        <p class="price-desc">Varios flujos interconectados que transforman tus operaciones. El plan más elegido por pymes y agencias que quieren resultados en semanas.</p>
+        <div class="price-amount">Desde <span>€</span>997<span>/mes</span></div>
+        <div class="price-note">Sin permanencia · Primeros resultados en 3 semanas</div>
+        <ul class="price-features">
+          <li><svg viewBox="0 0 24 24" width="14" height="14" stroke="var(--accent)" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Hasta 5 flujos de automatización</li>
+          <li><svg viewBox="0 0 24 24" width="14" height="14" stroke="var(--accent)" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Captación + seguimiento + notificaciones</li>
+          <li><svg viewBox="0 0 24 24" width="14" height="14" stroke="var(--accent)" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Integración con tu CRM y herramientas</li>
+          <li><svg viewBox="0 0 24 24" width="14" height="14" stroke="var(--accent)" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Dashboard de métricas y resultados</li>
+          <li><svg viewBox="0 0 24 24" width="14" height="14" stroke="var(--accent)" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Optimización mensual de los flujos</li>
+          <li><svg viewBox="0 0 24 24" width="14" height="14" stroke="var(--accent)" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Soporte prioritario por WhatsApp</li>
+        </ul>
+        <a href="mailto:hola@fluxit.es?subject=Plan Growth" class="price-cta price-cta-primary">Empezar ahora →</a>
+      </div>
+      <!-- PLAN SCALE -->
+      <div class="price-card">
+        <div class="price-tag">Scale</div>
+        <h3>Sistema a Medida</h3>
+        <p class="price-desc">Para empresas con procesos complejos, múltiples departamentos o necesidades de automatización avanzada con IA generativa.</p>
+        <div class="price-amount">A medida</div>
+        <div class="price-note">Presupuesto personalizado tras auditoría</div>
+        <ul class="price-features">
+          <li><svg viewBox="0 0 24 24" width="14" height="14" stroke="var(--accent)" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Flujos ilimitados y a medida</li>
+          <li><svg viewBox="0 0 24 24" width="14" height="14" stroke="var(--accent)" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Agentes de IA personalizados</li>
+          <li><svg viewBox="0 0 24 24" width="14" height="14" stroke="var(--accent)" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Integración con ERP / sistemas internos</li>
+          <li><svg viewBox="0 0 24 24" width="14" height="14" stroke="var(--accent)" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Web o landing de alta conversión incluida</li>
+          <li><svg viewBox="0 0 24 24" width="14" height="14" stroke="var(--accent)" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Account manager dedicado</li>
+          <li><svg viewBox="0 0 24 24" width="14" height="14" stroke="var(--accent)" fill="none" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>SLA y soporte en horario ampliado</li>
+        </ul>
+        <a href="mailto:hola@fluxit.es?subject=Plan Scale" class="price-cta price-cta-ghost">Hablar con el equipo →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUÉ INCLUYE SIEMPRE -->
+<section class="section includes-section">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div class="section-label reveal">// Siempre incluido</div>
+    <h2 class="section-title reveal">Lo que viene en todos los planes</h2>
+    <div class="includes-grid">
+      <div class="include-card reveal">
+        <div class="include-icon"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+        <h3>Auditoría gratuita previa</h3>
+        <p>Antes de cualquier contrato analizamos tu empresa y te decimos exactamente qué automatizar y qué ROI esperar. Sin coste y sin compromiso.</p>
+      </div>
+      <div class="include-card reveal">
+        <div class="include-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <h3>Implementación rápida</h3>
+        <p>Primeros flujos funcionando en menos de 2 semanas. No meses de consultoría sin resultados — entregamos sistemas que operan desde el primer día.</p>
+      </div>
+      <div class="include-card reveal">
+        <div class="include-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Sin permanencia</h3>
+        <p>Todos los planes mensuales son cancelables con 15 días de aviso. Si no estás viendo resultados, no tiene sentido que sigas pagando.</p>
+      </div>
+      <div class="include-card reveal">
+        <div class="include-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <h3>Formación incluida</h3>
+        <p>Tu equipo aprende a usar y monitorizar los sistemas que implementamos. No creas dependencia tecnológica — te damos las llaves de tu propio sistema.</p>
+      </div>
+      <div class="include-card reveal">
+        <div class="include-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+        <h3>Métricas y reportes</h3>
+        <p>Cada sistema incluye métricas de seguimiento para que sepas exactamente cuánto tiempo se está ahorrando y cuántos leads se están captando.</p>
+      </div>
+      <div class="include-card reveal">
+        <div class="include-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+        <h3>Soporte post-entrega</h3>
+        <p>Todos los proyectos incluyen soporte mínimo de 30 días. Los planes mensuales tienen soporte continuo con tiempo de respuesta garantizado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARATIVA -->
+<section class="section" style="background:var(--bg);">
+  <div style="max-width:900px;margin:0 auto;">
+    <div class="section-label reveal">// Comparativa</div>
+    <h2 class="section-title reveal">¿Qué incluye cada plan?</h2>
+    <table class="compare-table reveal">
+      <thead>
+        <tr>
+          <th>Características</th>
+          <th>Starter</th>
+          <th>Growth</th>
+          <th>Scale</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Auditoría gratuita previa</td><td class="check-yes">✓</td><td class="check-yes">✓</td><td class="check-yes">✓</td></tr>
+        <tr><td>Flujos de automatización</td><td>1</td><td>Hasta 5</td><td>Ilimitados</td></tr>
+        <tr><td>Integración con CRM / email / WhatsApp</td><td class="check-yes">✓</td><td class="check-yes">✓</td><td class="check-yes">✓</td></tr>
+        <tr><td>Captación de leads automatizada</td><td class="check-no">—</td><td class="check-yes">✓</td><td class="check-yes">✓</td></tr>
+        <tr><td>Agentes de IA personalizados</td><td class="check-no">—</td><td class="check-no">—</td><td class="check-yes">✓</td></tr>
+        <tr><td>Dashboard de métricas</td><td class="check-no">—</td><td class="check-yes">✓</td><td class="check-yes">✓</td></tr>
+        <tr><td>Optimización mensual</td><td class="check-no">—</td><td class="check-yes">✓</td><td class="check-yes">✓</td></tr>
+        <tr><td>Landing page de alta conversión</td><td class="check-no">—</td><td class="check-no">—</td><td class="check-yes">✓</td></tr>
+        <tr><td>Soporte post-entrega</td><td>30 días</td><td>Continuo</td><td>SLA dedicado</td></tr>
+        <tr><td>Permanencia</td><td>Sin</td><td>Sin</td><td>Sin</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq-section">
+  <div style="max-width:800px;margin:0 auto;">
+    <div class="section-label reveal">// FAQ</div>
+    <h2 class="section-title reveal">Preguntas sobre precios</h2>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <div class="faq-question"><span>¿Hay permanencia en los planes mensuales?</span>
+          <div class="faq-toggle"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
+        <div class="faq-answer"><p>No hay permanencia. Puedes cancelar con 15 días de aviso. Creemos que nos tienes que querer por los resultados, no por un contrato.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question"><span>¿Qué incluye la auditoría gratuita?</span>
+          <div class="faq-toggle"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
+        <div class="faq-answer"><p>Analizamos tus procesos actuales, identificamos los 3 flujos con mayor potencial de automatización y te entregamos un plan de acción con estimación de ROI. Sin coste ni compromiso.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question"><span>¿Cuánto tiempo tarda la implementación?</span>
+          <div class="faq-toggle"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
+        <div class="faq-answer"><p>La mayoría de proyectos se implementan en 2-4 semanas. Los flujos más complejos pueden llevar hasta 6 semanas, pero siempre con hitos intermedios funcionales.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question"><span>¿Qué herramientas utilizáis?</span>
+          <div class="faq-toggle"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
+        <div class="faq-answer"><p>Principalmente n8n, Make y Zapier para automatizaciones, junto con las herramientas que ya uses (CRM, email, WhatsApp Business API, Google Workspace, etc.). No te obligamos a cambiar lo que ya funciona.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question"><span>¿Puedo empezar con Starter y pasar a Growth?</span>
+          <div class="faq-toggle"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
+        <div class="faq-answer"><p>Sí, es la ruta más habitual. Empezamos con un flujo para que veas resultados reales, y cuando decides escalar pasamos a Growth descontando lo ya invertido.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question"><span>¿Los precios incluyen las licencias de las herramientas?</span>
+          <div class="faq-toggle"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
+        <div class="faq-answer"><p>Los precios son de implementación y gestión. Las licencias de herramientas (n8n cloud, Make, etc.) van aparte y suelen costar entre 20-80€/mes dependiendo del volumen. Te lo detallamos en la auditoría.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="section-label">// Primer paso</div>
+  <h2>Empieza con una auditoría <em>gratuita</em></h2>
+  <p>Analizamos tu empresa, identificamos qué automatizar y te decimos exactamente qué ROI puedes esperar. Sin compromiso.</p>
+  <div class="cta-btns">
+    <a href="mailto:hola@fluxit.es?subject=Solicito auditoria gratuita" class="btn-primary">Solicitar auditoría gratuita</a>
+    <a href="https://wa.me/34600000000" target="_blank" class="btn-wa">
+      <svg width="16" height="16" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.552 4.116 1.52 5.847L0 24l6.335-1.502A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.368l-.36-.214-3.76.891.924-3.668-.234-.376A9.818 9.818 0 112 12c0-5.42 4.398-9.818 9.818-9.818 5.421 0 9.819 4.398 9.819 9.818 0 5.421-4.398 9.818-9.818 9.818z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">FLUXIT<span>.</span></div>
+      <p class="footer-desc">Consultoría en IA, automatización y captación digital para empresas que quieren crecer sin crecer en problemas.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="/automatizacion-procesos-empresas.html">Automatización IA</a></li>
+          <li><a href="/captacion-leads-b2b.html">Captación Leads B2B</a></li>
+          <li><a href="/diseno-landings-conversion.html">Webs de Conversión</a></li>
+          <li><a href="/automatizacion-inmobiliarias.html">Inmobiliarias</a></li>
+          <li><a href="/automatizacion-empresas-servicios.html">Empresas Servicios</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Recursos</h4>
+        <ul>
+          <li><a href="https://shop.fluxit.es" target="_blank">Tienda Digital</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+          <li><a href="/precios.html">Precios</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="mailto:hola@fluxit.es">hola@fluxit.es</a></li>
+          <li><a href="/#contacto">Auditoría Gratis</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Fluxit — Todos los derechos reservados</p>
+    <a href="/">fluxit.es</a>
+  </div>
+</footer>
+
+<a href="https://wa.me/34600000000" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg width="28" height="28" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.552 4.116 1.52 5.847L0 24l6.335-1.502A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.368l-.36-.214-3.76.891.924-3.668-.234-.376A9.818 9.818 0 112 12c0-5.42 4.398-9.818 9.818-9.818 5.421 0 9.819 4.398 9.819 9.818 0 5.421-4.398 9.818-9.818 9.818z"/></svg>
+</a>
+
+<script>
+  const c = document.getElementById('fx-cursor');
+  const r = document.getElementById('fx-cursor-ring');
+  let mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;});
+  (function loop(){ rx+=(mx-rx)*.10; ry+=(my-ry)*.10; c.style.left=mx+'px'; c.style.top=my+'px'; r.style.left=rx+'px'; r.style.top=ry+'px'; requestAnimationFrame(loop); })();
+  document.querySelectorAll('a,button').forEach(el=>{ el.addEventListener('mouseenter',()=>c.classList.add('hov')); el.addEventListener('mouseleave',()=>c.classList.remove('hov')); });
+
+  const obs = new IntersectionObserver((entries)=>{ entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('visible'); obs.unobserve(en.target); } }); },{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+  document.querySelectorAll('.faq-item').forEach(item=>{
+    item.addEventListener('click',()=>{
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i=>{ i.classList.remove('open'); const a = i.querySelector('.faq-answer'); if(a) a.classList.remove('open'); });
+      if(!isOpen){ item.classList.add('open'); const a = item.querySelector('.faq-answer'); if(a) a.classList.add('open'); }
+    });
+  });
+
+  const ham = document.getElementById('hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  if(ham && navLinks){ ham.addEventListener('click',()=>navLinks.style.display = navLinks.style.display==='flex'?'none':'flex'); }
+</script>
+</body>
+</html>
