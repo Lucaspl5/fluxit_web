@@ -1,3 +1,11 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "fluxit.es" }],
+      "destination": "https://www.fluxit.es/$1",
+      "permanent": true
+    }
+  ]
 }
