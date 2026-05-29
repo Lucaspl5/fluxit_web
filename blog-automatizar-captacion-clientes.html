@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Automatizar la Captación de Clientes: Sistema Completo con IA para Empresas</title>
+  <meta name="description" content="Cómo montar un sistema de captación de clientes automático con IA y n8n: desde el primer contacto hasta el seguimiento. Para agencias, consultoras y empresas de servicios.">
+  <meta name="keywords" content="automatizar captación clientes, sistema captación leads automático, captación clientes ia, n8n captación clientes, automatizar ventas empresa, leads automáticos">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Automatizar la Captación de Clientes: Sistema Completo con IA">
+  <meta property="og:description" content="Sistema completo de captación automatizada: desde el primer contacto hasta el cierre. Con IA y n8n.">
+  <meta property="og:url" content="https://www.fluxit.es/blog-automatizar-captacion-clientes">
+  <meta property="og:site_name" content="Fluxit">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://www.fluxit.es/blog-automatizar-captacion-clientes">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Automatizar la Captación de Clientes: Sistema Completo con IA","author":{"@type":"Organization","name":"Fluxit","url":"https://www.fluxit.es"},"publisher":{"@type":"Organization","name":"Fluxit"},"datePublished":"2026-05-29","url":"https://www.fluxit.es/blog-automatizar-captacion-clientes","inLanguage":"es-ES"}</script>
+  <style>
+    :root{--bg:#0B1120;--bg2:#111827;--text:#E0F0FF;--muted:#8899BB;--accent:#E07040;--border:rgba(224,240,255,0.08);}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background-color:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:17px;line-height:1.75;}
+    a{color:var(--accent);text-decoration:none;}a:hover{text-decoration:underline;}
+    nav{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+    .nav-logo{font-size:1.25rem;font-weight:700;color:var(--text);letter-spacing:0.08em;}.nav-logo span{color:var(--accent);}
+    .nav-back{font-size:0.875rem;color:var(--muted);}.nav-back:hover{color:var(--text);text-decoration:none;}
+    .breadcrumb{max-width:820px;margin:28px auto 0;padding:0 24px;font-size:0.8rem;color:var(--muted);display:flex;gap:8px;}
+    .breadcrumb a{color:var(--muted);}.breadcrumb-sep{opacity:0.4;}
+    .hero{max-width:820px;margin:32px auto 0;padding:0 24px 48px;border-bottom:1px solid var(--border);}
+    .hero-tag{display:inline-block;background:rgba(224,112,64,0.12);color:var(--accent);font-size:0.78rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:4px 12px;border-radius:4px;margin-bottom:20px;}
+    .hero h1{font-size:clamp(1.75rem,4vw,2.6rem);font-weight:700;line-height:1.2;margin-bottom:20px;}
+    .hero-meta{display:flex;gap:20px;font-size:0.85rem;color:var(--muted);flex-wrap:wrap;}
+    .content{max-width:820px;margin:0 auto;padding:48px 24px;}
+    .content h2{font-size:1.5rem;font-weight:700;color:var(--text);margin:40px 0 16px;}
+    .content h3{font-size:1.15rem;font-weight:600;color:var(--text);margin:28px 0 12px;}
+    .content p{color:var(--muted);margin-bottom:20px;line-height:1.8;}
+    .content ul{padding-left:24px;margin-bottom:20px;}
+    .content li{color:var(--muted);margin-bottom:8px;line-height:1.7;}
+    .content strong{color:var(--text);font-weight:600;}
+    .flow{display:flex;flex-direction:column;gap:0;margin:28px 0;}
+    .flow-step{display:flex;gap:16px;position:relative;padding-bottom:24px;}
+    .flow-step::before{content:'';position:absolute;left:17px;top:36px;bottom:0;width:2px;background:rgba(224,112,64,0.2);}
+    .flow-step:last-child::before{display:none;}
+    .flow-icon{width:36px;height:36px;border-radius:50%;background:rgba(224,112,64,0.15);border:2px solid rgba(224,112,64,0.4);display:flex;align-items:center;justify-content:center;font-size:0.85rem;font-weight:700;color:var(--accent);flex-shrink:0;}
+    .flow-content h4{color:var(--text);font-size:0.95rem;font-weight:700;margin-bottom:4px;}
+    .flow-content p{color:var(--muted);font-size:0.88rem;margin:0;line-height:1.6;}
+    .cta-box{background:rgba(224,112,64,0.08);border:1px solid rgba(224,112,64,0.25);border-radius:10px;padding:36px 32px;margin:48px 0;text-align:center;}
+    .cta-box h3{font-size:1.3rem;font-weight:700;color:var(--text);margin-bottom:12px;}
+    .cta-box p{color:var(--muted);margin-bottom:24px;font-size:0.95rem;}
+    .btn{display:inline-block;background:var(--accent);color:#fff;padding:14px 28px;border-radius:6px;font-weight:600;font-size:0.9rem;transition:opacity 0.2s;}
+    .btn:hover{opacity:0.85;text-decoration:none;}
+    footer{background:var(--bg2);border-top:1px solid var(--border);padding:32px 24px;text-align:center;color:var(--muted);font-size:0.85rem;margin-top:80px;}
+    footer a{color:var(--muted);}
+  </style>
+</head>
+<body>
+  <nav><a href="/" class="nav-logo">FLUXIT<span>.</span></a><a href="/blog" class="nav-back">← Blog</a></nav>
+  <div class="breadcrumb"><a href="/">Inicio</a><span class="breadcrumb-sep">/</span><a href="/blog">Blog</a><span class="breadcrumb-sep">/</span><span>Automatizar Captación Clientes</span></div>
+  <div class="hero">
+    <div class="hero-tag">Captación · Automatización · IA</div>
+    <h1>Automatizar la Captación de Clientes: Sistema Completo con IA para Empresas</h1>
+    <div class="hero-meta"><span>Fluxit</span><span>Mayo 2026</span><span>11 min lectura</span></div>
+  </div>
+  <div class="content">
+    <p>La captación manual de clientes es el cuello de botella número uno en empresas de servicios en España. Un lead llega, alguien lo ve tarde, la respuesta se retrasa, el potencial cliente ya habló con la competencia. El sistema automático resuelve esto: responde en segundos, cualifica solo, y escala sin contratar.</p>
+    <p>Te explico cómo montarlo de cero.</p>
+
+    <h2>El sistema completo de captación automatizada</h2>
+    <p>Un sistema bien montado tiene 5 etapas. Cada una puede funcionar de forma independiente, pero juntas son lo que convierte un negocio que "trabaja para conseguir clientes" en uno que "recibe clientes mientras trabaja".</p>
+
+    <div class="flow">
+      <div class="flow-step">
+        <div class="flow-icon">1</div>
+        <div class="flow-content">
+          <h4>Captura — El primer contacto</h4>
+          <p>Formulario web, WhatsApp Business, chatbot en la web o anuncio con lead form. El canal importa menos que lo que pasa después. Todo entra en el mismo sistema.</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-icon">2</div>
+        <div class="flow-content">
+          <h4>Cualificación con IA</h4>
+          <p>n8n recibe el lead y lo pasa por un prompt de IA: ¿tiene presupuesto? ¿encaja con tu cliente ideal? ¿es urgente? El sistema clasifica automáticamente: caliente, tibio o descartar.</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-icon">3</div>
+        <div class="flow-content">
+          <h4>Respuesta inmediata</h4>
+          <p>En menos de 2 minutos el lead recibe un email o WhatsApp personalizado. No genérico: menciona su nombre, su problema específico y propone un siguiente paso concreto.</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-icon">4</div>
+        <div class="flow-content">
+          <h4>Registro en CRM</h4>
+          <p>El lead entra automáticamente en tu CRM (HubSpot, Notion, una hoja de cálculo — lo que uses). Con todos sus datos, el canal de origen y la clasificación IA ya hecha.</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-icon">5</div>
+        <div class="flow-content">
+          <h4>Seguimiento automático</h4>
+          <p>Si el lead no responde en 48h, el sistema manda un seguimiento. A los 7 días, otro. El equipo de ventas solo toca los leads que ya han mostrado intención real.</p>
+        </div>
+      </div>
+    </div>
+
+    <h2>Cuánto tarda en montarse</h2>
+    <p>Con las herramientas adecuadas (n8n + tu CRM actual), un sistema básico funcional tarda entre 4 y 8 horas de configuración. Un sistema completo con cualificación IA y seguimientos automatizados, 1-2 semanas.</p>
+    <p>Una vez montado, el mantenimiento es mínimo: revisar que los flujos funcionan cada 2-3 semanas y ajustar los criterios de cualificación si cambia tu perfil de cliente ideal.</p>
+
+    <h2>Herramientas necesarias</h2>
+    <ul>
+      <li><strong>n8n</strong> (self-hosted en Railway, ~10€/mes) — el cerebro que conecta todo</li>
+      <li><strong>OpenAI o Anthropic API</strong> (~5-20€/mes según volumen) — para cualificar con IA</li>
+      <li><strong>WhatsApp Business API</strong> (Twilio o 360dialog, ~30€/mes) — para respuestas automáticas por WhatsApp</li>
+      <li><strong>Tu CRM actual</strong> — HubSpot free, Notion, Airtable, o una simple hoja de cálculo</li>
+    </ul>
+    <p>Coste total del sistema completo: <strong>50-80€/mes</strong>. Si consigue un cliente adicional al mes, ya se paga.</p>
+
+    <h2>Casos específicos por sector</h2>
+    <ul>
+      <li><strong>Inmobiliarias:</strong> <a href="/blog-leads-inmobiliarias">ver cómo automatizar leads en inmobiliarias →</a></li>
+      <li><strong>Despachos y asesorías:</strong> <a href="/blog-captacion-despachos">ver captación automática para despachos →</a></li>
+      <li><strong>Empresas de servicios:</strong> <a href="/blog-automatizar-empresa-servicios">ver automatización para empresas de servicios →</a></li>
+    </ul>
+
+    <div class="cta-box">
+      <h3>Monta este sistema en tu empresa</h3>
+      <p>En Fluxit implementamos sistemas de captación automática para empresas de servicios en España. En una auditoría gratuita vemos qué encaja con tu proceso de ventas actual.</p>
+      <a href="mailto:lucas@fluxit.es?subject=Sistema captación automática" class="btn">Solicitar auditoría gratuita →</a>
+    </div>
+  </div>
+  <footer><p>© 2026 <a href="/">Fluxit</a> · <a href="/blog">Blog</a> · <a href="https://pariente8.gumroad.com" target="_blank">Tienda</a></p></footer>
+</body>
+</html>

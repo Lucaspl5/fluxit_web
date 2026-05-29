@@ -116,4 +116,52 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://www.fluxit.es/blog-make-vs-n8n</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.fluxit.es/blog-n8n-tutorial-espanol</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.fluxit.es/blog-ia-para-pymes</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.fluxit.es/blog-automatizar-captacion-clientes</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.fluxit.es/blog-herramientas-no-code-empresas</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.fluxit.es/blog-chatgpt-para-empresas</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.fluxit.es/blog-automatizar-linkedin-prospeccion</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.fluxit.es/blog-como-conseguir-clientes-freelancer</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>

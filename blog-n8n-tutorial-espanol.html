@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>n8n Tutorial en Español: Primer Flujo de Automatización Paso a Paso</title>
+  <meta name="description" content="Tutorial n8n en español para principiantes: instala n8n, conecta tus apps y crea tu primer workflow de automatización en menos de 1 hora. Guía práctica 2026.">
+  <meta name="keywords" content="n8n tutorial español, n8n guía español, n8n principiantes, aprender n8n, n8n workflow tutorial, automatización n8n paso a paso">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="n8n Tutorial en Español: Primer Flujo de Automatización Paso a Paso">
+  <meta property="og:description" content="Aprende n8n desde cero en español. Instala, conecta tus apps y crea tu primer flujo automático en menos de 1 hora.">
+  <meta property="og:url" content="https://www.fluxit.es/blog-n8n-tutorial-espanol">
+  <meta property="og:site_name" content="Fluxit">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://www.fluxit.es/blog-n8n-tutorial-espanol">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "n8n Tutorial en Español: Primer Flujo de Automatización",
+    "description": "Cómo instalar n8n y crear tu primer workflow de automatización",
+    "author": { "@type": "Organization", "name": "Fluxit", "url": "https://www.fluxit.es" },
+    "datePublished": "2026-05-29",
+    "inLanguage": "es-ES",
+    "url": "https://www.fluxit.es/blog-n8n-tutorial-espanol"
+  }
+  </script>
+  <style>
+    :root{--bg:#0B1120;--bg2:#111827;--text:#E0F0FF;--muted:#8899BB;--accent:#E07040;--border:rgba(224,240,255,0.08);}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{background-color:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:17px;line-height:1.75;}
+    a{color:var(--accent);text-decoration:none;}a:hover{text-decoration:underline;}
+    nav{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+    .nav-logo{font-size:1.25rem;font-weight:700;color:var(--text);letter-spacing:0.08em;}.nav-logo span{color:var(--accent);}
+    .nav-back{font-size:0.875rem;color:var(--muted);}.nav-back:hover{color:var(--text);text-decoration:none;}
+    .breadcrumb{max-width:820px;margin:28px auto 0;padding:0 24px;font-size:0.8rem;color:var(--muted);display:flex;gap:8px;align-items:center;}
+    .breadcrumb a{color:var(--muted);}.breadcrumb-sep{opacity:0.4;}
+    .hero{max-width:820px;margin:32px auto 0;padding:0 24px 48px;border-bottom:1px solid var(--border);}
+    .hero-tag{display:inline-block;background:rgba(224,112,64,0.12);color:var(--accent);font-size:0.78rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:4px 12px;border-radius:4px;margin-bottom:20px;}
+    .hero h1{font-size:clamp(1.75rem,4vw,2.6rem);font-weight:700;line-height:1.2;margin-bottom:20px;}
+    .hero-meta{display:flex;gap:20px;font-size:0.85rem;color:var(--muted);flex-wrap:wrap;}
+    .content{max-width:820px;margin:0 auto;padding:48px 24px;}
+    .content h2{font-size:1.5rem;font-weight:700;color:var(--text);margin:40px 0 16px;}
+    .content h3{font-size:1.15rem;font-weight:600;color:var(--text);margin:28px 0 12px;}
+    .content p{color:var(--muted);margin-bottom:20px;line-height:1.8;}
+    .content ul,.content ol{padding-left:24px;margin-bottom:20px;}
+    .content li{color:var(--muted);margin-bottom:8px;line-height:1.7;}
+    .content strong{color:var(--text);font-weight:600;}
+    .step{display:flex;gap:16px;margin-bottom:32px;align-items:flex-start;}
+    .step-num{background:rgba(224,112,64,0.15);color:var(--accent);width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.9rem;flex-shrink:0;margin-top:2px;}
+    .step-content h3{margin:0 0 8px;}
+    .step-content p{margin:0 0 8px;font-size:0.92rem;}
+    .code-block{background:#0d1520;border:1px solid rgba(224,112,64,0.2);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;padding:14px 18px;font-family:'Courier New',monospace;font-size:0.85rem;color:#7DC8E8;margin:10px 0;overflow-x:auto;}
+    .tip-box{background:rgba(52,211,153,0.07);border-left:3px solid #34D399;padding:14px 18px;border-radius:0 6px 6px 0;margin:16px 0;}
+    .tip-box p{color:var(--muted);font-size:0.88rem;margin:0;}
+    .tip-box strong{color:#34D399;}
+    .cta-box{background:rgba(224,112,64,0.08);border:1px solid rgba(224,112,64,0.25);border-radius:10px;padding:36px 32px;margin:48px 0;text-align:center;}
+    .cta-box h3{font-size:1.3rem;font-weight:700;color:var(--text);margin-bottom:12px;}
+    .cta-box p{color:var(--muted);margin-bottom:24px;font-size:0.95rem;}
+    .btn{display:inline-block;background:var(--accent);color:#fff;padding:14px 28px;border-radius:6px;font-weight:600;font-size:0.9rem;transition:opacity 0.2s;}
+    .btn:hover{opacity:0.85;text-decoration:none;}
+    footer{background:var(--bg2);border-top:1px solid var(--border);padding:32px 24px;text-align:center;color:var(--muted);font-size:0.85rem;margin-top:80px;}
+    footer a{color:var(--muted);}
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">FLUXIT<span>.</span></a>
+    <a href="/blog" class="nav-back">← Blog</a>
+  </nav>
+  <div class="breadcrumb">
+    <a href="/">Inicio</a><span class="breadcrumb-sep">/</span>
+    <a href="/blog">Blog</a><span class="breadcrumb-sep">/</span>
+    <span>n8n Tutorial Español</span>
+  </div>
+  <div class="hero">
+    <div class="hero-tag">n8n · Tutorial · Automatización</div>
+    <h1>n8n Tutorial en Español: Primer Flujo de Automatización Paso a Paso</h1>
+    <div class="hero-meta"><span>Fluxit</span><span>Mayo 2026</span><span>12 min lectura</span></div>
+  </div>
+  <div class="content">
+    <p>n8n es la herramienta de automatización más potente que existe ahora mismo para empresas que quieren control total sin pagar por operación. El problema es que casi todo el contenido está en inglés. Esta guía está escrita en español, para el contexto empresarial español, y te lleva de cero a tu primer workflow funcionando.</p>
+
+    <h2>¿Qué puedes hacer con n8n?</h2>
+    <p>Antes de instalar nada, entiende qué resuelve: n8n conecta aplicaciones y automatiza acciones entre ellas. Ejemplos reales que montamos para clientes:</p>
+    <ul>
+      <li>Lead llega al formulario web → se crea en el CRM + se envía WhatsApp de bienvenida + se agenda tarea de seguimiento</li>
+      <li>Factura llega al email → se extrae con IA → se registra en la hoja de gastos → se notifica al gestor</li>
+      <li>Cliente rellena formulario de reserva → confirmación automática + recordatorio 24h antes + encuesta post-servicio</li>
+      <li>Mención de tu marca en redes → notificación Telegram al equipo + guardado en hoja de seguimiento</li>
+    </ul>
+
+    <h2>Opción 1: n8n Cloud (la más rápida)</h2>
+    <p>Si no quieres tocar servidores, ve a <strong>n8n.io</strong> y crea una cuenta. Tienen plan gratuito con limitaciones y plan de pago desde 20€/mes con workflows ilimitados. Para empezar a aprender, el gratuito es más que suficiente.</p>
+
+    <h2>Opción 2: n8n en Railway (recomendada para uso real)</h2>
+    <p>Railway es una plataforma de hosting sencilla donde puedes instalar n8n en minutos. Cuesta ~5-10€/mes y te da control total. Es lo que usamos en Fluxit para todos los clientes.</p>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h3>Crear cuenta en Railway</h3>
+        <p>Ve a railway.app y crea cuenta con GitHub. En el dashboard, haz click en <strong>New Project → Deploy a template</strong>.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h3>Buscar la plantilla de n8n</h3>
+        <p>En el buscador de templates escribe "n8n". Selecciona la plantilla oficial. Railway configurará automáticamente el contenedor.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h3>Configurar variables de entorno</h3>
+        <p>En la sección Variables de tu proyecto Railway, añade:</p>
+        <div class="code-block">N8N_BASIC_AUTH_ACTIVE=true<br>N8N_BASIC_AUTH_USER=tu_usuario<br>N8N_BASIC_AUTH_PASSWORD=tu_contraseña<br>WEBHOOK_URL=https://tu-proyecto.up.railway.app</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <h3>Acceder a n8n</h3>
+        <p>Railway genera una URL pública para tu proyecto (algo como <code>xxxxxx.up.railway.app</code>). Abre esa URL en el navegador, introduce tu usuario y contraseña, y ya tienes n8n funcionando.</p>
+      </div>
+    </div>
+
+    <h2>Tu primer workflow: notificación cuando llega un lead</h2>
+    <p>Vamos a crear un flujo simple pero útil: cuando alguien rellene un formulario web, recibes una notificación en Telegram con sus datos.</p>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h3>Nodo Webhook — el disparador</h3>
+        <p>En n8n, haz click en <strong>+ Add node → Webhook</strong>. Copia la URL que te genera (algo como <code>https://tu-n8n.railway.app/webhook/abc123</code>). Ese endpoint recibirá los datos del formulario.</p>
+        <div class="tip-box"><p><strong>Tip:</strong> En tu formulario web (Typeform, Tally, el que uses), configura el webhook de destino con esa URL.</p></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h3>Nodo Telegram — la notificación</h3>
+        <p>Añade el nodo <strong>Telegram → Send Message</strong>. Necesitas:</p>
+        <ul>
+          <li>Un Bot Token (créalo hablando con @BotFather en Telegram)</li>
+          <li>Tu Chat ID (usa @userinfobot para obtenerlo)</li>
+        </ul>
+        <p>En el campo Message escribe algo como:</p>
+        <div class="code-block">🔔 Nuevo lead recibido<br>Nombre: {{ "{{" }}$json.nombre{{ "}}" }}<br>Email: {{ "{{" }}$json.email{{ "}}" }}<br>Teléfono: {{ "{{" }}$json.telefono{{ "}}" }}</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h3>Activar y probar</h3>
+        <p>Haz click en <strong>Save</strong> y luego en <strong>Activate</strong> (el toggle en la esquina superior derecha). Envía una prueba desde tu formulario y comprueba que llega el Telegram.</p>
+      </div>
+    </div>
+
+    <h2>Workflows más avanzados para empresas</h2>
+    <p>Una vez dominas los fundamentos, estos son los flujos más útiles para negocios en España:</p>
+    <ul>
+      <li><strong>Lead → CRM automático:</strong> conectar el webhook con HubSpot, Notion o una hoja de cálculo</li>
+      <li><strong>Email → IA → respuesta:</strong> clasificar emails entrantes con GPT y responder automáticamente los frecuentes</li>
+      <li><strong>Factura → extracción de datos:</strong> leer PDFs de facturas con IA y registrarlas automáticamente</li>
+      <li><strong>Recordatorios automáticos:</strong> usar el nodo Schedule Trigger para enviar WhatsApp o emails en fechas concretas</li>
+    </ul>
+    <p>Si te interesa profundizar en casos concretos para tu sector, tenemos guías específicas: <a href="/blog-n8n-inmobiliarias">n8n para inmobiliarias</a>, <a href="/blog-crm-automatico-asesoria">CRM automático para asesorías</a> y <a href="/blog-automatizar-whatsapp-negocio">automatizar WhatsApp para tu negocio</a>.</p>
+
+    <div class="cta-box">
+      <h3>¿Prefieres que lo montemos nosotros?</h3>
+      <p>Si tienes claro qué quieres automatizar pero no tienes tiempo o ganas de aprenderlo, en Fluxit lo montamos y entregamos funcionando. Auditoría gratuita para ver qué tiene sentido en tu caso.</p>
+      <a href="mailto:lucas@fluxit.es?subject=Quiero automatizar con n8n" class="btn">Hablar con Fluxit →</a>
+    </div>
+  </div>
+  <footer>
+    <p>© 2026 <a href="/">Fluxit</a> · <a href="/blog">Blog</a> · <a href="https://pariente8.gumroad.com" target="_blank">Tienda</a></p>
+  </footer>
+</body>
+</html>
