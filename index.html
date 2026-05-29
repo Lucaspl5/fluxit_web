@@ -462,6 +462,72 @@
     }
     .testimonial-role { font-size: .78rem; color: var(--muted); }
 
+    /* ─── FOUNDER ─── */
+    .founder-section { background: var(--bg); }
+    .founder-inner { display: grid; grid-template-columns: 340px 1fr; gap: 80px; align-items: center; max-width: 960px; margin: 0 auto; }
+    .founder-photo-wrap {
+      position: relative; flex-shrink: 0;
+    }
+    .founder-photo-wrap::before {
+      content: ''; position: absolute; inset: -2px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--accent) 0%, transparent 60%);
+      z-index: 0;
+    }
+    .founder-photo {
+      width: 100%; aspect-ratio: 4/5;
+      object-fit: cover;
+      object-position: center 8%;
+      border-radius: 14px;
+      position: relative; z-index: 1;
+      filter: contrast(1.08) brightness(0.92) saturate(0.75);
+      display: block;
+    }
+    .founder-badge {
+      position: absolute; bottom: -16px; right: -16px; z-index: 2;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 12px 16px;
+      font-family: var(--mono); font-size: .7rem; color: var(--accent);
+      letter-spacing: .08em; text-transform: uppercase;
+      backdrop-filter: blur(8px);
+    }
+    .founder-badge span { display: block; color: var(--text); font-size: .85rem; font-weight: 600; font-family: var(--sans); margin-top: 2px; }
+    .founder-content { padding: 8px 0; }
+    .founder-name { font-family: var(--sans); font-size: 2rem; font-weight: 700; color: var(--text); line-height: 1.1; margin-bottom: 4px; }
+    .founder-title { font-family: var(--mono); font-size: .75rem; text-transform: uppercase; letter-spacing: .12em; color: var(--accent); margin-bottom: 28px; }
+    .founder-bio { font-size: 1rem; color: var(--muted); line-height: 1.85; margin-bottom: 28px; }
+    .founder-bio strong { color: var(--text); }
+    .founder-stack { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
+    .founder-tag {
+      font-family: var(--mono); font-size: .68rem; text-transform: uppercase;
+      letter-spacing: .08em; color: var(--muted);
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 5px 10px; transition: border-color .2s, color .2s;
+    }
+    .founder-tag:hover { border-color: var(--accent); color: var(--accent); }
+    .founder-links { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+    .founder-link-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--accent); color: #fff;
+      font-family: var(--mono); font-size: .75rem; font-weight: 500;
+      letter-spacing: .1em; text-transform: uppercase;
+      padding: 12px 22px; border-radius: 4px; text-decoration: none;
+      transition: opacity .2s;
+    }
+    .founder-link-primary:hover { opacity: .85; }
+    .founder-link-ghost {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--muted); font-family: var(--mono); font-size: .75rem;
+      text-transform: uppercase; letter-spacing: .1em; text-decoration: none;
+      border: 1px solid var(--border); padding: 12px 20px; border-radius: 4px;
+      transition: color .2s, border-color .2s;
+    }
+    .founder-link-ghost:hover { color: var(--accent); border-color: var(--accent); }
+    @media(max-width:900px){
+      .founder-inner { grid-template-columns: 1fr; gap: 40px; }
+      .founder-photo-wrap { max-width: 260px; margin: 0 auto; }
+    }
+
     /* ─── FAQ ─── */
     .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
     .faq-item {
@@ -922,6 +988,43 @@
             <div class="testimonial-name">Javier P.</div>
             <div class="testimonial-role">Consultor Freelance</div>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOUNDER ═══ -->
+<section class="section founder-section">
+  <div class="section-inner">
+    <div class="founder-inner">
+      <div class="founder-photo-wrap reveal">
+        <img src="assets/images/lucas-pariente.jpg" alt="Lucas Pariente — Fundador de Fluxit" class="founder-photo" loading="lazy">
+        <div class="founder-badge">Fundador &amp; CEO<span>Fluxit.</span></div>
+      </div>
+      <div class="founder-content reveal">
+        <p class="section-tag">// El equipo</p>
+        <h2 class="founder-name">Lucas Pariente</h2>
+        <p class="founder-title">Fundador · AI Automation Specialist · Barcelona</p>
+        <p class="founder-bio">
+          Empecé en operaciones y administración de empresas — aprendí cómo funcionan los procesos desde dentro, dónde se pierde el tiempo y dónde está el dinero atascado. Cuando descubrí n8n y los LLMs, vi que podía resolver exactamente esos problemas sin depender de un equipo de IT.
+        </p>
+        <p class="founder-bio">
+          Desde 2025 diseño e implemento sistemas de automatización para empresas en España: desde captación de leads con <strong>SHA Wellness Clinic</strong> hasta flujos de facturación y CRM automático para pymes. No vendo software — construyo infraestructura que funciona mientras duermes.
+        </p>
+        <div class="founder-stack">
+          <span class="founder-tag">n8n</span>
+          <span class="founder-tag">OpenAI / Claude</span>
+          <span class="founder-tag">Make.com</span>
+          <span class="founder-tag">WhatsApp API</span>
+          <span class="founder-tag">HubSpot</span>
+          <span class="founder-tag">Railway / Docker</span>
+          <span class="founder-tag">JavaScript</span>
+          <span class="founder-tag">Webhooks</span>
+        </div>
+        <div class="founder-links">
+          <a href="mailto:lucas@fluxit.es?subject=Auditoría gratuita" class="founder-link-primary">Hablar con Lucas →</a>
+          <a href="https://www.linkedin.com/in/lucaspariente" target="_blank" rel="noopener" class="founder-link-ghost">LinkedIn ↗</a>
         </div>
       </div>
     </div>
