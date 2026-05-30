@@ -673,6 +673,72 @@
     .faq-item.open .faq-a { display: block; }
     .faq-item.open .faq-toggle { transform: rotate(45deg); }
 
+    /* ─── ROI CALCULATOR ─── */
+    .roi-section { background: var(--bg2); }
+    .roi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 48px; align-items: start; }
+    .roi-inputs { display: flex; flex-direction: column; gap: 28px; }
+    .roi-field label {
+      display: flex; justify-content: space-between; align-items: baseline;
+      font-family: var(--mono); font-size: .72rem; text-transform: uppercase;
+      letter-spacing: .1em; color: var(--muted); margin-bottom: 10px;
+    }
+    .roi-field label span {
+      font-family: var(--sans); font-size: 1rem; font-weight: 700;
+      color: var(--accent); text-transform: none; letter-spacing: 0;
+    }
+    .roi-slider {
+      -webkit-appearance: none; appearance: none;
+      width: 100%; height: 4px; border-radius: 2px;
+      background: var(--border); outline: none; cursor: pointer;
+    }
+    .roi-slider::-webkit-slider-thumb {
+      -webkit-appearance: none; appearance: none;
+      width: 18px; height: 18px; border-radius: 50%;
+      background: var(--accent); cursor: pointer;
+      box-shadow: 0 0 8px rgba(224,112,64,.5);
+      transition: box-shadow .2s;
+    }
+    .roi-slider::-webkit-slider-thumb:hover { box-shadow: 0 0 14px rgba(224,112,64,.7); }
+    .roi-results {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 14px; padding: 36px 32px;
+      position: sticky; top: 80px;
+    }
+    .roi-results-title {
+      font-family: var(--mono); font-size: .65rem; text-transform: uppercase;
+      letter-spacing: .12em; color: var(--accent); margin-bottom: 24px;
+    }
+    .roi-metric { padding: 16px 0; border-bottom: 1px solid var(--border); }
+    .roi-metric:last-of-type { border-bottom: none; }
+    .roi-metric-label { font-size: .82rem; color: var(--muted); margin-bottom: 4px; }
+    .roi-metric-value {
+      font-family: var(--sans); font-size: 1.7rem; font-weight: 700;
+      color: var(--text); line-height: 1;
+    }
+    .roi-metric-value.accent { color: var(--accent); }
+    .roi-metric-value.green  { color: #34D399; }
+    .roi-divider { height: 1px; background: var(--border); margin: 20px 0; }
+    .roi-total-label { font-family: var(--mono); font-size: .7rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin-bottom: 8px; }
+    .roi-total-value {
+      font-family: var(--sans); font-size: 2.6rem; font-weight: 700;
+      color: #34D399; line-height: 1; margin-bottom: 6px;
+    }
+    .roi-total-sub { font-size: .82rem; color: var(--muted); margin-bottom: 24px; }
+    .roi-cta {
+      display: block; text-align: center;
+      background: var(--accent); color: #fff;
+      font-family: var(--mono); font-size: .78rem; font-weight: 500;
+      letter-spacing: .1em; text-transform: uppercase;
+      padding: 14px 24px; border-radius: 4px; text-decoration: none;
+      transition: opacity .2s; cursor: pointer; border: none; width: 100%;
+    }
+    .roi-cta:hover { opacity: .85; }
+    .roi-disclaimer { font-size: .72rem; color: var(--muted); text-align: center; margin-top: 12px; opacity: .7; }
+    @media(max-width:900px){
+      .roi-grid { grid-template-columns: 1fr; }
+      .roi-results { position: static; }
+    }
+
     /* ─── CTA SECTION ─── */
     .cta-section {
       position: relative; z-index: 1;
@@ -1300,6 +1366,149 @@
     </div>
   </div>
 </section>
+
+<!-- ═══ ROI CALCULATOR ═══ -->
+<section class="section roi-section">
+  <div class="section-inner">
+    <p class="section-tag reveal">// Calculadora de ROI</p>
+    <h2 class="section-title reveal">¿Cuánto te cuesta <em style="color:var(--accent);font-style:normal;">no</em> automatizar?</h2>
+    <p class="section-sub reveal">Ajusta los sliders con los datos de tu empresa y ve el retorno estimado en tiempo real.</p>
+
+    <div class="roi-grid reveal">
+      <!-- INPUTS -->
+      <div class="roi-inputs">
+
+        <div class="roi-field">
+          <label>Personas haciendo tareas repetitivas <span id="v-empleados">3</span></label>
+          <input type="range" class="roi-slider" id="s-empleados" min="1" max="20" value="3">
+        </div>
+
+        <div class="roi-field">
+          <label>Horas/semana en esas tareas (por persona) <span id="v-horas">8</span>h</label>
+          <input type="range" class="roi-slider" id="s-horas" min="1" max="40" value="8">
+        </div>
+
+        <div class="roi-field">
+          <label>Coste/hora medio de esas personas <span id="v-salario">20</span>€</label>
+          <input type="range" class="roi-slider" id="s-salario" min="10" max="80" value="20">
+        </div>
+
+        <div class="roi-field">
+          <label>Leads que recibes al mes <span id="v-leads">30</span></label>
+          <input type="range" class="roi-slider" id="s-leads" min="5" max="300" value="30">
+        </div>
+
+        <div class="roi-field">
+          <label>% de leads que se pierden sin seguimiento rápido <span id="v-perdidos">40</span>%</label>
+          <input type="range" class="roi-slider" id="s-perdidos" min="5" max="90" value="40">
+        </div>
+
+        <div class="roi-field">
+          <label>Valor medio de un cliente <span id="v-ticket">1500</span>€</label>
+          <input type="range" class="roi-slider" id="s-ticket" min="200" max="15000" step="100" value="1500">
+        </div>
+
+      </div>
+
+      <!-- RESULTS -->
+      <div class="roi-results">
+        <p class="roi-results-title">// Impacto estimado mensual</p>
+
+        <div class="roi-metric">
+          <div class="roi-metric-label">Horas recuperadas al mes</div>
+          <div class="roi-metric-value accent" id="r-horas">—</div>
+        </div>
+        <div class="roi-metric">
+          <div class="roi-metric-label">Ahorro en horas de personal</div>
+          <div class="roi-metric-value" id="r-ahorro">—</div>
+        </div>
+        <div class="roi-metric">
+          <div class="roi-metric-label">Leads adicionales recuperados</div>
+          <div class="roi-metric-value accent" id="r-leads">—</div>
+        </div>
+        <div class="roi-metric">
+          <div class="roi-metric-label">Ingresos adicionales estimados</div>
+          <div class="roi-metric-value green" id="r-ingresos">—</div>
+        </div>
+
+        <div class="roi-divider"></div>
+
+        <div class="roi-total-label">Retorno total estimado / mes</div>
+        <div class="roi-total-value" id="r-total">—</div>
+        <div class="roi-total-sub" id="r-ratio">vs. coste del sistema Fluxit</div>
+
+        <button class="roi-cta" onclick="Calendly.initPopupWidget({url:'https://calendly.com/lucas-fluxit/30min'});return false;">
+          Quiero este retorno en mi empresa →
+        </button>
+        <p class="roi-disclaimer">Estimación orientativa basada en datos promedio de clientes Fluxit. Los resultados reales varían según el sector y proceso.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  const fields = [
+    { slider: 's-empleados', val: 'v-empleados', suffix: '' },
+    { slider: 's-horas',     val: 'v-horas',     suffix: 'h' },
+    { slider: 's-salario',   val: 'v-salario',   suffix: '€' },
+    { slider: 's-leads',     val: 'v-leads',     suffix: '' },
+    { slider: 's-perdidos',  val: 'v-perdidos',  suffix: '%' },
+    { slider: 's-ticket',    val: 'v-ticket',    suffix: '€' },
+  ];
+
+  function fmt(n) {
+    return n >= 1000 ? (n/1000).toFixed(1).replace('.',',') + 'k€' : n.toFixed(0) + '€';
+  }
+
+  function calc() {
+    const emp     = +document.getElementById('s-empleados').value;
+    const horas   = +document.getElementById('s-horas').value;
+    const salario = +document.getElementById('s-salario').value;
+    const leads   = +document.getElementById('s-leads').value;
+    const perdidos= +document.getElementById('s-perdidos').value / 100;
+    const ticket  = +document.getElementById('s-ticket').value;
+
+    const horasMes      = Math.round(emp * horas * 4.3 * 0.65); // 65% automatizable
+    const ahorroPersonal= horasMes * salario;
+    const leadsExtra    = Math.round(leads * perdidos * 0.35);   // recuperamos 35% de los perdidos
+    const ingresosExtra = leadsExtra * ticket * 0.15;            // 15% tasa de cierre
+    const totalMes      = ahorroPersonal + ingresosExtra;
+    const coste         = 600; // coste medio sistema Fluxit
+    const ratio         = Math.round((totalMes / coste) * 10) / 10;
+
+    document.getElementById('r-horas').textContent    = horasMes + 'h';
+    document.getElementById('r-ahorro').textContent   = fmt(ahorroPersonal);
+    document.getElementById('r-leads').textContent    = leadsExtra + ' leads';
+    document.getElementById('r-ingresos').textContent = fmt(ingresosExtra);
+    document.getElementById('r-total').textContent    = fmt(totalMes);
+    document.getElementById('r-ratio').textContent    = `×${ratio} sobre el coste del sistema (${coste}€/mes)`;
+  }
+
+  fields.forEach(f => {
+    const sl = document.getElementById(f.slider);
+    const vl = document.getElementById(f.val);
+    sl.addEventListener('input', () => {
+      vl.textContent = sl.value;
+      calc();
+    });
+    // style slider fill
+    sl.addEventListener('input', function(){
+      const pct = (this.value - this.min) / (this.max - this.min) * 100;
+      this.style.background = `linear-gradient(to right, #E07040 ${pct}%, rgba(224,240,255,0.08) ${pct}%)`;
+    });
+  });
+
+  // init fills
+  fields.forEach(f => {
+    const sl = document.getElementById(f.slider);
+    const pct = (sl.value - sl.min) / (sl.max - sl.min) * 100;
+    sl.style.background = `linear-gradient(to right, #E07040 ${pct}%, rgba(224,240,255,0.08) ${pct}%)`;
+  });
+
+  calc();
+})();
+</script>
 
 <!-- ═══ CTA ═══ -->
 <section class="cta-section" id="contacto">
