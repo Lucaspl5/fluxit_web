@@ -18,16 +18,25 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": "n8n Tutorial en Español: Primer Flujo de Automatización",
-    "description": "Cómo instalar n8n y crear tu primer workflow de automatización",
-    "author": { "@type": "Organization", "name": "Fluxit", "url": "https://www.fluxit.es" },
-    "datePublished": "2026-05-29",
-    "inLanguage": "es-ES",
-    "url": "https://www.fluxit.es/blog-n8n-tutorial-espanol"
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "n8n Tutorial en Español: Primer Flujo de Automatización",
+  "description": "Cómo instalar n8n y crear tu primer workflow de automatización",
+  "author": {
+    "@type": "Organization",
+    "name": "Fluxit",
+    "url": "https://www.fluxit.es"
+  },
+  "datePublished": "2026-05-29",
+  "inLanguage": "es-ES",
+  "url": "https://www.fluxit.es/blog-n8n-tutorial-espanol",
+  "image": "https://www.fluxit.es/assets/images/fluxit-logo.png",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.fluxit.es/blog-n8n-tutorial-espanol"
   }
+}
   </script>
   <style>
     :root{--bg:#0B1120;--bg2:#111827;--text:#E0F0FF;--muted:#8899BB;--accent:#E07040;--border:rgba(224,240,255,0.08);}
@@ -173,13 +182,50 @@
     </ul>
     <p>Si te interesa profundizar en casos concretos para tu sector, tenemos guías específicas: <a href="/blog-n8n-inmobiliarias">n8n para inmobiliarias</a>, <a href="/blog-crm-automatico-asesoria">CRM automático para asesorías</a> y <a href="/blog-automatizar-whatsapp-negocio">automatizar WhatsApp para tu negocio</a>.</p>
 
+    <h2>Conceptos de n8n que conviene entender desde el principio</h2>
+    <p>Antes de lanzarte a construir flujos complejos, hay cuatro ideas que te ahorrarán muchos quebraderos de cabeza:</p>
+    <ul>
+      <li><strong>Nodos disparadores (triggers) vs nodos de acción.</strong> Todo workflow empieza con un disparador: un webhook que recibe datos, un horario (Schedule Trigger), un email entrante o un evento de otra app. El resto de nodos son acciones que se ejecutan en cadena cuando el disparador salta.</li>
+      <li><strong>El flujo de datos entre nodos.</strong> Cada nodo recibe los datos del anterior en formato JSON y los pasa al siguiente. Puedes ver exactamente qué datos viajan haciendo clic en cualquier nodo tras una ejecución de prueba: esto es lo que más acelera el aprendizaje.</li>
+      <li><strong>Expresiones.</strong> Para usar un dato del nodo anterior (por ejemplo, el email del lead) escribes una expresión como <code>{{ $json.email }}</code>. Es la pieza que conecta la información entre pasos y la que más se usa en el día a día.</li>
+      <li><strong>Ejecuciones y logs.</strong> n8n guarda cada ejecución con su resultado. Cuando algo falla, el historial de ejecuciones te dice en qué nodo y por qué; aprender a leerlo es la diferencia entre depurar en minutos o en horas.</li>
+    </ul>
+
+    <h2>Buenas prácticas para que tus workflows no se rompan</h2>
+    <p>Un flujo que funciona en la demo pero falla en producción es el error más común de quien empieza. Estas prácticas evitan el 90% de los problemas:</p>
+    <ul>
+      <li><strong>Maneja los errores.</strong> Añade un <em>Error Trigger</em> o configura el nodo con "Continue On Fail" para que un fallo puntual (una API caída, un dato vacío) no detenga todo el flujo y te quedes sin enterarte.</li>
+      <li><strong>No abuses de los límites de las APIs.</strong> Si procesas muchos elementos, añade esperas entre llamadas. Servicios como Google o LinkedIn bloquean si reciben demasiadas peticiones seguidas.</li>
+      <li><strong>Prueba con datos reales antes de activar.</strong> Usa "Execute Workflow" con un caso real y revisa la salida de cada nodo antes de poner el flujo en automático.</li>
+      <li><strong>Guarda credenciales como credenciales, no en el nodo.</strong> n8n tiene un gestor de credenciales cifrado: úsalo en lugar de pegar claves API directamente en los nodos.</li>
+    </ul>
+
+    <h2>Preguntas frecuentes sobre n8n</h2>
+    <p><strong>¿Necesito saber programar para usar n8n?</strong><br>No para empezar. El editor visual cubre la mayoría de casos sin escribir una línea de código. Saber algo de JavaScript te da superpoderes (transformar datos, lógica a medida), pero no es un requisito para tus primeros flujos.</p>
+    <p><strong>¿Cuánto cuesta tener n8n funcionando 24/7?</strong><br>En Railway, una instancia para uso real ronda los 5-10€/mes. n8n Cloud cuesta desde 20€/mes si prefieres no gestionar el servidor.</p>
+    <p><strong>¿Se puede conectar n8n con ChatGPT y otras IAs?</strong><br>Sí, tiene nodos nativos para OpenAI, Anthropic y LangChain, lo que permite construir agentes de IA, clasificar texto o generar respuestas dentro del propio flujo.</p>
+    <p><strong>¿Qué pasa si mi servidor se cae?</strong><br>Los workflows dejan de ejecutarse mientras el servidor esté caído. Por eso, para flujos críticos, conviene un proveedor estable y activar copias de seguridad de la base de datos de n8n.</p>
+
     <div class="cta-box">
       <h3>¿Prefieres que lo montemos nosotros?</h3>
       <p>Si tienes claro qué quieres automatizar pero no tienes tiempo o ganas de aprenderlo, en Fluxit lo montamos y entregamos funcionando. Auditoría gratuita para ver qué tiene sentido en tu caso.</p>
       <a href="https://calendly.com/lucas-fluxit/30min" target="_blank" rel="noopener" class="btn">Hablar con Fluxit →</a>
     </div>
   </div>
-  <footer>
+  
+<!-- seo-internal-links -->
+<section style="max-width:760px;margin:56px auto 0;padding:28px 24px;border-top:1px solid rgba(140,180,255,0.15)">
+  <h2 style="font-size:1.15rem;margin:0 0 14px">Servicios de Fluxit</h2>
+  <ul style="list-style:none;padding:0;margin:0;display:grid;gap:8px">
+    <li><a href="/automatizacion-inmobiliarias">Automatización para inmobiliarias con IA</a></li>
+    <li><a href="/automatizacion-procesos-empresas">Automatización de procesos para empresas</a></li>
+    <li><a href="/captacion-leads-b2b">Captación de leads B2B</a></li>
+    <li><a href="/diseno-landings-conversion">Diseño de landings de alta conversión</a></li>
+    <li><a href="/precios">Ver precios</a> · <a href="/blog">Más artículos del blog</a></li>
+  </ul>
+</section>
+
+<footer>
     <p>© 2026 <a href="/">Fluxit</a> · <a href="/blog">Blog</a> · <a href="https://pariente8.gumroad.com" target="_blank">Tienda</a></p>
   </footer>
 </body>

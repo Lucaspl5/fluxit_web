@@ -18,19 +18,32 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "Plantilla Notion para Freelancers: CRM + Proyectos + Ingresos en un Solo Lugar",
-    "description": "Cómo montar tu sistema de gestión freelance en Notion: CRM, proyectos, ingresos y pipeline de ventas.",
-    "author": { "@type": "Organization", "name": "Fluxit", "url": "https://www.fluxit.es" },
-    "publisher": { "@type": "Organization", "name": "Fluxit", "url": "https://www.fluxit.es" },
-    "datePublished": "2026-05-29",
-    "dateModified": "2026-05-29",
-    "url": "https://www.fluxit.es/blog-plantilla-notion-freelancer",
-    "inLanguage": "es-ES",
-    "keywords": "plantilla notion freelancer, crm notion, gestión freelance, autónomo notion"
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Plantilla Notion para Freelancers: CRM + Proyectos + Ingresos en un Solo Lugar",
+  "description": "Cómo montar tu sistema de gestión freelance en Notion: CRM, proyectos, ingresos y pipeline de ventas.",
+  "author": {
+    "@type": "Organization",
+    "name": "Fluxit",
+    "url": "https://www.fluxit.es"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Fluxit",
+    "url": "https://www.fluxit.es"
+  },
+  "datePublished": "2026-05-29",
+  "dateModified": "2026-05-29",
+  "url": "https://www.fluxit.es/blog-plantilla-notion-freelancer",
+  "inLanguage": "es-ES",
+  "keywords": "plantilla notion freelancer, crm notion, gestión freelance, autónomo notion",
+  "image": "https://www.fluxit.es/assets/images/fluxit-logo.png",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.fluxit.es/blog-plantilla-notion-freelancer"
   }
+}
   </script>
   <style>
     :root{--bg:#0B1120;--bg2:#111827;--text:#E0F0FF;--muted:#8899BB;--accent:#E07040;--border:rgba(224,240,255,0.08);}
@@ -174,6 +187,24 @@
     <h2>¿Cuánto tiempo lleva montarlo?</h2>
     <p>Si lo construyes desde cero leyendo esta guía: 2-3 horas. Si partes de una plantilla ya configurada: 10 minutos para duplicarla y personalizarla con tus datos.</p>
 
+    <h2>Cómo automatizar el sistema (y dejar de actualizarlo a mano)</h2>
+    <p>Una plantilla de Notion bien montada ya te ordena la vida, pero el siguiente nivel es que <strong>se rellene sola</strong>. Estas son las automatizaciones que más tiempo ahorran a un freelancer:</p>
+    <ul>
+      <li><strong>Facturas que se registran solas:</strong> cuando emites una factura desde tu herramienta de facturación, un flujo la crea automáticamente en la base de datos de Notion con cliente, importe e IVA.</li>
+      <li><strong>Recordatorios de cobro:</strong> si una factura supera los 30 días sin pagar, el sistema te avisa (o avisa al cliente) sin que tengas que revisar nada.</li>
+      <li><strong>Captura de gastos:</strong> reenvías el email de una compra y la IA extrae el importe, la fecha y la categoría, y lo guarda como gasto deducible.</li>
+      <li><strong>Resumen semanal:</strong> cada lunes recibes en tu email cuánto facturaste, qué tienes pendiente de cobro y qué tareas vencen esa semana.</li>
+    </ul>
+    <p>Todo esto se monta con n8n conectado a Notion. Si quieres ver cómo funciona la herramienta por dentro, tenemos una <a href="/blog-n8n-tutorial-espanol">guía de n8n paso a paso</a>.</p>
+
+    <h2>Notion, Google Sheets o Excel: ¿cuál elegir?</h2>
+    <p>No hay una respuesta única. <strong>Notion</strong> es ideal si te gusta tener todo (proyectos, clientes, notas y finanzas) en un mismo sitio visual y enlazado. <strong>Google Sheets</strong> gana si lo que quieres es cálculo potente, fórmulas y conexión fácil con automatizaciones. <strong>Excel</strong> tiene sentido si ya trabajas en local y tu gestor te pide los datos en ese formato. Lo importante no es la herramienta, sino tener un sistema único donde no se te escape ningún ingreso ni ningún gasto deducible.</p>
+
+    <h2>Preguntas frecuentes</h2>
+    <p><strong>¿Sirve para declarar IVA e IRPF?</strong><br>Sí. Si registras cada ingreso y cada gasto con su tipo de IVA, el sistema te da los totales trimestrales que necesitas para el modelo 303 y para tu IRPF. No sustituye a tu gestor, pero le entrega los números cuadrados.</p>
+    <p><strong>¿Necesito la versión de pago de Notion?</strong><br>No. Para un freelancer en solitario, el plan gratuito de Notion es más que suficiente.</p>
+    <p><strong>¿Y si ya llevo las cuentas en una hoja desordenada?</strong><br>Empieza por migrar solo los últimos tres meses a la nueva estructura. En cuanto veas el control que da, querrás pasar el resto.</p>
+
     <div class="cta-box">
       <h3>Freelancer Finance OS — 9€</h3>
       <p>El sistema completo de gestión financiera para autónomos: ingresos, gastos deducibles, IVA, IRPF y control de facturas. Para Google Sheets o Excel. Descarga directa, configúralo en 10 minutos.</p>
@@ -181,7 +212,20 @@
     </div>
   </div>
 
-  <footer>
+  
+<!-- seo-internal-links -->
+<section style="max-width:760px;margin:56px auto 0;padding:28px 24px;border-top:1px solid rgba(140,180,255,0.15)">
+  <h2 style="font-size:1.15rem;margin:0 0 14px">Servicios de Fluxit</h2>
+  <ul style="list-style:none;padding:0;margin:0;display:grid;gap:8px">
+    <li><a href="/automatizacion-inmobiliarias">Automatización para inmobiliarias con IA</a></li>
+    <li><a href="/automatizacion-procesos-empresas">Automatización de procesos para empresas</a></li>
+    <li><a href="/captacion-leads-b2b">Captación de leads B2B</a></li>
+    <li><a href="/diseno-landings-conversion">Diseño de landings de alta conversión</a></li>
+    <li><a href="/precios">Ver precios</a> · <a href="/blog">Más artículos del blog</a></li>
+  </ul>
+</section>
+
+<footer>
     <p>© 2026 <a href="/">Fluxit</a> · <a href="/blog">Blog</a> · <a href="https://pariente8.gumroad.com" target="_blank">Tienda</a></p>
   </footer>
 </body>
