@@ -1,0 +1,21 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>
+  html,body{margin:0;padding:0}
+  .card{width:720px;height:720px;background:#0B1120;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;font-family:Arial,Helvetica,sans-serif}
+  .mark{width:300px;height:300px;margin-bottom:34px}
+  .word{font-size:104px;font-weight:800;letter-spacing:-3px;color:#fff;line-height:1}
+  .word .dot{color:#E07040}
+</style></head><body>
+  <div class="card">
+    <svg class="mark" viewBox="0 0 100 100" fill="none">
+      <!-- hexágono exterior -->
+      <path d="M50 4 L91 27 L91 73 L50 96 L9 73 L9 27 Z"
+            stroke="#E07040" stroke-width="4" fill="none" stroke-linejoin="round"/>
+      <!-- flujo interior (la 'f' / corriente) -->
+      <path d="M37 32 L63 32 M37 32 L37 70 M37 50 L57 50"
+            stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="66" cy="64" r="6" fill="#E07040"/>
+    </svg>
+    <div class="word">fluxit<span class="dot">.</span></div>
+  </div>
+</body></html>
