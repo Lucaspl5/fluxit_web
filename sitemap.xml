@@ -98,70 +98,22 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- EMPRESA -->
   <url>
-    <loc>https://www.fluxit.es/blog-prompts-chatgpt-freelance</loc>
+    <loc>https://www.fluxit.es/nosotros</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://www.fluxit.es/blog-plantilla-notion-freelancer</loc>
+    <loc>https://www.fluxit.es/contacto</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
 
-  <url>
-    <loc>https://www.fluxit.es/blog-automatizacion-autonomos-ia</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
 
-  <url>
-    <loc>https://www.fluxit.es/blog-make-vs-n8n</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
 
-  <url>
-    <loc>https://www.fluxit.es/blog-n8n-tutorial-espanol</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
 
-  <url>
-    <loc>https://www.fluxit.es/blog-ia-para-pymes</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
 
-  <url>
-    <loc>https://www.fluxit.es/blog-automatizar-captacion-clientes</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://www.fluxit.es/blog-herramientas-no-code-empresas</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://www.fluxit.es/blog-chatgpt-para-empresas</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://www.fluxit.es/blog-automatizar-linkedin-prospeccion</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://www.fluxit.es/blog-como-conseguir-clientes-freelancer</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
 
 </urlset>
