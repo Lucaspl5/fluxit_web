@@ -64,7 +64,18 @@
         },
         "description": "Automatización con n8n e IA para inmobiliarias en España. Captación y seguimiento de leads, CRM automático y atención a clientes 24/7.",
         "areaServed": "ES",
-        "serviceType": "Consultoría IA y Automatización"
+        "serviceType": "Consultoría IA y Automatización",
+        "sameAs": [
+          "https://www.linkedin.com/company/fluxit-automatizacion",
+          "https://community.n8n.io/u/Lucas_Pariente"
+        ]
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "FisioProject — Web y asistente IA para clínica de fisioterapia",
+        "about": "Caso de éxito: desarrollo de web y asistente IA bilingüe (catalán/castellano) para FisioProject, clínica de fisioterapia en Mollerussa (Lleida)",
+        "url": "https://fisioprojectcentre.com",
+        "creator": { "@id": "https://www.fluxit.es/#organization" }
       },
       {
         "@type": "FAQPage",
@@ -504,6 +515,7 @@
       display: grid; grid-template-columns: repeat(2,1fr); gap: 2px;
     }
     .sector-card {
+      display: block;
       background: var(--card); padding: 36px 32px;
       border: 1px solid var(--border); border-radius: 8px;
       transition: border-color .3s, transform .3s;
@@ -1174,26 +1186,26 @@
     <h2 class="section-title reveal">Especialistas en tu sector</h2>
     <p class="section-sub reveal">Experiencia probada en los sectores donde la automatización tiene mayor impacto.</p>
     <div class="sectors-grid">
-      <div class="sector-card reveal">
+      <a href="/automatizacion-inmobiliarias" class="sector-card reveal">
         <p class="sector-tag">Inmobiliario</p>
         <h3 class="sector-name">Agencias Inmobiliarias</h3>
         <p class="sector-desc">CRM automático, seguimiento de leads por WhatsApp, cualificación IA y captación de propietarios en piloto automático.</p>
-      </div>
-      <div class="sector-card reveal">
+      </a>
+      <a href="/captacion-leads-despachos" class="sector-card reveal">
         <p class="sector-tag">Legal</p>
         <h3 class="sector-name">Despachos y Asesorías</h3>
         <p class="sector-desc">Captación de clientes cualificados, automatización de documentación y seguimiento inteligente de expedientes.</p>
-      </div>
-      <div class="sector-card reveal">
+      </a>
+      <a href="/automatizacion-empresas-servicios" class="sector-card reveal">
         <p class="sector-tag">Servicios</p>
         <h3 class="sector-name">Empresas de Servicios</h3>
         <p class="sector-desc">Onboarding automático, facturación, recordatorios y sistemas de referidos que multiplican tu base de clientes.</p>
-      </div>
-      <div class="sector-card reveal">
+      </a>
+      <a href="/blog-como-conseguir-clientes-freelancer" class="sector-card reveal">
         <p class="sector-tag">Freelancers</p>
         <h3 class="sector-name">Profesionales Independientes</h3>
         <p class="sector-desc">Automatiza tu presencia, gestión de proyectos y captación. Compite como una agencia sin serlo.</p>
-      </div>
+      </a>
     </div>
   </div>
 </section>
@@ -1282,12 +1294,12 @@
       </div>
       <div class="testimonial-card reveal">
         <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">"Como freelancer nunca pensé que podría tener un sistema de ventas automático. Ahora tengo clientes contactándome sin hacer nada, es increíble."</p>
+        <p class="testimonial-text">Caso real: diseñamos e implementamos la web y el asistente de IA bilingüe (catalán/castellano) de FisioProject, clínica de fisioterapia con +4.000 pacientes al año, que atiende consultas y guía la reserva de citas 24/7.</p>
         <div class="testimonial-author">
-          <div class="testimonial-avatar">JP</div>
+          <div class="testimonial-avatar">FP</div>
           <div>
-            <div class="testimonial-name">Javier P.</div>
-            <div class="testimonial-role">Consultor Freelance</div>
+            <div class="testimonial-name">FisioProject</div>
+            <div class="testimonial-role"><a href="https://fisioprojectcentre.com" target="_blank" rel="noopener">Clínica de fisioterapia · fisioprojectcentre.com ↗</a></div>
           </div>
         </div>
       </div>
