@@ -499,9 +499,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7LBYX8W3BM"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-7LBYX8W3BM');</script>
+  <!-- Google tag (gtag.js) — carga condicionada al consentimiento de cookies -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.__fluxitLoadGA = function(){
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-7LBYX8W3BM';
+      document.head.appendChild(s);
+      gtag('js', new Date());
+      gtag('config', 'G-7LBYX8W3BM');
+    };
+    if (localStorage.getItem('fluxit_cookie_consent') === 'accepted') {
+      window.__fluxitLoadGA();
+    }
+  </script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -854,6 +867,33 @@
       gtag("event","cta_click",{event_category:"engagement",event_label:(el.textContent||"").trim().substring(0,50)});
     }
   });
+})();
+</script>
+
+<!-- Cookie consent banner -->
+<div id="cookie-banner" style="display:none;position:fixed;left:0;right:0;bottom:0;z-index:9999;background:#101828;border-top:1px solid rgba(224,240,255,0.12);padding:16px 24px;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;font-family:'Inter',sans-serif;font-size:.85rem;color:#8899BB;">
+  <span>Usamos cookies de analítica para entender cómo se usa este sitio. Puedes aceptarlas o rechazarlas. Más info en nuestra <a href="/cookies" style="color:#E07040;">Política de Cookies</a>.</span>
+  <span style="display:flex;gap:10px;flex-shrink:0;">
+    <button id="cookie-reject" style="background:transparent;border:1px solid rgba(224,240,255,0.2);color:#8899BB;padding:8px 16px;border-radius:4px;cursor:pointer;font-size:.8rem;">Rechazar</button>
+    <button id="cookie-accept" style="background:#E07040;border:none;color:#fff;padding:8px 16px;border-radius:4px;cursor:pointer;font-size:.8rem;font-weight:600;">Aceptar</button>
+  </span>
+</div>
+<script>
+(function(){
+  var consent = localStorage.getItem('fluxit_cookie_consent');
+  var banner = document.getElementById('cookie-banner');
+  if (!consent && banner) { banner.style.display = 'flex'; }
+  if (banner) {
+    document.getElementById('cookie-accept').addEventListener('click', function(){
+      localStorage.setItem('fluxit_cookie_consent', 'accepted');
+      banner.style.display = 'none';
+      if (window.__fluxitLoadGA) window.__fluxitLoadGA();
+    });
+    document.getElementById('cookie-reject').addEventListener('click', function(){
+      localStorage.setItem('fluxit_cookie_consent', 'rejected');
+      banner.style.display = 'none';
+    });
+  }
 })();
 </script>
 </body>
