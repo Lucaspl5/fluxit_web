@@ -795,7 +795,7 @@
     .footer-bottom {
       max-width: 1200px; margin: 40px auto 0;
       padding-top: 24px; border-top: 1px solid var(--border);
-      display: flex; justify-content: space-between; align-items: center;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px 24px;
       font-size: .78rem; color: var(--muted);
     }
 
@@ -989,16 +989,16 @@
 <div class="stats">
   <div class="stats-inner">
     <div class="stat-item">
-      <div class="stat-num" data-count="50">0</div>
-      <div class="stat-label">Empresas automatizadas</div>
-    </div>
-    <div class="stat-item">
       <div class="stat-num" data-count="15">0</div>
-      <div class="stat-label">Días promedio de implementación</div>
+      <div class="stat-label">Días estimados para tener el sistema en producción</div>
     </div>
     <div class="stat-item">
-      <div class="stat-num" data-suffix="%">98</div>
-      <div class="stat-label">Tasa de satisfacción</div>
+      <div class="stat-num" data-count="24" data-suffix="h">0</div>
+      <div class="stat-label">Tiempo de respuesta a tu auditoría</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num" data-count="100" data-suffix="%">0</div>
+      <div class="stat-label">Automatizaciones a medida, sin plantillas</div>
     </div>
     <div class="stat-item">
       <div class="stat-num" data-prefix="0">€</div>
@@ -1533,6 +1533,7 @@
   </div>
   <div class="footer-bottom">
     <span>© 2025 Fluxit — Todos los derechos reservados</span>
+      <span><a href="/aviso-legal">Aviso Legal</a> · <a href="/privacidad">Privacidad</a> · <a href="/cookies">Cookies</a></span>
     <span>España · IA · Automatización</span>
   </div>
 </footer>
