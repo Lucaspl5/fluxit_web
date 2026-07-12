@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <title>Página no encontrada | Fluxit</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0B1120;--bg2:#111827;--text:#E0F0FF;--muted:#8899BB;--accent:#E07040;--border:rgba(224,240,255,0.08);--sans:'Space Grotesk',sans-serif;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{background-color:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;display:flex;flex-direction:column;}
+    a{color:var(--accent);text-decoration:none;}a:hover{text-decoration:underline;}
+    nav{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between;}
+    .nav-logo{font-family:var(--sans);font-size:1.25rem;font-weight:700;color:var(--text);letter-spacing:0.08em;}.nav-logo span{color:var(--accent);}
+    .wrap{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:48px 24px;}
+    .code{font-family:var(--sans);font-size:clamp(4rem,14vw,7rem);font-weight:700;color:var(--accent);line-height:1;margin-bottom:12px;}
+    h1{font-family:var(--sans);font-size:clamp(1.4rem,3vw,1.9rem);font-weight:700;margin-bottom:14px;}
+    p{color:var(--muted);max-width:440px;margin-bottom:32px;line-height:1.7;}
+    .actions{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
+    .btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;padding:12px 22px;border-radius:6px;font-weight:600;font-size:0.85rem;transition:opacity 0.2s;}
+    .btn:hover{opacity:0.85;text-decoration:none;}
+    .btn-ghost{display:inline-flex;align-items:center;gap:8px;color:var(--muted);border:1px solid var(--border);padding:12px 22px;border-radius:6px;font-weight:600;font-size:0.85rem;transition:color .2s,border-color .2s;}
+    .btn-ghost:hover{color:var(--accent);border-color:var(--accent);text-decoration:none;}
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">FLUXIT<span>.</span></a>
+  </nav>
+  <div class="wrap">
+    <div class="code">404</div>
+    <h1>Esta página no existe (o ya no).</h1>
+    <p>El enlace puede estar roto o la página se movió. Prueba a volver al inicio o revisa el blog.</p>
+    <div class="actions">
+      <a href="/" class="btn">Ir al inicio →</a>
+      <a href="/blog" class="btn-ghost">Ver el blog</a>
+    </div>
+  </div>
+</body>
+</html>

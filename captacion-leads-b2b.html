@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <title>Captación de Leads B2B con IA | Fluxit</title>
   <meta name="description" content="Sistema de prospección B2B automatizado con IA. Outreach personalizado, cualificación automática y pipeline predecible. Multiplica tus demos sin multiplicar tu equipo." />
   <meta name="robots" content="index, follow" />
@@ -162,20 +166,6 @@
     }
     .btn-wa:hover{opacity:.88;transform:translateY(-2px);}
 
-    /* ── HERO STATS ─────────────────────────────────────── */
-    .hero-stats {
-      display:flex;gap:48px;margin-top:56px;
-      padding-top:48px;border-top:1px solid var(--border);
-      position:relative;z-index:1;flex-wrap:wrap;
-    }
-    .hero-stat-num{
-      font-family:var(--sans);font-size:clamp(2rem,4vw,3rem);
-      font-weight:700;color:var(--accent);line-height:1;
-    }
-    .hero-stat-label{
-      font-family:var(--mono);font-size:.7rem;text-transform:uppercase;
-      letter-spacing:.1em;color:var(--muted);margin-top:6px;
-    }
 
     /* ── SECTION LABEL + TITLES ─────────────────────────── */
     .section{padding:96px 48px;position:relative;z-index:1;}
@@ -255,31 +245,6 @@
     .whom-card-text h3{font-family:var(--sans);font-size:.95rem;font-weight:600;color:var(--text);margin-bottom:6px;}
     .whom-card-text p{font-size:.88rem;font-weight:300;color:var(--muted);line-height:1.6;}
 
-    /* ── CASE STUDY ─────────────────────────────────────── */
-    .case-study{background:var(--bg);}
-    .case-study .section-label{color:var(--accent);}
-    .case-box{
-      background:var(--card);border:1px solid var(--border);
-      border-radius:12px;padding:48px;margin-top:48px;
-      display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;
-    }
-    .case-quote{
-      font-family:var(--body);font-size:1rem;font-style:italic;
-      color:var(--text);line-height:1.75;margin-bottom:28px;
-      border-left:2px solid var(--accent);padding-left:20px;
-    }
-    .case-author-name{font-family:var(--sans);font-size:.9rem;font-weight:600;color:var(--text);}
-    .case-author-role{font-size:.8rem;font-weight:300;color:var(--muted);margin-top:4px;}
-    .case-metrics{display:flex;flex-direction:column;gap:20px;}
-    .case-metric{
-      background:rgba(224,112,64,.05);border:1px solid var(--border);
-      padding:24px 28px;border-radius:8px;border-left:3px solid var(--accent);
-    }
-    .case-metric-num{
-      font-family:var(--sans);font-size:2.5rem;font-weight:700;
-      color:var(--accent);line-height:1;
-    }
-    .case-metric-label{font-size:.8rem;font-weight:300;color:var(--muted);margin-top:6px;}
 
     /* ── PROCESS ─────────────────────────────────────────── */
     .process-section{background:var(--bg2);}
@@ -486,12 +451,10 @@
       .problem-grid{grid-template-columns:1fr;gap:40px;}
       .services-detail-grid{grid-template-columns:1fr;}
       .whom-grid{grid-template-columns:1fr;}
-      .case-box{grid-template-columns:1fr;gap:32px;}
       .section{padding:64px 24px;}
       .section-sm{padding:48px 24px;}
       .footer-top{flex-direction:column;gap:40px;}
       .footer-links{flex-direction:column;gap:32px;}
-      .hero-stats{gap:28px;}
       .blog-grid{grid-template-columns:1fr;}
       footer{padding:48px 24px 24px;}
     }
