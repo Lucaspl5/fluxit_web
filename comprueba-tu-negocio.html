@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <title>¿Tu negocio tiene web propia? Compruébalo en 10 segundos | Fluxit</title>
+  <meta name="description" content="Comprueba si tu negocio del Vallès Oriental tiene web propia y recibe una mini-auditoría gratuita al instante. Sin coste, sin compromiso." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Fluxit" />
+  <meta name="theme-color" content="#0B1120" />
+  <link rel="canonical" href="https://www.fluxit.es/comprueba-tu-negocio" />
+  <meta property="og:title" content="¿Tu negocio tiene web propia? Compruébalo en 10 segundos | Fluxit" />
+  <meta property="og:description" content="Comprueba si tu negocio del Vallès Oriental tiene web propia y recibe una mini-auditoría gratuita al instante." />
+  <meta property="og:url" content="https://www.fluxit.es/comprueba-tu-negocio" />
+  <meta property="og:image" content="https://www.fluxit.es/assets/images/card.jpg" />
+  <meta property="og:locale" content="es_ES" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:     #0B1120;
+      --bg2:    #101828;
+      --card:   #131F35;
+      --accent: #E07040;
+      --accent2:#FF8C55;
+      --good:   #4CAF7D;
+      --bad:    #E0704A;
+      --text:   #E8EDFF;
+      --muted:  #7A8BA8;
+      --border: rgba(140,180,255,0.10);
+      --sans:   'Space Grotesk', sans-serif;
+      --mono:   'JetBrains Mono', monospace;
+      --body:   'Inter', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--body); background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; min-height: 100vh; }
+    a { color: inherit; }
+    .grid-bg { position:fixed;inset:0;pointer-events:none;z-index:0; background-image:linear-gradient(rgba(140,180,255,0.04) 1px,transparent 1px), linear-gradient(90deg,rgba(140,180,255,0.04) 1px,transparent 1px); background-size:60px 60px; }
+
+    nav { position:fixed;top:0;left:0;right:0;z-index:1000; display:flex;align-items:center;justify-content:space-between; padding:0 40px;height:64px; background:rgba(11,17,32,0.92); backdrop-filter:blur(18px); border-bottom:1px solid var(--border); }
+    .nav-logo { font-family:var(--mono);font-size:1.05rem;font-weight:600; letter-spacing:.14em;color:var(--text); }
+    .nav-logo span{color:var(--accent);}
+
+    .wrap { max-width: 720px; margin: 0 auto; padding: 140px 24px 100px; position: relative; z-index: 1; }
+    .tag { display:inline-flex;align-items:center;gap:8px; font-family:var(--mono);font-size:.7rem;font-weight:500; letter-spacing:.16em;text-transform:uppercase; color:var(--accent);margin-bottom:24px; }
+    .tag::before{content:'';display:block;width:24px;height:1px;background:var(--accent);}
+    h1 { font-family:var(--sans);font-size:clamp(1.9rem,5vw,3rem); font-weight:700;line-height:1.15;color:var(--text); margin-bottom:16px; }
+    h1 em{font-style:normal;color:var(--accent);}
+    .sub { font-size:1.02rem;font-weight:300;color:var(--muted);line-height:1.7; margin-bottom:40px; max-width: 560px; }
+
+    .search-box { position: relative; margin-bottom: 12px; }
+    #search-input {
+      width: 100%; padding: 20px 24px; font-size: 1.05rem; font-family: var(--body);
+      background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+      color: var(--text); outline: none; transition: border-color .2s;
+    }
+    #search-input:focus { border-color: var(--accent); }
+    #search-input::placeholder { color: var(--muted); }
+    .search-hint { font-family: var(--mono); font-size: .72rem; color: var(--muted); letter-spacing: .04em; margin-bottom: 40px; }
+
+    #results { display: flex; flex-direction: column; gap: 8px; margin-bottom: 8px; }
+    .result-item {
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+      padding: 16px 20px; cursor: pointer; transition: border-color .2s;
+    }
+    .result-item:hover { border-color: rgba(224,112,64,.4); }
+    .result-name { font-family: var(--sans); font-weight: 600; font-size: .95rem; }
+    .result-meta { font-family: var(--mono); font-size: .72rem; color: var(--muted); margin-top: 3px; }
+    .result-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+    .result-dot.web { background: var(--good); }
+    .result-dot.noweb { background: var(--bad); }
+
+    #outcome { display: none; margin-top: 32px; }
+    #outcome.show { display: block; }
+    .outcome-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+      padding: 36px 32px; position: relative; overflow: hidden;
+    }
+    .outcome-card.noweb { border-color: rgba(224,112,64,.35); background: rgba(224,112,64,.05); }
+    .outcome-card.web { border-color: rgba(76,175,125,.35); background: rgba(76,175,125,.05); }
+    .outcome-badge { font-family: var(--mono); font-size: .7rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 14px; display: inline-block; }
+    .outcome-badge.noweb { color: var(--bad); }
+    .outcome-badge.web { color: var(--good); }
+    .outcome-title { font-family: var(--sans); font-size: 1.4rem; font-weight: 700; margin-bottom: 14px; line-height: 1.3; }
+    .outcome-body { font-size: .95rem; color: var(--muted); line-height: 1.7; margin-bottom: 24px; }
+
+    .lead-form { display: none; flex-direction: column; gap: 12px; margin-top: 24px; }
+    .lead-form.show { display: flex; }
+    .lead-form input {
+      padding: 14px 18px; font-size: .92rem; font-family: var(--body);
+      background: var(--bg); border: 1px solid var(--border); border-radius: 8px; color: var(--text); outline: none;
+    }
+    .lead-form input:focus { border-color: var(--accent); }
+    .btn-primary { display:inline-flex;align-items:center;justify-content:center;gap:8px; background:var(--accent);color:#fff; font-family:var(--mono);font-size:.78rem;font-weight:500; letter-spacing:.1em;text-transform:uppercase; padding:15px 28px;border-radius:8px;border:none;cursor:pointer; transition:background .2s; }
+    .btn-primary:hover{background:var(--accent2);}
+    .btn-primary:disabled { opacity: .6; cursor: default; }
+    #lead-success { display: none; font-size: .9rem; color: var(--good); margin-top: 14px; }
+    #lead-success.show { display: block; }
+
+    .not-found { font-size: .9rem; color: var(--muted); line-height: 1.7; padding: 16px 0; }
+    footer { position: relative; z-index: 1; text-align: center; padding: 40px 24px; font-family: var(--mono); font-size: .72rem; color: var(--muted); border-top: 1px solid var(--border); }
+    footer a:hover { color: var(--accent); }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.__fluxitLoadGA = function(){
+      var s = document.createElement('script'); s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-7LBYX8W3BM';
+      document.head.appendChild(s); gtag('js', new Date()); gtag('config', 'G-7LBYX8W3BM');
+    };
+    if (localStorage.getItem('fluxit_cookie_consent') === 'accepted') { window.__fluxitLoadGA(); }
+  </script>
+</head>
+<body>
+<div class="grid-bg"></div>
+
+<nav>
+  <a href="/" class="nav-logo">FLUXIT<span>.</span></a>
+</nav>
+
+<div class="wrap">
+  <div class="tag">Vallès Oriental · 242 negocios mapeados</div>
+  <h1>¿Tu negocio tiene <em>web propia</em>?<br>Compruébalo en 10 segundos.</h1>
+  <p class="sub">Hemos mapeado los negocios de Granollers, Cardedeu, Sant Celoni y alrededores. Busca el tuyo y descubre si te están encontrando en Google — o si te estás quedando fuera.</p>
+
+  <div class="search-box">
+    <input type="text" id="search-input" placeholder="Escribe el nombre de tu negocio…" autocomplete="off" />
+  </div>
+  <div class="search-hint" id="search-hint">Empieza a escribir para buscar</div>
+
+  <div id="results"></div>
+
+  <div id="outcome">
+    <div class="outcome-card" id="outcome-card">
+      <div class="outcome-badge" id="outcome-badge"></div>
+      <div class="outcome-title" id="outcome-title"></div>
+      <div class="outcome-body" id="outcome-body"></div>
+      <button class="btn-primary" id="cta-btn">Quiero mi auditoría gratis →</button>
+      <form class="lead-form" id="lead-form">
+        <input type="text" id="lf-nombre" placeholder="Tu nombre" required />
+        <input type="text" id="lf-contacto" placeholder="Teléfono o email" required />
+        <button type="submit" class="btn-primary" id="lf-submit">Enviar →</button>
+      </form>
+      <div id="lead-success">✓ Recibido. Te contactamos en menos de 24h.</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>Fluxit · <a href="/">fluxit.es</a> · <a href="mailto:lucas.fluxit@gmail.com">lucas.fluxit@gmail.com</a></p>
+</footer>
+
+<script>
+  let DB = [];
+  fetch('/data/negocios-valles.json').then(r => r.json()).then(d => { DB = d; });
+
+  const input = document.getElementById('search-input');
+  const resultsEl = document.getElementById('results');
+  const hintEl = document.getElementById('search-hint');
+  const outcomeEl = document.getElementById('outcome');
+  const cardEl = document.getElementById('outcome-card');
+  const badgeEl = document.getElementById('outcome-badge');
+  const titleEl = document.getElementById('outcome-title');
+  const bodyEl = document.getElementById('outcome-body');
+  const ctaBtn = document.getElementById('cta-btn');
+  const leadForm = document.getElementById('lead-form');
+  const leadSuccess = document.getElementById('lead-success');
+  let selectedBiz = null;
+
+  function normalize(s) { return (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,''); }
+
+  input.addEventListener('input', () => {
+    const q = normalize(input.value.trim());
+    outcomeEl.classList.remove('show');
+    if (q.length < 2) { resultsEl.innerHTML = ''; hintEl.textContent = 'Empieza a escribir para buscar'; return; }
+    const matches = DB.filter(b => normalize(b.n).includes(q)).slice(0, 8);
+    if (!matches.length) {
+      resultsEl.innerHTML = '';
+      hintEl.innerHTML = 'No encontramos tu negocio en nuestra base de datos todavía — <a href="#" id="not-found-link" style="color:var(--accent)">cuéntanos y te lo comprobamos igualmente</a>.';
+      const link = document.getElementById('not-found-link');
+      if (link) link.addEventListener('click', (e) => { e.preventDefault(); showOutcome(null); });
+      return;
+    }
+    hintEl.textContent = matches.length + ' resultado' + (matches.length>1?'s':'');
+    resultsEl.innerHTML = matches.map((b,i) => `
+      <div class="result-item" data-idx="${i}">
+        <div>
+          <div class="result-name">${b.n}</div>
+          <div class="result-meta">${b.cat || 'Negocio local'} · ${b.c}</div>
+        </div>
+        <div class="result-dot ${b.w ? 'web' : 'noweb'}"></div>
+      </div>
+    `).join('');
+    resultsEl.querySelectorAll('.result-item').forEach((el, i) => {
+      el.addEventListener('click', () => showOutcome(matches[i]));
+    });
+  });
+
+  function showOutcome(biz) {
+    selectedBiz = biz;
+    outcomeEl.classList.add('show');
+    leadForm.classList.remove('show');
+    leadSuccess.classList.remove('show');
+    ctaBtn.style.display = 'inline-flex';
+    outcomeEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+    if (!biz) {
+      cardEl.className = 'outcome-card noweb';
+      badgeEl.className = 'outcome-badge noweb';
+      badgeEl.textContent = 'Vamos a comprobarlo';
+      titleEl.textContent = 'Todavía no te tenemos mapeado';
+      bodyEl.textContent = 'Déjanos tu contacto y te decimos en menos de 24h si tienes web propia y cómo apareces en Google — gratis, sin compromiso.';
+      return;
+    }
+    if (biz.w) {
+      cardEl.className = 'outcome-card web';
+      badgeEl.className = 'outcome-badge web';
+      badgeEl.textContent = 'Tienes web ✓';
+      titleEl.textContent = `${biz.n} ya tiene presencia web`;
+      bodyEl.textContent = 'Bien — pero tener web no es lo mismo que tener reservas, WhatsApp o CRM automatizados. Te hacemos una auditoría gratuita para ver qué te está costando tiempo cada semana.';
+    } else {
+      cardEl.className = 'outcome-card noweb';
+      badgeEl.className = 'outcome-badge noweb';
+      badgeEl.textContent = 'Sin web propia';
+      titleEl.textContent = `${biz.n} no tiene web propia`;
+      bodyEl.textContent = 'Esto significa que quien te busca en Google puede no encontrarte — o encuentra antes a la competencia. Te hacemos una auditoría gratuita con 2-3 ideas concretas para tu negocio.';
+    }
+  }
+
+  ctaBtn.addEventListener('click', () => {
+    ctaBtn.style.display = 'none';
+    leadForm.classList.add('show');
+  });
+
+  leadForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const submitBtn = document.getElementById('lf-submit');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Enviando…';
+    const payload = {
+      negocio: selectedBiz ? selectedBiz.n : input.value.trim(),
+      ciudad: selectedBiz ? selectedBiz.c : '',
+      tiene_web: selectedBiz ? selectedBiz.w : null,
+      nombre: document.getElementById('lf-nombre').value,
+      contacto: document.getElementById('lf-contacto').value
+    };
+    fetch('https://n8n-production-c4be.up.railway.app/webhook/fluxit-grader-lead', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload)
+    }).then(() => {
+      leadForm.classList.remove('show');
+      leadSuccess.classList.add('show');
+      if (window.gtag) gtag('event', 'grader_lead', { event_category: 'engagement' });
+    }).catch(() => {
+      submitBtn.disabled = false; submitBtn.textContent = 'Enviar →';
+      alert('Hubo un problema. Escríbenos directamente a lucas.fluxit@gmail.com');
+    });
+  });
+
+  // Cookie consent (mismo patrón que el resto del sitio)
+  (function(){
+    var consent = localStorage.getItem('fluxit_cookie_consent');
+    if (consent === 'accepted' && window.__fluxitLoadGA) window.__fluxitLoadGA();
+  })();
+</script>
+</body>
+</html>

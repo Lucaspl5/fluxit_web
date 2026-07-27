@@ -10,6 +10,13 @@
     <priority>1.0</priority>
   </url>
 
+  <!-- HERRAMIENTA -->
+  <url>
+    <loc>https://www.fluxit.es/comprueba-tu-negocio</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- SERVICIOS / LANDINGS -->
   <url>
     <loc>https://www.fluxit.es/diseno-landings-conversion</loc>
