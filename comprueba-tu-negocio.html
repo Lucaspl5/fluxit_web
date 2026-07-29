@@ -205,7 +205,8 @@
       <button class="btn-primary" id="cta-btn">Quiero mi auditoría gratis →</button>
       <form class="lead-form" id="lead-form">
         <input type="text" id="lf-nombre" placeholder="Tu nombre" required />
-        <input type="text" id="lf-contacto" placeholder="Teléfono o email" required />
+        <input type="email" id="lf-email" placeholder="Email" required />
+        <input type="tel" id="lf-telefono" placeholder="Teléfono (opcional)" />
         <button type="submit" class="btn-primary" id="lf-submit">Enviar →</button>
       </form>
       <div id="lead-success">✓ Recibido. Te contactamos en menos de 24h.</div>
@@ -341,7 +342,8 @@
       ciudad: selectedBiz ? selectedBiz.c : '',
       tiene_web: selectedBiz ? selectedBiz.w : null,
       nombre: document.getElementById('lf-nombre').value,
-      contacto: document.getElementById('lf-contacto').value
+      email: document.getElementById('lf-email').value,
+      telefono: document.getElementById('lf-telefono').value
     };
     fetch('https://n8n-production-c4be.up.railway.app/webhook/fluxit-grader-lead', {
       method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload)
