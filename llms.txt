@@ -16,6 +16,7 @@ El proceso típico: auditoría gratuita → diseño del sistema → implementaci
 ## Sectores
 
 - [Clínicas y centros de salud](https://www.fluxit.es/automatizacion-clinicas-salud): sincronización con Doctoralia, recordatorios contra no-shows, facturación en Holded/TicketBAI.
+- [Restaurantes](https://www.fluxit.es/automatizacion-restaurantes): reservas automáticas por WhatsApp, recordatorios contra mesas vacías, gestión de reseñas.
 - [Empresas de servicios](https://www.fluxit.es/automatizacion-empresas-servicios): consultoras, clínicas, academias, despachos.
 - [Despachos y asesorías](https://www.fluxit.es/captacion-leads-despachos): captación de clientes y automatización de expedientes.
 - [Agencias inmobiliarias](https://www.fluxit.es/automatizacion-inmobiliarias): CRM automático y seguimiento de leads por WhatsApp.
