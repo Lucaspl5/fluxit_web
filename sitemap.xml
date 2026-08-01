@@ -36,6 +36,13 @@
     <priority>0.85</priority>
   </url>
 
+  <!-- SERVICIOS -->
+  <url>
+    <loc>https://www.fluxit.es/agentes-ia-chatbots</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
   <!-- LANDINGS POR NICHO -->
   <url>
     <loc>https://www.fluxit.es/automatizacion-clinicas-salud</loc>

@@ -413,15 +413,14 @@
 
     /* ─── SERVICES ─── */
     .services-grid {
-      display: grid; grid-template-columns: repeat(3,1fr);
-      border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
+      display: grid; grid-template-columns: repeat(2,1fr); gap: 2px;
     }
     .service-card {
-      padding: 44px 36px; border-right: 1px solid var(--border);
-      transition: background .3s;
+      padding: 40px 36px; background: var(--card);
+      border: 1px solid var(--border); border-radius: 8px;
+      transition: border-color .3s, background .3s;
     }
-    .service-card:last-child { border-right: none; }
-    .service-card:hover { background: var(--card); }
+    .service-card:hover { background: rgba(224,112,64,.05); border-color: rgba(224,112,64,.4); }
     .service-icon {
       width: 44px; height: 44px; border-radius: 8px;
       background: rgba(224,112,64,.12); display: flex;
@@ -1110,13 +1109,19 @@
   <div class="section-inner">
     <p class="section-tag reveal">// Servicios</p>
     <h2 class="section-title reveal">Lo que transformamos</h2>
-    <p class="section-sub reveal">Tres pilares que convierten tu operación actual en una máquina eficiente.</p>
+    <p class="section-sub reveal">Cuatro pilares que convierten tu operación actual en una máquina eficiente.</p>
     <div class="services-grid">
       <div class="service-card reveal">
         <div class="service-icon">🤖</div>
         <h3 class="service-title">Automatización con IA</h3>
         <p class="service-desc">Eliminamos tareas repetitivas, conectamos tus herramientas y creamos flujos inteligentes que trabajan por ti sin descanso.</p>
         <a href="/automatizacion-procesos-empresas" class="service-link">Ver servicio →</a>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">💬</div>
+        <h3 class="service-title">Agentes de IA y Chatbots</h3>
+        <p class="service-desc">Asistentes que responden por WhatsApp o en tu web 24/7, cualifican leads y agendan citas sin intervención humana.</p>
+        <a href="/agentes-ia-chatbots" class="service-link">Ver servicio →</a>
       </div>
       <div class="service-card reveal">
         <div class="service-icon">🎯</div>
@@ -1534,6 +1539,7 @@
       <div class="footer-col-title">Servicios</div>
       <ul>
         <li><a href="/automatizacion-procesos-empresas">Automatización IA</a></li>
+        <li><a href="/agentes-ia-chatbots">Agentes de IA y Chatbots</a></li>
         <li><a href="/captacion-leads-b2b">Captación Leads B2B</a></li>
         <li><a href="/diseno-landings-conversion">Webs de Conversión</a></li>
         <li><a href="/automatizacion-clinicas-salud">Clínicas y Salud</a></li>

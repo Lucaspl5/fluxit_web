@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <title>Agentes de IA y Chatbots 24/7 para Empresas | Barcelona | Fluxit</title>
+  <meta name="description" content="Agentes de IA y chatbots que responden por WhatsApp o en tu web las 24 horas, cualifican leads y agendan citas sin intervención humana. Barcelona, Vallès Oriental, toda España. Auditoría gratuita." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Fluxit" />
+  <meta name="theme-color" content="#0B1120" />
+  <link rel="canonical" href="https://www.fluxit.es/agentes-ia-chatbots" />
+  <meta property="og:title" content="Agentes de IA y Chatbots 24/7 para Empresas | Fluxit" />
+  <meta property="og:description" content="Chatbots y agentes de IA que responden, cualifican leads y agendan citas 24/7 por WhatsApp o web. Barcelona, Vallès Oriental y toda España." />
+  <meta property="og:url" content="https://www.fluxit.es/agentes-ia-chatbots" />
+  <meta property="og:locale" content="es_ES" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:     #0B1120;
+      --bg2:    #101828;
+      --card:   #131F35;
+      --accent: #E07040;
+      --accent2:#FF8C55;
+      --text:   #E8EDFF;
+      --muted:  #7A8BA8;
+      --border: rgba(140,180,255,0.10);
+      --sans:   'Space Grotesk', sans-serif;
+      --mono:   'JetBrains Mono', monospace;
+      --body:   'Inter', sans-serif;
+      --grid:   rgba(140,180,255,0.04);
+      --dark: #0B1120; --dark2: #101828; --dark3: #131F35; --dark4: #101828;
+      --white: #E8EDFF; --gray: #7A8BA8; --gray2: #5A6E99;
+      --text-dark: #E8EDFF; --text-mid: #7A8BA8;
+      --border-light: rgba(140,180,255,0.08);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--body); background: var(--bg);
+      color: var(--text); overflow-x: hidden; -webkit-font-smoothing: antialiased;
+      cursor: none;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    #fx-cursor {
+      position:fixed;width:10px;height:10px;background:var(--accent);
+      border-radius:50%;pointer-events:none;z-index:9999;
+      transform:translate(-50%,-50%);
+      transition:width .2s,height .2s,opacity .2s;
+    }
+    #fx-cursor-ring {
+      position:fixed;width:32px;height:32px;
+      border:1px solid rgba(224,112,64,.4);border-radius:50%;
+      pointer-events:none;z-index:9998;transform:translate(-50%,-50%);
+    }
+    #fx-cursor.hov{width:18px;height:18px;opacity:.6;}
+    .grid-bg {
+      position:fixed;inset:0;pointer-events:none;z-index:0;
+      background-image:linear-gradient(var(--grid) 1px,transparent 1px),
+                       linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+      background-size:60px 60px;
+    }
+    nav:not(.toc) {
+      position:fixed;top:0;left:0;right:0;z-index:1000;
+      display:flex;align-items:center;justify-content:space-between;
+      padding:0 40px;height:64px;
+      background:rgba(11,17,32,0.92);
+      backdrop-filter:blur(18px) saturate(160%);
+      -webkit-backdrop-filter:blur(18px) saturate(160%);
+      border-bottom:1px solid var(--border);
+    }
+    .nav-logo {
+      font-family:var(--mono);font-size:1.05rem;font-weight:600;
+      letter-spacing:.14em;color:var(--text);
+    }
+    .nav-logo span{color:var(--accent);}
+    .nav-links{display:flex;align-items:center;gap:32px;list-style:none;}
+    .nav-links a{
+      font-family:var(--mono);font-size:.72rem;text-transform:uppercase;
+      letter-spacing:.12em;color:var(--muted);transition:color .2s;
+    }
+    .nav-links a:hover{color:var(--text);}
+    .nav-cta{
+      font-family:var(--mono)!important;font-size:.72rem!important;
+      text-transform:uppercase;letter-spacing:.1em!important;
+      background:var(--accent)!important;color:#fff!important;
+      padding:10px 22px;border-radius:4px;border:none;cursor:none;
+      transition:background .2s!important;
+    }
+    .nav-cta:hover{background:var(--accent2)!important;opacity:1!important;}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
+    .hamburger span{display:block;width:24px;height:1.5px;background:var(--text);}
+    .page-hero {
+      background:var(--bg);padding:140px 48px 80px;
+      position:relative;overflow:hidden;
+    }
+    .page-hero::before {
+      content:'';position:absolute;inset:0;
+      background:radial-gradient(ellipse 70% 80% at 80% 50%,rgba(224,112,64,.08) 0%,transparent 65%);
+    }
+    .breadcrumb {
+      display:flex;align-items:center;gap:8px;
+      font-family:var(--mono);font-size:.7rem;color:var(--muted);
+      letter-spacing:.06em;margin-bottom:32px;position:relative;z-index:1;
+    }
+    .breadcrumb a{color:var(--muted);transition:color .2s;}
+    .breadcrumb a:hover{color:var(--accent);}
+    .breadcrumb span{color:rgba(140,180,255,.25);}
+    .page-hero-tag {
+      display:inline-flex;align-items:center;gap:8px;
+      font-family:var(--mono);font-size:.7rem;font-weight:500;
+      letter-spacing:.16em;text-transform:uppercase;
+      color:var(--accent);margin-bottom:24px;position:relative;z-index:1;
+    }
+    .page-hero-tag::before{content:'';display:block;width:24px;height:1px;background:var(--accent);}
+    .page-hero h1 {
+      font-family:var(--sans);font-size:clamp(2rem,5vw,3.8rem);
+      font-weight:700;line-height:1.1;color:var(--text);
+      margin-bottom:24px;max-width:720px;position:relative;z-index:1;
+    }
+    .page-hero h1 em{font-style:normal;color:var(--accent);}
+    .page-hero-sub {
+      font-family:var(--body);font-size:1.05rem;font-weight:300;
+      color:var(--muted);line-height:1.75;max-width:600px;
+      margin-bottom:40px;position:relative;z-index:1;
+    }
+    .hero-cta-row{display:flex;gap:16px;align-items:center;position:relative;z-index:1;flex-wrap:wrap;}
+    .btn-primary, .btn-white {
+      display:inline-flex;align-items:center;gap:8px;
+      background:var(--accent);color:#fff;
+      font-family:var(--mono);font-size:.78rem;font-weight:500;
+      letter-spacing:.1em;text-transform:uppercase;
+      padding:14px 28px;border-radius:4px;border:none;cursor:none;
+      transition:background .2s,transform .15s;
+    }
+    .btn-primary:hover,.btn-white:hover{background:var(--accent2);transform:translateY(-2px);opacity:1;}
+    .btn-ghost-dark {
+      display:inline-flex;align-items:center;gap:8px;
+      color:var(--muted);font-family:var(--mono);font-size:.78rem;
+      font-weight:400;letter-spacing:.1em;text-transform:uppercase;
+      border:1px solid var(--border);padding:14px 24px;border-radius:4px;
+      transition:color .2s,border-color .2s;
+    }
+    .btn-ghost-dark:hover{color:var(--accent);border-color:var(--accent);}
+    .btn-wa {
+      display:inline-flex;align-items:center;gap:10px;
+      background:#25d366;color:#fff;
+      font-family:var(--mono);font-size:.78rem;font-weight:500;
+      letter-spacing:.08em;text-transform:uppercase;
+      padding:14px 28px;border-radius:4px;cursor:none;
+      transition:opacity .2s,transform .2s;
+    }
+    .btn-wa:hover{opacity:.88;transform:translateY(-2px);}
+    .section{padding:96px 48px;position:relative;z-index:1;}
+    .section-sm{padding:72px 48px;position:relative;z-index:1;}
+    .section-label{
+      font-family:var(--mono);font-size:.7rem;font-weight:500;
+      letter-spacing:.16em;text-transform:uppercase;
+      color:var(--accent);margin-bottom:16px;
+    }
+    h2.section-title,h2.section-title-white{
+      font-family:var(--sans);font-size:clamp(1.8rem,3.5vw,2.8rem);
+      font-weight:700;line-height:1.15;color:var(--text);margin-bottom:24px;
+    }
+    .body-text,.body-text-white{
+      font-size:1rem;font-weight:300;color:var(--muted);line-height:1.8;
+    }
+    .problem{background:var(--bg2);}
+    .problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+    .problem-list{display:flex;flex-direction:column;gap:16px;margin-top:32px;}
+    .problem-item{
+      display:flex;gap:16px;align-items:flex-start;
+      background:var(--card);border:1px solid var(--border);
+      padding:20px 24px;border-radius:8px;
+    }
+    .problem-icon{
+      width:36px;height:36px;border-radius:8px;
+      background:rgba(224,112,64,.1);border:1px solid rgba(224,112,64,.2);
+      display:flex;align-items:center;justify-content:center;flex-shrink:0;
+    }
+    .problem-icon svg{width:18px;height:18px;stroke:var(--accent);fill:none;stroke-width:1.5;}
+    .problem-item-text{font-size:.95rem;font-weight:500;color:var(--text);line-height:1.5;}
+    .problem-item-sub{font-size:.85rem;font-weight:300;color:var(--muted);margin-top:4px;}
+    .services-detail{background:var(--bg);}
+    .services-detail-grid{
+      display:grid;grid-template-columns:repeat(3,1fr);
+      gap:1px;margin-top:48px;
+      border:1px solid var(--border);border-radius:12px;overflow:hidden;
+    }
+    .svc-card{
+      background:var(--card);padding:36px 28px;
+      border-right:1px solid var(--border);
+      transition:background .3s;
+    }
+    .svc-card:last-child{border-right:none;}
+    .svc-card:hover{background:rgba(224,112,64,.05);}
+    .svc-num{
+      font-family:var(--mono);font-size:.8rem;color:var(--accent);
+      opacity:.5;line-height:1;margin-bottom:16px;
+    }
+    .svc-card h3{
+      font-family:var(--sans);font-size:1.05rem;font-weight:600;
+      color:var(--text);margin-bottom:12px;
+    }
+    .svc-card p{font-size:.88rem;font-weight:300;color:var(--muted);line-height:1.7;}
+    .for-whom{background:var(--bg2);}
+    .for-whom .section-label{color:var(--accent);}
+    .whom-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-top:48px;}
+    .whom-card{
+      background:var(--card);border:1px solid var(--border);
+      padding:28px 32px;border-radius:8px;display:flex;gap:16px;align-items:flex-start;
+      transition:border-color .3s;
+    }
+    .whom-card:hover{border-color:rgba(224,112,64,.4);}
+    .whom-check{
+      width:28px;height:28px;border-radius:50%;
+      background:rgba(224,112,64,.12);
+      display:flex;align-items:center;justify-content:center;
+      flex-shrink:0;margin-top:2px;
+    }
+    .whom-check svg{width:14px;height:14px;stroke:var(--accent);fill:none;stroke-width:2;}
+    .whom-card-text h3{font-family:var(--sans);font-size:.95rem;font-weight:600;color:var(--text);margin-bottom:6px;}
+    .whom-card-text p{font-size:.88rem;font-weight:300;color:var(--muted);line-height:1.6;}
+    .process-section{background:var(--bg2);}
+    .process-steps-list{display:flex;flex-direction:column;gap:0;margin-top:48px;max-width:720px;}
+    .proc-step{
+      display:grid;grid-template-columns:56px 1fr;
+      gap:24px;padding:32px 0;border-top:1px solid var(--border);
+    }
+    .proc-step:last-child{border-bottom:1px solid var(--border);}
+    .proc-num{
+      font-family:var(--mono);font-size:.8rem;color:var(--accent);
+      opacity:.6;line-height:1;padding-top:4px;
+    }
+    .proc-content h3{
+      font-family:var(--sans);font-size:1rem;font-weight:600;
+      color:var(--text);margin-bottom:8px;
+    }
+    .proc-content p{font-size:.88rem;font-weight:300;color:var(--muted);line-height:1.7;}
+    .faq-section{background:var(--bg);}
+    .faq-list{display:flex;flex-direction:column;gap:2px;margin-top:48px;max-width:800px;}
+    .faq-item{
+      background:var(--card);border:1px solid var(--border);
+      border-radius:8px;cursor:pointer;transition:border-color .2s;
+      overflow:hidden;
+    }
+    .faq-item:hover,.faq-item.open{border-color:rgba(224,112,64,.4);}
+    .faq-question{
+      display:flex;justify-content:space-between;align-items:center;
+      padding:24px 28px;gap:16px;
+    }
+    .faq-question span{
+      font-family:var(--sans);font-size:.95rem;font-weight:500;
+      color:var(--text);line-height:1.4;
+    }
+    .faq-toggle{
+      width:28px;height:28px;border-radius:50%;border:1px solid var(--border);
+      display:flex;align-items:center;justify-content:center;flex-shrink:0;
+      transition:background .2s,transform .3s;
+    }
+    .faq-item.open .faq-toggle{background:var(--accent);border-color:var(--accent);transform:rotate(45deg);}
+    .faq-toggle svg{width:14px;height:14px;stroke:var(--muted);fill:none;stroke-width:2;}
+    .faq-item.open .faq-toggle svg{stroke:#fff;}
+    .faq-answer{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;padding:0 28px;}
+    .faq-answer.open{max-height:300px;padding:0 28px 24px;}
+    .faq-answer p{font-size:.88rem;font-weight:300;color:var(--muted);line-height:1.75;}
+    .cta-section{
+      background:var(--card);padding:96px 48px;text-align:center;
+      position:relative;overflow:hidden;
+      border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+    }
+    .cta-section::before{
+      content:'';position:absolute;inset:0;
+      background:radial-gradient(ellipse 60% 60% at 50% 50%,rgba(224,112,64,.07) 0%,transparent 70%);
+    }
+    .cta-section .section-label{color:var(--accent);position:relative;}
+    .cta-section h2{
+      font-family:var(--sans);font-size:clamp(2rem,4vw,3.2rem);
+      font-weight:700;color:var(--text);line-height:1.15;
+      margin-bottom:16px;position:relative;
+    }
+    .cta-section h2 em{font-style:normal;color:var(--accent);}
+    .cta-section p{
+      font-size:1rem;font-weight:300;color:var(--muted);
+      margin-bottom:40px;position:relative;
+    }
+    .cta-btns{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;position:relative;}
+    footer{
+      background:var(--bg);border-top:1px solid var(--border);
+      padding:60px 48px 32px;position:relative;z-index:1;
+    }
+    .footer-top{
+      display:flex;justify-content:space-between;align-items:flex-start;
+      margin-bottom:48px;
+    }
+    .footer-logo{
+      font-family:var(--mono);font-size:1rem;font-weight:600;
+      letter-spacing:.14em;color:var(--text);
+    }
+    .footer-logo span{color:var(--accent);}
+    .footer-desc{
+      font-size:.88rem;font-weight:300;color:var(--muted);
+      margin-top:10px;max-width:280px;line-height:1.6;
+    }
+    .footer-links{display:flex;gap:60px;}
+    .footer-col h4{
+      font-family:var(--mono);font-size:.65rem;text-transform:uppercase;
+      letter-spacing:.12em;color:var(--text);margin-bottom:20px;
+    }
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:12px;}
+    .footer-col a{font-size:.88rem;font-weight:300;color:var(--muted);transition:color .2s;}
+    .footer-col a:hover{color:var(--accent);}
+    .footer-bottom{
+      border-top:1px solid var(--border);padding-top:28px;
+      display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px 24px;
+    }
+    .footer-bottom p,.footer-bottom a{
+      font-family:var(--mono);font-size:.7rem;
+      color:var(--muted);transition:color .2s;
+    }
+    .footer-bottom a:hover{color:var(--accent);}
+    .wa-float{
+      position:fixed;bottom:32px;right:32px;z-index:999;
+      width:56px;height:56px;border-radius:50%;background:#25d366;
+      display:flex;align-items:center;justify-content:center;
+      box-shadow:0 4px 20px rgba(37,211,102,.4);
+      transition:transform .25s,box-shadow .25s;
+    }
+    .wa-float:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,.5);}
+    .reveal{opacity:0;transform:translateY(24px);}
+    .reveal.visible{opacity:1;transform:none;transition:opacity .7s ease,transform .7s ease;}
+    @media(max-width:900px){
+      nav:not(.toc){padding:0 20px;}
+      .nav-links{display:none;}
+      .hamburger{display:flex;}
+      .page-hero,.blog-hero{padding:120px 24px 60px;}
+      .problem-grid{grid-template-columns:1fr;gap:40px;}
+      .services-detail-grid{grid-template-columns:1fr;}
+      .whom-grid{grid-template-columns:1fr;}
+      .section{padding:64px 24px;}
+      .section-sm{padding:48px 24px;}
+      .footer-top{flex-direction:column;gap:40px;}
+      .footer-links{flex-direction:column;gap:32px;}
+      footer{padding:48px 24px 24px;}
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.__fluxitLoadGA = function(){
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-7LBYX8W3BM';
+      document.head.appendChild(s);
+      gtag('js', new Date());
+      gtag('config', 'G-7LBYX8W3BM');
+    };
+    if (localStorage.getItem('fluxit_cookie_consent') === 'accepted') {
+      window.__fluxitLoadGA();
+    }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "name": "Agentes de IA y Chatbots 24/7",
+        "description": "Agentes de IA y chatbots que responden por WhatsApp o web, cualifican leads y agendan citas 24/7 sin intervención humana.",
+        "provider": { "@type": "Organization", "name": "Fluxit", "url": "https://www.fluxit.es" },
+        "areaServed": [
+          { "@type": "City", "name": "Barcelona" },
+          { "@type": "City", "name": "Granollers" },
+          { "@type": "AdministrativeArea", "name": "Vallès Oriental" },
+          { "@type": "Country", "name": "España" }
+        ],
+        "url": "https://www.fluxit.es/agentes-ia-chatbots"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿El chatbot suena robótico o puede sonar como mi negocio?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Se entrena con el tono, la información y las respuestas típicas de tu negocio concreto. No es una plantilla genérica: responde con tu carta, tu horario, tus precios y tu forma de hablar." }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué pasa si el agente no sabe responder algo?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Deriva la conversación a una persona del equipo en lugar de inventar una respuesta. Tú decides qué preguntas gestiona solo y cuáles se escalan siempre a un humano." }
+          },
+          {
+            "@type": "Question",
+            "name": "¿En qué canales funciona?",
+            "acceptedAnswer": { "@type": "Answer", "text": "WhatsApp Business, el chat de tu web, o ambos a la vez conectados al mismo sistema, para que la conversación no se pierda si el cliente cambia de canal." }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuánto tarda en estar funcionando?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Entre 1 y 2 semanas desde la auditoría inicial, dependiendo de cuánta información propia (FAQs, catálogo, horarios) haya que integrar en el agente." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+<div id="fx-cursor"></div>
+  <div id="fx-cursor-ring"></div>
+  <div class="grid-bg"></div>
+
+  <nav id="navbar">
+    <a href="/" class="nav-logo">FLUXIT<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="/#servicios">Servicios</a></li>
+      <li><a href="/#sectores">Sectores</a></li>
+      <li><a href="/#proceso">Proceso</a></li>
+      <li><a href="/#faq">FAQ</a></li>
+      <li><a href="/comprueba-tu-negocio">Comprueba tu negocio</a></li>
+      <li><a href="/#contacto" class="nav-cta">Auditoría gratis</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" aria-label="Menú" role="button" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="breadcrumb"><a href="/">Inicio</a><span>/</span><span>Agentes de IA y Chatbots</span></div>
+    <div class="page-hero-tag">Agentes de IA</div>
+    <h1>Que alguien responda siempre,<br>aunque tú <em>no puedas</em>.</h1>
+    <p class="page-hero-sub">Agentes de IA que atienden por WhatsApp o en tu web las 24 horas: responden preguntas, cualifican leads y agendan citas, sin que tu equipo tenga que estar pendiente del móvil.</p>
+    <div class="hero-cta-row">
+      <a href="mailto:lucas.fluxit@gmail.com" class="btn-primary">Auditoría gratuita →</a>
+      <a href="https://wa.me/34658010945" target="_blank" class="btn-wa"><svg width="16" height="16" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.552 4.116 1.52 5.847L0 24l6.335-1.502A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.368l-.36-.214-3.76.891.924-3.668-.234-.376A9.818 9.818 0 112 12c0-5.42 4.398-9.818 9.818-9.818 5.421 0 9.819 4.398 9.819 9.818 0 5.421-4.398 9.818-9.818 9.818z"/></svg> WhatsApp</a>
+    </div>
+  </section>
+
+  <section class="section problem">
+    <div style="max-width:1100px;margin:0 auto">
+      <div class="problem-grid">
+        <div>
+          <div class="section-label reveal">// El problema</div>
+          <h2 class="section-title reveal">Cada mensaje sin respuesta es un cliente que se enfría</h2>
+          <p class="body-text reveal">Un lead que escribe a las 22h y no recibe respuesta hasta el día siguiente ya está mirando a tu competencia. Y las preguntas repetitivas de siempre le quitan tiempo a tu equipo para lo que de verdad importa.</p>
+        </div>
+        <div class="problem-list">
+        <div class="problem-item reveal">
+          <div class="problem-icon"><svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:var(--accent);fill:none;stroke-width:1.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+          <div><div class="problem-item-text">Fuera de horario, nadie responde</div><div class="problem-item-sub">Noches, fines de semana y festivos son cuando más gente busca y contacta, y cuando menos se responde.</div></div>
+        </div>
+        <div class="problem-item reveal">
+          <div class="problem-icon"><svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:var(--accent);fill:none;stroke-width:1.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+          <div><div class="problem-item-text">Las mismas preguntas, una y otra vez</div><div class="problem-item-sub">Horario, precio, disponibilidad — tu equipo repite lo mismo en vez de dedicarse a cerrar clientes.</div></div>
+        </div>
+        <div class="problem-item reveal">
+          <div class="problem-icon"><svg viewBox="0 0 24 24" style="width:18px;height:18px;stroke:var(--accent);fill:none;stroke-width:1.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+          <div><div class="problem-item-text">Leads sin cualificar que hacen perder el tiempo a ventas</div><div class="problem-item-sub">Sin un primer filtro automático, tu equipo comercial invierte tiempo en contactos que nunca iban a comprar.</div></div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section services-detail">
+    <div style="max-width:1100px;margin:0 auto">
+      <div class="section-label reveal">// Soluciones</div>
+      <h2 class="section-title reveal">Un agente que atiende, cualifica y agenda por ti</h2>
+      <div class="services-detail-grid">
+          <div class="svc-card reveal">
+            <div class="svc-num">01</div><h3>Atención 24/7 por WhatsApp o web</h3><p>Responde con la información real de tu negocio (horario, precios, disponibilidad) al instante, a cualquier hora.</p>
+          </div>
+          <div class="svc-card reveal">
+            <div class="svc-num">02</div><h3>Cualificación automática de leads</h3><p>El agente hace las preguntas clave para saber si el contacto encaja con lo que ofreces, antes de pasarlo a tu equipo.</p>
+          </div>
+          <div class="svc-card reveal">
+            <div class="svc-num">03</div><h3>Agendado de citas conversacional</h3><p>El propio agente ofrece horarios disponibles y confirma la cita dentro de la misma conversación, sin salir de WhatsApp.</p>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section for-whom">
+    <div style="max-width:1100px;margin:0 auto">
+      <div class="section-label reveal">// Para quién</div>
+      <h2 class="section-title reveal">Para cualquier negocio que atiende por WhatsApp o web</h2>
+      <div class="whom-grid">
+          <div class="whom-card reveal">
+            <div class="whom-check"><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:var(--accent);fill:none;stroke-width:2"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div class="whom-card-text"><h3>Clínicas y centros de salud</h3><p>Que reciben consultas fuera de horario y necesitan filtrar y agendar sin saturar a recepción.</p></div>
+          </div>
+          <div class="whom-card reveal">
+            <div class="whom-check"><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:var(--accent);fill:none;stroke-width:2"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div class="whom-card-text"><h3>Restaurantes y negocios locales</h3><p>Que reciben decenas de mensajes preguntando por carta, horario o disponibilidad cada día.</p></div>
+          </div>
+          <div class="whom-card reveal">
+            <div class="whom-check"><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:var(--accent);fill:none;stroke-width:2"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div class="whom-card-text"><h3>Inmobiliarias</h3><p>Que necesitan responder al instante a leads de portales antes de que los capte otra agencia.</p></div>
+          </div>
+          <div class="whom-card reveal">
+            <div class="whom-check"><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:var(--accent);fill:none;stroke-width:2"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div class="whom-card-text"><h3>Empresas de servicios y B2B</h3><p>Que quieren cualificar leads automáticamente antes de que el equipo comercial invierta tiempo en cada uno.</p></div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section process-section">
+    <div style="max-width:800px;margin:0 auto">
+      <div class="section-label reveal">// Proceso</div>
+      <h2 class="section-title reveal">Operativo en 1-2 semanas</h2>
+      <div class="process-steps-list">
+          <div class="proc-step reveal">
+            <div class="proc-num">01</div>
+            <div class="proc-content"><h3>Mapeo de tus preguntas frecuentes</h3><p>Recogemos la información real que necesita manejar el agente: horarios, precios, servicios, política de cancelación.</p></div>
+          </div>
+          <div class="proc-step reveal">
+            <div class="proc-num">02</div>
+            <div class="proc-content"><h3>Diseño de la conversación</h3><p>Definimos qué gestiona el agente solo y qué se deriva siempre a una persona de tu equipo.</p></div>
+          </div>
+          <div class="proc-step reveal">
+            <div class="proc-num">03</div>
+            <div class="proc-content"><h3>Integración con tus canales</h3><p>Conectamos WhatsApp Business y/o el chat de tu web, y tu agenda o CRM si hay que agendar citas.</p></div>
+          </div>
+          <div class="proc-step reveal">
+            <div class="proc-num">04</div>
+            <div class="proc-content"><h3>Pruebas con conversaciones reales</h3><p>Probamos el agente con casos reales antes de activarlo para todos tus clientes.</p></div>
+          </div>
+          <div class="proc-step reveal">
+            <div class="proc-num">05</div>
+            <div class="proc-content"><h3>Activación y ajuste continuo</h3><p>Revisamos las conversaciones reales las primeras semanas y afinamos las respuestas que lo necesiten.</p></div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section faq-section">
+    <div style="max-width:800px;margin:0 auto">
+      <div class="section-label reveal">// FAQ</div>
+      <h2 class="section-title reveal">Preguntas frecuentes sobre agentes de IA y chatbots</h2>
+      <div class="faq-list">
+      <div class="faq-item reveal">
+        <div class="faq-question"><span>¿El chatbot suena robótico o puede sonar como mi negocio?</span>
+          <div class="faq-toggle"><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:var(--muted);fill:none;stroke-width:2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
+        <div class="faq-answer"><p>Se entrena con el tono, la información y las respuestas típicas de tu negocio concreto. No es una plantilla genérica: responde con tu carta, tu horario, tus precios y tu forma de hablar.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question"><span>¿Qué pasa si el agente no sabe responder algo?</span>
+          <div class="faq-toggle"><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:var(--muted);fill:none;stroke-width:2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
+        <div class="faq-answer"><p>Deriva la conversación a una persona del equipo en lugar de inventar una respuesta. Tú decides qué preguntas gestiona solo y cuáles se escalan siempre a un humano.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question"><span>¿En qué canales funciona?</span>
+          <div class="faq-toggle"><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:var(--muted);fill:none;stroke-width:2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
+        <div class="faq-answer"><p>WhatsApp Business, el chat de tu web, o ambos a la vez conectados al mismo sistema, para que la conversación no se pierda si el cliente cambia de canal.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question"><span>¿Cuánto tarda en estar funcionando?</span>
+          <div class="faq-toggle"><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:var(--muted);fill:none;stroke-width:2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
+        <div class="faq-answer"><p>Entre 1 y 2 semanas desde la auditoría inicial, dependiendo de cuánta información propia (FAQs, catálogo, horarios) haya que integrar en el agente.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question"><span>¿Es lo mismo que la automatización de procesos que ya ofrecéis?</span>
+          <div class="faq-toggle"><svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:var(--muted);fill:none;stroke-width:2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
+        <div class="faq-answer"><p>Están relacionados pero no son lo mismo. La automatización de procesos conecta tus herramientas para que los datos fluyan solos (facturas, CRM, recordatorios). Un agente de IA es la parte conversacional: quien habla directamente con tu cliente. Muchos proyectos combinan ambos.</p></div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="section-label">// Siguiente paso</div>
+    <h2>Que tu negocio nunca deje a nadie sin respuesta</h2>
+    <p>Cuéntanos qué preguntas repites más y te decimos cómo montar el agente que las gestiona por ti.</p>
+    <div class="cta-btns">
+      <a href="mailto:lucas.fluxit@gmail.com" class="btn-primary">Solicitar auditoría gratuita</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">FLUXIT<span>.</span></div>
+        <p class="footer-desc">Consultoría en IA, automatización y captación digital para empresas que quieren crecer sin crecer en problemas.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Servicios</h4>
+          <ul>
+            <li><a href="/automatizacion-procesos-empresas">Automatización IA</a></li>
+            <li><a href="/agentes-ia-chatbots">Agentes de IA y Chatbots</a></li>
+            <li><a href="/captacion-leads-b2b">Captación Leads B2B</a></li>
+            <li><a href="/diseno-landings-conversion">Webs de Conversión</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Recursos</h4>
+          <ul>
+            <li><a href="/blog">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Empresa</h4>
+          <ul>
+            <li><a href="/nosotros">Nosotros</a></li>
+            <li><a href="/contacto">Contacto</a></li>
+            <li><a href="mailto:lucas.fluxit@gmail.com">lucas.fluxit@gmail.com</a></li>
+            <li><a href="/#contacto">Auditoría Gratis</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Fluxit — Todos los derechos reservados</p>
+      <span><a href="/aviso-legal">Aviso Legal</a> · <a href="/privacidad">Privacidad</a> · <a href="/cookies">Cookies</a></span>
+      <a href="/">fluxit.es</a>
+    </div>
+  </footer>
+  <a href="https://wa.me/34658010945" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg width="28" height="28" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  </a>
+<script>
+    const c = document.getElementById('fx-cursor');
+    const r = document.getElementById('fx-cursor-ring');
+    let mx=0,my=0,rx=0,ry=0;
+    document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;});
+    (function loop(){
+      rx+=(mx-rx)*.10; ry+=(my-ry)*.10;
+      c.style.left=mx+'px'; c.style.top=my+'px';
+      r.style.left=rx+'px'; r.style.top=ry+'px';
+      requestAnimationFrame(loop);
+    })();
+    document.querySelectorAll('a,button').forEach(el=>{
+      el.addEventListener('mouseenter',()=>c.classList.add('hov'));
+      el.addEventListener('mouseleave',()=>c.classList.remove('hov'));
+    });
+
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(en=>{
+        if(en.isIntersecting){ en.target.classList.add('visible'); obs.unobserve(en.target); }
+      });
+    },{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+    document.querySelectorAll('.faq-item').forEach(item=>{
+      item.addEventListener('click',()=>{
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i=>{
+          i.classList.remove('open');
+          const a = i.querySelector('.faq-answer');
+          if(a) a.classList.remove('open');
+        });
+        if(!isOpen){
+          item.classList.add('open');
+          const a = item.querySelector('.faq-answer');
+          if(a) a.classList.add('open');
+        }
+      });
+    });
+
+    const ham = document.getElementById('hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    if(ham && navLinks){
+      ham.addEventListener('click',()=>navLinks.style.display = navLinks.style.display==='flex'?'none':'flex');
+    }
+  </script>
+<script>
+(function(){
+  document.addEventListener("click",function(e){
+    var el=e.target.closest("a,button");
+    if(!el)return;
+    var href=el.getAttribute("href")||"";
+    if(href.includes("wa.me")||el.classList.contains("wa-float")||el.classList.contains("btn-wa")){
+      gtag("event","whatsapp_click",{event_category:"engagement"});
+    } else if(href.startsWith("mailto:")){
+      gtag("event","email_contact",{event_category:"engagement",event_label:href});
+    } else if(el.classList.contains("btn-primary")||el.classList.contains("nav-cta")||el.classList.contains("mobile-cta")||el.classList.contains("btn-secondary")){
+      gtag("event","cta_click",{event_category:"engagement",event_label:(el.textContent||"").trim().substring(0,50)});
+    }
+  });
+})();
+</script>
+
+<div id="cookie-banner" style="display:none;position:fixed;left:0;right:0;bottom:0;z-index:9999;background:#101828;border-top:1px solid rgba(224,240,255,0.12);padding:16px 24px;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;font-family:'Inter',sans-serif;font-size:.85rem;color:#8899BB;">
+  <span>Usamos cookies de analítica para entender cómo se usa este sitio. Puedes aceptarlas o rechazarlas. Más info en nuestra <a href="/cookies" style="color:#E07040;">Política de Cookies</a>.</span>
+  <span style="display:flex;gap:10px;flex-shrink:0;">
+    <button id="cookie-reject" style="background:transparent;border:1px solid rgba(224,240,255,0.2);color:#8899BB;padding:8px 16px;border-radius:4px;cursor:pointer;font-size:.8rem;">Rechazar</button>
+    <button id="cookie-accept" style="background:#E07040;border:none;color:#fff;padding:8px 16px;border-radius:4px;cursor:pointer;font-size:.8rem;font-weight:600;">Aceptar</button>
+  </span>
+</div>
+<script>
+(function(){
+  var consent = localStorage.getItem('fluxit_cookie_consent');
+  var banner = document.getElementById('cookie-banner');
+  if (!consent && banner) { banner.style.display = 'flex'; }
+  if (banner) {
+    document.getElementById('cookie-accept').addEventListener('click', function(){
+      localStorage.setItem('fluxit_cookie_consent', 'accepted');
+      banner.style.display = 'none';
+      if (window.__fluxitLoadGA) window.__fluxitLoadGA();
+    });
+    document.getElementById('cookie-reject').addEventListener('click', function(){
+      localStorage.setItem('fluxit_cookie_consent', 'rejected');
+      banner.style.display = 'none';
+    });
+  }
+})();
+</script>
+</body>
+</html>

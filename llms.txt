@@ -9,6 +9,7 @@ El proceso típico: auditoría gratuita → diseño del sistema → implementaci
 ## Servicios
 
 - [Automatización con IA](https://www.fluxit.es/#servicios): eliminación de tareas repetitivas, flujos con n8n e IA conectando las herramientas del negocio.
+- [Agentes de IA y chatbots](https://www.fluxit.es/agentes-ia-chatbots): asistentes que responden por WhatsApp o web 24/7, cualifican leads y agendan citas sin intervención humana.
 - [Captación de leads B2B](https://www.fluxit.es/captacion-leads-b2b): prospección automática, cualificación con IA y seguimiento multicanal.
 - [Webs de alta conversión](https://www.fluxit.es/diseno-landings-conversion): landings y sites optimizados con copy, diseño y CRO.
 - [Precios y paquetes](https://www.fluxit.es/precios): paquetes Starter, Pro y a medida.
