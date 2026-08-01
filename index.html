@@ -525,7 +525,11 @@
     .compare-cta:hover { opacity: .85; }
     @media(max-width:900px){
       .compare-grid { grid-template-columns: 1fr; }
-      .compare-col.featured { border: 1px solid rgba(224,112,64,.4); border-radius: 8px; }
+      .compare-col.featured { border: 1px solid rgba(224,112,64,.4); border-radius: 8px; order: -1; margin-bottom: 20px; }
+      .compare-header { padding: 22px 20px 16px; }
+      .compare-cell { padding: 13px 18px; gap: 8px; }
+      .compare-cell-label strong { font-size: .8rem; }
+      .compare-cell-label { font-size: .82rem; }
     }
 
     /* ─── SECTORS ─── */
@@ -1137,7 +1141,7 @@
     <h2 class="section-title reveal">La alternativa que tiene sentido</h2>
     <p class="section-sub reveal">Ni los costes de una gran consultora ni las limitaciones de un freelancer. Un equipo especializado que conoce tu contexto y lo implementa.</p>
 
-    <div class="compare-grid reveal" style="display:grid;grid-template-columns:1fr 1fr 1fr;">
+    <div class="compare-grid reveal">
       <!-- Headers -->
       <div class="compare-col" style="border-radius:14px 0 0 14px;">
         <div class="compare-header">
