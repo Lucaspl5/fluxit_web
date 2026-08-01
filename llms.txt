@@ -25,6 +25,7 @@ El proceso típico: auditoría gratuita → diseño del sistema → implementaci
 ## Recursos
 
 - [Blog](https://www.fluxit.es/blog): guías prácticas sobre automatización e IA para empresas españolas.
+- [Automatización en Granollers y el Vallès Oriental](https://www.fluxit.es/blog-automatizacion-valles-oriental): guía local, Fluxit está basado en Llinars del Vallès.
 - [Comprueba tu negocio](https://www.fluxit.es/comprueba-tu-negocio): herramienta gratuita que audita la web y presencia digital de un negocio.
 - [Nosotros](https://www.fluxit.es/nosotros): historia de Lucas Pariente, fundador de Fluxit.
 - [Contacto](https://www.fluxit.es/contacto)
