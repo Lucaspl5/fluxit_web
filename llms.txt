@@ -1,6 +1,6 @@
 # Fluxit
 
-> Fluxit es una consultoría de automatización con IA para pymes y autónomos en España, especializada en n8n, integraciones con IA y webs de alta conversión. Con base en Barcelona, trabaja con negocios de Barcelona, el Vallès Oriental (Granollers y alrededores) y el resto de España, tanto en remoto como presencial.
+> Fluxit es una consultoría de automatización con IA para pymes y autónomos en España, especializada en n8n, integraciones con IA y webs de alta conversión. Con base en Llinars del Vallès (Barcelona), trabaja con negocios de Barcelona, el Vallès Oriental (Granollers, Llinars del Vallès y alrededores) y el resto de España, tanto en remoto como presencial.
 
 Fluxit diseña e implementa sistemas de automatización a medida: captación y seguimiento de leads, CRM automático, atención a clientes 24/7 con IA, y webs/landings optimizadas para conversión. No vende software genérico ni plantillas: construye infraestructura a medida sobre n8n, conectada a las herramientas que el cliente ya usa (WhatsApp, HubSpot, Notion, Airtable, Gmail, etc.).
 
