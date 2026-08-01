@@ -383,6 +383,47 @@
   </ul>
 </section>
 
+<section style="max-width:760px;margin:56px auto 0;padding:0 24px;">
+  <div style="background:#101828;border:1px solid rgba(224,240,255,0.08);border-left:4px solid #E07040;border-radius:0 10px 10px 0;padding:32px 28px;">
+    <p style="font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#E07040;margin:0 0 10px;">Regalo · Checklist gratis</p>
+    <h2 style="font-size:1.3rem;font-weight:700;color:#E0F0FF;margin:0 0 10px;border:none;padding:0;">10 automatizaciones que puedes montar este mes</h2>
+    <p style="font-size:.92rem;color:#8899BB;line-height:1.6;margin:0 0 20px;">Checklist en PDF, sin coste. Te lo mandamos al email al momento.</p>
+    <form id="fx-lead-magnet-form" style="display:flex;gap:10px;flex-wrap:wrap;">
+      <input type="email" required placeholder="tu@email.com" id="fx-lead-email"
+        style="flex:1;min-width:200px;padding:12px 14px;border-radius:6px;border:1px solid rgba(224,240,255,0.15);background:#0B1120;color:#E0F0FF;font-size:.92rem;">
+      <button type="submit" id="fx-lead-submit"
+        style="background:#E07040;color:#fff;font-weight:700;font-size:.92rem;padding:12px 22px;border:none;border-radius:6px;cursor:pointer;white-space:nowrap;">Enviarme el PDF →</button>
+    </form>
+    <p id="fx-lead-msg" style="font-size:.82rem;color:#8899BB;margin:12px 0 0;display:none;"></p>
+  </div>
+</section>
+<script>
+(function(){
+  var form = document.getElementById('fx-lead-magnet-form');
+  if (!form) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn = document.getElementById('fx-lead-submit');
+    var msg = document.getElementById('fx-lead-msg');
+    var email = document.getElementById('fx-lead-email').value;
+    btn.disabled = true; btn.textContent = 'Enviando…';
+    fetch('https://n8n-production-c4be.up.railway.app/webhook/fluxit-blog-lead-magnet', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email, articulo: document.title })
+    }).then(function(){
+      form.style.display = 'none';
+      msg.style.display = 'block';
+      msg.textContent = 'Revisa tu email — te acabamos de mandar el PDF.';
+      if (window.gtag) gtag('event', 'lead_magnet_signup', { event_category: 'engagement' });
+    }).catch(function(){
+      btn.disabled = false; btn.textContent = 'Enviarme el PDF →';
+      msg.style.display = 'block';
+      msg.textContent = 'Hubo un problema. Escríbenos a lucas.fluxit@gmail.com y te lo mandamos.';
+    });
+  });
+})();
+</script>
+
 <footer>
   <p>&copy; 2026 <a href="/">Fluxit</a> · Consultoría IA y Automatización · <a href="/blog">Blog</a> · <a href="/#contacto">Contacto</a> · <a href="/aviso-legal">Aviso Legal</a> · <a href="/privacidad">Privacidad</a> · <a href="/cookies">Cookies</a></p>
 </footer>
