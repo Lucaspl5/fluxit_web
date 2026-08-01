@@ -1,0 +1,32 @@
+# Fluxit
+
+> Fluxit es una consultoría de automatización con IA para pymes y autónomos en España, especializada en n8n, integraciones con IA y webs de alta conversión. Con base en Barcelona, trabaja con negocios de Barcelona, el Vallès Oriental (Granollers y alrededores) y el resto de España, tanto en remoto como presencial.
+
+Fluxit diseña e implementa sistemas de automatización a medida: captación y seguimiento de leads, CRM automático, atención a clientes 24/7 con IA, y webs/landings optimizadas para conversión. No vende software genérico ni plantillas: construye infraestructura a medida sobre n8n, conectada a las herramientas que el cliente ya usa (WhatsApp, HubSpot, Notion, Airtable, Gmail, etc.).
+
+El proceso típico: auditoría gratuita → diseño del sistema → implementación en 1-3 semanas → mantenimiento y optimización continua. Precios desde 500€ de implementación con cuota mensual de mantenimiento.
+
+## Servicios
+
+- [Automatización con IA](https://www.fluxit.es/#servicios): eliminación de tareas repetitivas, flujos con n8n e IA conectando las herramientas del negocio.
+- [Captación de leads B2B](https://www.fluxit.es/captacion-leads-b2b): prospección automática, cualificación con IA y seguimiento multicanal.
+- [Webs de alta conversión](https://www.fluxit.es/diseno-landings-conversion): landings y sites optimizados con copy, diseño y CRO.
+- [Precios y paquetes](https://www.fluxit.es/precios): paquetes Starter, Pro y a medida.
+
+## Sectores
+
+- [Empresas de servicios](https://www.fluxit.es/automatizacion-empresas-servicios): consultoras, clínicas, academias, despachos.
+- [Despachos y asesorías](https://www.fluxit.es/captacion-leads-despachos): captación de clientes y automatización de expedientes.
+- [Agencias inmobiliarias](https://www.fluxit.es/automatizacion-inmobiliarias): CRM automático y seguimiento de leads por WhatsApp.
+- [Automatización de procesos para empresas](https://www.fluxit.es/automatizacion-procesos-empresas)
+
+## Recursos
+
+- [Blog](https://www.fluxit.es/blog): guías prácticas sobre automatización e IA para empresas españolas.
+- [Comprueba tu negocio](https://www.fluxit.es/comprueba-tu-negocio): herramienta gratuita que audita la web y presencia digital de un negocio.
+- [Nosotros](https://www.fluxit.es/nosotros): historia de Lucas Pariente, fundador de Fluxit.
+- [Contacto](https://www.fluxit.es/contacto)
+
+## Caso de éxito
+
+FisioProject, clínica de fisioterapia con más de 4.000 pacientes al año: web y asistente de IA bilingüe (catalán/castellano) que atiende consultas y guía la reserva de citas 24/7. https://fisioprojectcentre.com

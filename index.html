@@ -8,9 +8,9 @@
   <link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-  <title>Automatización para Inmobiliarias con n8n e IA | Fluxit</title>
-  <meta name="description" content="Fluxit automatiza inmobiliarias con n8n e IA: captación y seguimiento de leads, CRM automático y respuesta a clientes 24/7. Auditoría gratuita sin compromiso." />
-  <meta name="keywords" content="automatización inmobiliarias, n8n inmobiliarias, captación leads inmobiliaria, CRM automático inmobiliaria, IA para inmobiliarias, automatización procesos inmobiliario, automatización con n8n España, fluxit" />
+  <title>Automatización con IA para Pymes y Autónomos | Barcelona, Vallès Oriental | Fluxit</title>
+  <meta name="description" content="Fluxit automatiza pymes y autónomos con n8n e IA: captación y seguimiento de leads, CRM automático y atención a clientes 24/7. Barcelona, Vallès Oriental, Granollers. Auditoría gratuita sin compromiso." />
+  <meta name="keywords" content="automatización empresas, automatización con n8n, agencia automatización IA Barcelona, automatización procesos pymes, automatización Granollers, automatización Vallès Oriental, captación de leads con IA, CRM automático, fluxit" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <meta name="author" content="Fluxit" />
   <meta name="theme-color" content="#0B1120" />
@@ -23,16 +23,16 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.fluxit.es/" />
   <meta property="og:site_name" content="Fluxit" />
-  <meta property="og:title" content="Automatización para Inmobiliarias con n8n e IA | Fluxit" />
-  <meta property="og:description" content="Automatizamos inmobiliarias con n8n e IA: captación y seguimiento de leads, CRM automático y atención 24/7. Auditoría gratuita sin compromiso." />
+  <meta property="og:title" content="Automatización con IA para Pymes y Autónomos | Barcelona, Vallès Oriental | Fluxit" />
+  <meta property="og:description" content="Automatizamos pymes y autónomos con n8n e IA: captación y seguimiento de leads, CRM automático y atención 24/7. Barcelona, Vallès Oriental, Granollers. Auditoría gratuita sin compromiso." />
   <meta property="og:image" content="https://www.fluxit.es/assets/images/card.jpg" />
   <meta property="og:image:width" content="1080" />
   <meta property="og:image:height" content="608" />
   <meta property="og:locale" content="es_ES" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Automatización para Inmobiliarias con n8n e IA | Fluxit" />
-  <meta name="twitter:description" content="Automatizamos inmobiliarias con n8n e IA: captación de leads, CRM automático y atención 24/7." />
+  <meta name="twitter:title" content="Automatización con IA para Pymes y Autónomos | Fluxit" />
+  <meta name="twitter:description" content="Automatizamos pymes y autónomos con n8n e IA: captación de leads, CRM automático y atención 24/7. Barcelona, Vallès Oriental, Granollers." />
   <meta name="twitter:image" content="https://www.fluxit.es/assets/images/card.jpg" />
 
   <!-- Google tag (gtag.js) — carga condicionada al consentimiento de cookies -->
@@ -66,7 +66,7 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
+        "@type": ["Organization", "LocalBusiness"],
         "@id": "https://www.fluxit.es/#organization",
         "name": "Fluxit",
         "url": "https://www.fluxit.es",
@@ -74,8 +74,13 @@
           "@type": "ImageObject",
           "url": "https://www.fluxit.es/assets/images/card.jpg"
         },
-        "description": "Automatización con n8n e IA para inmobiliarias en España. Captación y seguimiento de leads, CRM automático y atención a clientes 24/7.",
-        "areaServed": "ES",
+        "description": "Automatización con n8n e IA para pymes y autónomos en España. Captación y seguimiento de leads, CRM automático y atención a clientes 24/7.",
+        "areaServed": [
+          { "@type": "City", "name": "Barcelona" },
+          { "@type": "City", "name": "Granollers" },
+          { "@type": "AdministrativeArea", "name": "Vallès Oriental" },
+          { "@type": "Country", "name": "España" }
+        ],
         "serviceType": "Consultoría IA y Automatización",
         "sameAs": [
           "https://www.linkedin.com/company/fluxit-automatizacion",
@@ -1004,13 +1009,13 @@
 
       <h1 class="hero-headline">
         <span class="hl">Automatización con IA</span>
-        <span class="hl accent">para inmobiliarias</span>
-        <span class="hl">que captan solas.</span>
+        <span class="hl accent">que capta clientes sola.</span>
         <span class="hl">Tú cierras más operaciones.</span>
       </h1>
       <p class="hero-body">
-        Automatizamos tu inmobiliaria con n8n e IA: captación y seguimiento de leads,
+        Automatizamos tu pyme o negocio con n8n e IA: captación y seguimiento de leads,
         CRM automático y atención a clientes 24/7 mientras tú te centras en vender.
+        Basados en Barcelona, trabajamos con negocios de toda España.
       </p>
       <div class="hero-actions">
         <a href="#contacto" class="btn-primary mag-btn">Solicita auditoría gratuita</a>
@@ -1643,22 +1648,36 @@ const letters = document.querySelectorAll('.il');
 const dot     = document.getElementById('intro-dot');
 const line    = document.getElementById('intro-line');
 
-const tl = anime.timeline({ easing: 'easeOutExpo' });
-tl
-  .add({ targets: letters, opacity: [0,1], translateY: [60,0], duration: 700, delay: anime.stagger(60) })
-  .add({ targets: dot, opacity: [0,1], scale: [0,1], duration: 400 }, '-=200')
-  .add({ targets: line, width: ['0%','60%'], duration: 500 }, '-=100')
-  .add({ targets: line, opacity: [1,0], duration: 300 }, '+=300')
-  .add({
-    targets: '#intro-overlay',
-    opacity: [1,0],
-    scale: [1,1.04],
-    duration: 700,
-    complete: () => {
-      overlay.style.display = 'none';
-      startMainAnimations();
-    }
-  }, '+=100');
+let introFinished = false;
+function finishIntro() {
+  if (introFinished) return;
+  introFinished = true;
+  overlay.style.display = 'none';
+  startMainAnimations();
+}
+
+// Failsafe: if the intro animation never fires or completes (blocked script,
+// backgrounded tab, slow device...), the whole homepage stays hidden behind
+// the overlay. Force it open after 2.5s regardless.
+setTimeout(finishIntro, 2500);
+
+try {
+  const tl = anime.timeline({ easing: 'easeOutExpo' });
+  tl
+    .add({ targets: letters, opacity: [0,1], translateY: [60,0], duration: 700, delay: anime.stagger(60) })
+    .add({ targets: dot, opacity: [0,1], scale: [0,1], duration: 400 }, '-=200')
+    .add({ targets: line, width: ['0%','60%'], duration: 500 }, '-=100')
+    .add({ targets: line, opacity: [1,0], duration: 300 }, '+=300')
+    .add({
+      targets: '#intro-overlay',
+      opacity: [1,0],
+      scale: [1,1.04],
+      duration: 700,
+      complete: finishIntro
+    }, '+=100');
+} catch (e) {
+  finishIntro();
+}
 
 /* ═══════════════════════════════════════════════════════
    SCROLL REVEAL
