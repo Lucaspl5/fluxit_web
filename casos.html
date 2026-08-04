@@ -68,8 +68,11 @@
     .nav-cta{ font-family:var(--mono)!important;font-size:.72rem!important;text-transform:uppercase;letter-spacing:.1em!important;
       background:var(--accent)!important;color:#fff!important;padding:10px 22px;border-radius:4px;border:none;transition:background .2s!important; }
     .nav-cta:hover{background:var(--accent2)!important;}
-    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
-    .hamburger span{display:block;width:24px;height:1.5px;background:var(--text);}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
+    .hamburger span{display:block;width:24px;height:1.5px;background:var(--text);transition:transform .2s,opacity .2s;}
+    .hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+    .hamburger.open span:nth-child(2){opacity:0;}
+    .hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
 
     .page-hero { background:var(--bg);padding:140px 48px 72px;position:relative;overflow:hidden; }
     .page-hero::before { content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 80% 50%,rgba(224,112,64,.08) 0%,transparent 65%); }
@@ -99,7 +102,7 @@
     .case-cta { font-family:var(--mono);font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);display:inline-flex;align-items:center;gap:8px; }
     .case-cta:hover { color:var(--accent2); }
     .case-media { border-radius:12px;overflow:hidden;border:1px solid var(--border);box-shadow:0 30px 60px rgba(0,0,0,0.35); }
-    .case-media video { width:100%;height:auto;display:block; }
+    .case-media video { width:100%;height:auto;aspect-ratio:16/9;display:block;background:var(--bg2);object-fit:cover; }
 
     footer { padding:64px 48px 32px;border-top:1px solid var(--border); }
     .footer-top { display:flex;justify-content:space-between;gap:60px;max-width:1200px;margin:0 auto 40px; }
@@ -122,7 +125,20 @@
 
     @media (max-width: 860px) {
       nav{padding:0 20px;}
-      .nav-links{display:none;}
+      .nav-links{
+        display:flex;flex-direction:column;align-items:flex-start;gap:0;
+        position:fixed;top:64px;left:0;right:0;
+        background:var(--bg2);border-bottom:1px solid var(--border);
+        padding:8px 20px 20px;
+        max-height:0;overflow:hidden;opacity:0;
+        transition:max-height .25s ease,opacity .2s ease;
+        pointer-events:none;
+      }
+      .nav-links.open{max-height:70vh;opacity:1;pointer-events:auto;overflow-y:auto;}
+      .nav-links li{width:100%;border-top:1px solid var(--border);}
+      .nav-links li:first-child{border-top:none;}
+      .nav-links a{display:block;padding:16px 4px;font-size:.8rem;}
+      .nav-links .nav-cta{display:inline-block;margin:12px 4px 4px;}
       .hamburger{display:flex;}
       .page-hero{padding:120px 24px 48px;}
       .case{padding:56px 24px;}
@@ -166,7 +182,7 @@
       <li><a href="/comprueba-tu-negocio">Comprueba tu negocio</a></li>
       <li><a href="/#contacto" class="nav-cta">Auditoría gratis</a></li>
     </ul>
-    <div class="hamburger" id="hamburger" aria-label="Menú" role="button" tabindex="0">
+    <div class="hamburger" id="hamburger" aria-label="Menú" role="button" tabindex="0" aria-expanded="false">
       <span></span><span></span><span></span>
     </div>
   </nav>
@@ -303,7 +319,18 @@
     const ham = document.getElementById('hamburger');
     const navLinks = document.querySelector('.nav-links');
     if(ham && navLinks){
-      ham.addEventListener('click',()=>navLinks.style.display = navLinks.style.display==='flex'?'none':'flex');
+      ham.addEventListener('click',()=>{
+        const isOpen = navLinks.classList.toggle('open');
+        ham.classList.toggle('open', isOpen);
+        ham.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+      navLinks.querySelectorAll('a').forEach(a=>{
+        a.addEventListener('click',()=>{
+          navLinks.classList.remove('open');
+          ham.classList.remove('open');
+          ham.setAttribute('aria-expanded','false');
+        });
+      });
     }
   </script>
   <script>
